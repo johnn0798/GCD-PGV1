@@ -17,15 +17,24 @@
 
     <style>
         /* ══════════════════════════════════════════════════════════
-           DESIGN SYSTEM — GOLDEN CLUB DIGITAL
+           DESIGN SYSTEM — GOLDEN CLUB DIGITAL (LIGHT THEME)
         ══════════════════════════════════════════════════════════ */
         :root {
-            /* Core Colors */
-            --color-dark: #0A0A0A;
-            --color-offwhite: #EBE4D5;
+            /* Light Core Colors */
+            --color-bg: #FAF7F2;
+            --color-bg-alt: #F3EEE6;
+            --color-bg-card: #FFFFFF;
+            --color-text: #1A1A1A;
+            --color-text-muted: #5A5550;
+            --color-text-light: #8C857D;
 
-            /* Gold Palette */
+            /* Gold Palette — Dourado rico e quente */
             --color-gold: #C8A165;
+            --color-gold-light: #DBBF8A;
+            --color-gold-dark: #A8854E;
+
+            /* Accent */
+            --color-deep-cream: #E8DFD0;
         }
 
         /* ═══ Reset & Base ═══ */
@@ -44,8 +53,8 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background: var(--color-dark);
-            color: var(--color-offwhite);
+            background: var(--color-bg);
+            color: var(--color-text);
             overflow-x: hidden;
             line-height: 1.6;
         }
@@ -62,14 +71,14 @@
 
         /* ═══ Utility Styles ═══ */
         .gold-text {
-            background: linear-gradient(135deg, #C8A165 0%, #e8d5b0 45%, #C8A165 100%);
+            background: linear-gradient(135deg, #C8A165 0%, #DBBF8A 45%, #C8A165 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
         .gold-shimmer {
-            background: linear-gradient(90deg, #C8A165 0%, #e8d5b0 25%, #C8A165 50%, #e8d5b0 75%, #C8A165 100%);
+            background: linear-gradient(90deg, #C8A165 0%, #DBBF8A 25%, #C8A165 50%, #DBBF8A 75%, #C8A165 100%);
             background-size: 200% auto;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -78,13 +87,8 @@
         }
 
         @keyframes shimmer {
-            0% {
-                background-position: -200% center;
-            }
-
-            100% {
-                background-position: 200% center;
-            }
+            0% { background-position: -200% center; }
+            100% { background-position: 200% center; }
         }
 
         /* ═══ CTA Buttons ═══ */
@@ -92,8 +96,8 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, #C8A165 0%, #a8854e 100%);
-            color: #0D1F18;
+            background: linear-gradient(135deg, #C8A165 0%, #A8854E 100%);
+            color: #FFFFFF;
             font-weight: 800;
             font-family: 'Montserrat', sans-serif;
             text-transform: uppercase;
@@ -101,20 +105,22 @@
             padding: 20px 48px;
             border-radius: 60px;
             font-size: 0.95rem;
-            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 20px rgba(200, 161, 101, 0.35);
         }
 
         .cta-button:hover {
             transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 32px rgba(200, 161, 101, 0.5);
         }
 
         /* ═════════════════════════════════════════════════════════════
-           DOBRA 1: HERO (IDÊNTICA À REFERÊNCIA DO EVENTO - FLEX COL/ROW)
+           DOBRA 1: HERO
         ═════════════════════════════════════════════════════════════ */
         .hero {
             position: relative;
             min-height: 100vh;
-            background: var(--color-dark);
+            background: var(--color-bg);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -179,11 +185,11 @@
             display: block;
         }
 
-        /* Gradientes para mesclar a imagem de forma suave */
+        /* Gradientes para mesclar a imagem ao fundo claro */
         .grad-mobile-bottom {
             position: absolute;
             inset: 0;
-            background: linear-gradient(to top, var(--color-dark) 0%, rgba(10, 10, 10, 0.4) 50%, transparent 100%);
+            background: linear-gradient(to top, var(--color-bg) 0%, rgba(250, 247, 242, 0.15) 25%, transparent 50%);
             pointer-events: none;
         }
 
@@ -191,7 +197,7 @@
             position: absolute;
             inset: 0;
             display: none;
-            background: linear-gradient(to top, var(--color-dark) 0%, rgba(10, 10, 10, 0.2) 50%, transparent 100%);
+            background: linear-gradient(to top, var(--color-bg) 0%, rgba(250, 247, 242, 0.1) 20%, transparent 40%);
             pointer-events: none;
         }
 
@@ -206,9 +212,9 @@
             top: 0;
             bottom: 0;
             left: 0;
-            width: 128px;
+            width: 80px;
             display: none;
-            background: linear-gradient(to right, var(--color-dark) 0%, transparent 100%);
+            background: linear-gradient(to right, var(--color-bg) 0%, transparent 100%);
             pointer-events: none;
         }
 
@@ -218,7 +224,7 @@
             }
         }
 
-        /* Coluna Texto (Mobile em baixo, Desktop na esquerda) */
+        /* Coluna Texto */
         .hero-text-col {
             width: 100%;
             padding: 48px 24px 24px 24px;
@@ -240,18 +246,14 @@
         }
 
         @media (min-width: 1024px) {
-            .hero-text-col {
-                padding-left: 96px;
-            }
+            .hero-text-col { padding-left: 96px; }
         }
 
         @media (min-width: 1280px) {
-            .hero-text-col {
-                padding-left: 128px;
-            }
+            .hero-text-col { padding-left: 128px; }
         }
 
-        /* Estilização da Tipografia */
+        /* Tipografia Hero */
         .hero-title {
             font-family: 'Playfair Display', serif;
             font-size: clamp(2.2rem, 5vw, 3.8rem);
@@ -260,12 +262,11 @@
             margin-bottom: 24px;
             margin-top: -16px;
             max-width: 560px;
+            color: var(--color-text);
         }
 
         @media (min-width: 768px) {
-            .hero-title {
-                margin-top: -48px;
-            }
+            .hero-title { margin-top: -48px; }
         }
 
         @media (max-width: 767px) {
@@ -280,12 +281,19 @@
         }
 
         .hero-subtitle {
-            color: rgba(235, 228, 213, 0.8);
+            color: var(--color-text-muted);
             font-size: 1.125rem;
             max-width: 600px;
             margin: 0 auto 32px auto;
-            line-height: 1.6;
+            line-height: 1.7;
             font-weight: 300;
+        }
+
+        .hero-subtitle strong {
+            color: var(--color-gold-dark);
+            font-weight: 600;
+            -webkit-text-fill-color: var(--color-gold-dark);
+            background: none;
         }
 
         @media (min-width: 768px) {
@@ -302,10 +310,7 @@
         }
 
         @media (min-width: 768px) {
-            .hero-cta-wrapper {
-                justify-content: flex-start;
-            }
-
+            .hero-cta-wrapper { justify-content: flex-start; }
             .cta-button {
                 width: auto;
                 font-size: 0.875rem;
@@ -323,9 +328,7 @@
         /* ═══ Ticker ═══ */
         .ticker-wrap {
             overflow: hidden;
-            background: #0D1F18;
-            border-top: 1px solid rgba(200, 161, 101, 0.15);
-            border-bottom: 1px solid rgba(200, 161, 101, 0.15);
+            background: linear-gradient(135deg, #C8A165 0%, #DBBF8A 50%, #C8A165 100%);
             padding: 14px 0;
         }
 
@@ -336,13 +339,8 @@
         }
 
         @keyframes ticker-scroll {
-            0% {
-                transform: translateX(0);
-            }
-
-            100% {
-                transform: translateX(-50%);
-            }
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
         }
 
         .ticker-item {
@@ -358,11 +356,16 @@
             font-weight: 700;
             letter-spacing: 0.25em;
             text-transform: uppercase;
+            color: #FFFFFF;
+            -webkit-text-fill-color: #FFFFFF;
+            background: none;
         }
 
         .ticker-dot {
             font-size: 0.6rem;
-            opacity: 0.4;
+            color: rgba(255, 255, 255, 0.5);
+            -webkit-text-fill-color: rgba(255, 255, 255, 0.5);
+            background: none;
         }
 
         /* ═══ Header ═══ */
@@ -374,17 +377,15 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border-bottom: 1px solid rgba(200, 161, 101, 0.1);
+            background: rgba(250, 247, 242, 0.92);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(184, 145, 63, 0.12);
             transition: background 0.3s ease, padding 0.3s ease;
         }
 
         @media (min-width: 768px) {
-            .site-header {
-                padding: 8px 48px;
-            }
+            .site-header { padding: 8px 48px; }
         }
 
         .header-logo img {
@@ -393,13 +394,11 @@
         }
 
         @media (min-width: 768px) {
-            .header-logo img {
-                height: 65px;
-            }
+            .header-logo img { height: 65px; }
         }
 
         .header-countdown {
-            display: flex;
+            display: none !important;
             align-items: center;
             gap: 6px;
         }
@@ -410,23 +409,21 @@
             font-weight: 600;
             letter-spacing: 0.15em;
             text-transform: uppercase;
-            color: rgba(235, 228, 213, 0.5);
+            color: var(--color-text-light);
             margin-right: 8px;
             display: none;
         }
 
         @media (min-width: 768px) {
-            .countdown-label {
-                display: block;
-            }
+            .countdown-label { display: block; }
         }
 
         .countdown-block {
             display: flex;
             flex-direction: column;
             align-items: center;
-            background: rgba(200, 161, 101, 0.08);
-            border: 1px solid rgba(200, 161, 101, 0.15);
+            background: rgba(184, 145, 63, 0.08);
+            border: 1px solid rgba(184, 145, 63, 0.18);
             border-radius: 8px;
             padding: 6px 10px;
             min-width: 44px;
@@ -437,7 +434,7 @@
             font-size: 1.1rem;
             font-weight: 700;
             line-height: 1;
-            color: var(--color-gold);
+            color: var(--color-gold-dark);
         }
 
         .countdown-unit {
@@ -446,7 +443,7 @@
             font-weight: 600;
             letter-spacing: 0.15em;
             text-transform: uppercase;
-            color: rgba(235, 228, 213, 0.4);
+            color: var(--color-text-light);
             margin-top: 2px;
         }
 
@@ -454,22 +451,20 @@
             font-family: 'Montserrat', sans-serif;
             font-size: 1rem;
             font-weight: 600;
-            color: rgba(200, 161, 101, 0.3);
+            color: rgba(184, 145, 63, 0.35);
             line-height: 1;
             padding-bottom: 10px;
         }
 
         /* ═══ Segunda Dobra (Testemunhos) ═══ */
         .social-proof {
-            background: #080808;
+            background: var(--color-bg-alt);
             padding: 80px 24px;
             position: relative;
         }
 
         @media (min-width: 768px) {
-            .social-proof {
-                padding: 120px 48px;
-            }
+            .social-proof { padding: 120px 48px; }
         }
 
         .sp-container {
@@ -480,7 +475,7 @@
         .sp-title {
             font-family: 'Playfair Display', serif;
             font-size: clamp(2rem, 4vw, 3rem);
-            color: var(--color-offwhite);
+            color: var(--color-text);
             text-align: center;
             max-width: 700px;
             margin: 0 auto 60px auto;
@@ -501,18 +496,19 @@
         }
 
         .sp-card {
-            background: rgba(20, 20, 20, 0.6);
-            border: 1px solid rgba(200, 161, 101, 0.15);
-            border-radius: 16px;
+            background: var(--color-bg-card);
+            border: 1px solid rgba(184, 145, 63, 0.15);
+            border-radius: 20px;
             padding: 32px;
             display: flex;
             flex-direction: column;
-            transition: transform 0.3s ease, border-color 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
         }
 
         .sp-card:hover {
             transform: translateY(-5px);
-            border-color: rgba(200, 161, 101, 0.4);
+            box-shadow: 0 12px 40px rgba(184, 145, 63, 0.12);
         }
 
         .sp-stars {
@@ -525,8 +521,8 @@
         .sp-text {
             font-family: 'Inter', sans-serif;
             font-size: 0.95rem;
-            color: rgba(235, 228, 213, 0.8);
-            line-height: 1.6;
+            color: var(--color-text-muted);
+            line-height: 1.7;
             font-style: italic;
             margin-bottom: 32px;
             flex-grow: 1;
@@ -536,7 +532,7 @@
             display: flex;
             align-items: center;
             gap: 16px;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-top: 1px solid var(--color-deep-cream);
             padding-top: 24px;
         }
 
@@ -544,8 +540,8 @@
             width: 48px;
             height: 48px;
             border-radius: 50%;
-            background: rgba(200, 161, 101, 0.1);
-            border: 1px solid rgba(200, 161, 101, 0.3);
+            background: linear-gradient(135deg, rgba(184, 145, 63, 0.1), rgba(184, 145, 63, 0.05));
+            border: 1px solid rgba(184, 145, 63, 0.25);
             flex-shrink: 0;
             display: flex;
             align-items: center;
@@ -567,19 +563,18 @@
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
             font-size: 0.85rem;
-            color: var(--color-offwhite);
+            color: var(--color-text);
         }
 
         .sp-business {
             font-size: 0.75rem;
-            color: var(--color-gold);
-            opacity: 0.8;
+            color: var(--color-gold-dark);
             margin-top: 2px;
         }
 
         /* ═══ Terceira Dobra (Grid de Cursos) ═══ */
         .courses-section {
-            background: var(--color-dark);
+            background: var(--color-bg);
             padding: 80px 0;
             overflow: hidden;
             position: relative;
@@ -588,7 +583,7 @@
         .courses-title {
             font-family: 'Playfair Display', serif;
             font-size: clamp(2rem, 3.5vw, 2.5rem);
-            color: var(--color-offwhite);
+            color: var(--color-text);
             text-align: center;
             max-width: 600px;
             margin: 0 auto 40px auto;
@@ -614,25 +609,33 @@
         }
 
         .course-thumb {
-            border-radius: 12px;
+            border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
-            border: 1px solid rgba(200, 161, 101, 0.15);
-            transition: transform 0.3s ease, border-color 0.3s ease;
-            background: rgba(20, 20, 20, 0.5);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(184, 145, 63, 0.12);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: var(--color-bg-card);
         }
 
         .course-thumb:hover {
             transform: scale(1.05) translateY(-5px);
-            border-color: rgba(200, 161, 101, 0.5);
-            box-shadow: 0 15px 35px rgba(200, 161, 101, 0.2);
+            box-shadow: 0 15px 40px rgba(184, 145, 63, 0.18);
         }
 
         .course-thumb img {
             width: 100%;
             height: auto;
             display: block;
-            border-radius: 11px;
+            border-radius: 15px;
+        }
+
+        /* ═══ Decorative Elements ═══ */
+        .section-divider {
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--color-gold), var(--color-gold-light));
+            border-radius: 2px;
+            margin: 0 auto 24px auto;
         }
     </style>
 </head>
@@ -665,11 +668,11 @@
     </header>
 
     <!-- ═══════════════════════════════════════════════════════════════════
-         DOBRA 1: HERO — Estrutura Idêntica ao golden-club-landing-v2
+         DOBRA 1: HERO
     ═══════════════════════════════════════════════════════════════════ -->
     <section class="hero" id="hero">
 
-        <!-- Bloco de Imagem - Aparece no topo no Mobile, na direita no Desktop -->
+        <!-- Bloco de Imagem -->
         <div class="hero-image-col">
             <!-- Desktop: Imagem de Fundo (Contain) -->
             <div class="hero-image-desktop" style="background-image: url('imagem/imageshero-desktop.png.png');"></div>
@@ -681,12 +684,12 @@
                 <div class="grad-mobile-bottom"></div>
             </div>
 
-            <!-- Gradientes Desktop para suavizar a mesclagem ao fundo dark -->
+            <!-- Gradientes Desktop -->
             <div class="grad-desktop-bottom"></div>
             <div class="grad-desktop-left"></div>
         </div>
 
-        <!-- Bloco de Texto - Aparece abaixo no Mobile, na esquerda no Desktop -->
+        <!-- Bloco de Texto -->
         <div class="hero-text-col">
             <h1 class="hero-title">
                 Vamos juntas construir <span class="hero-title-highlight gold-shimmer">os melhores 12 meses</span> da
@@ -694,9 +697,7 @@
             </h1>
 
             <p class="hero-subtitle">
-                Nós vamos trabalhar juntas para construir um negócio lucrativo. Te mostrando os <strong
-                    class="gold-text">melhores caminhos</strong>, acelerando seus resultados e <strong
-                    class="gold-text">acompanhando o seu desenvolvimento</strong>.
+                Nós vamos trabalhar juntas para construir um negócio lucrativo. Te mostrando os <strong>melhores caminhos</strong>, acelerando seus resultados e <strong>acompanhando o seu desenvolvimento</strong>.
             </p>
 
             <div class="hero-cta-wrapper">
@@ -710,35 +711,20 @@
     ═══════════════════════════════════════════════════════════════════ -->
     <div class="ticker-wrap">
         <div class="ticker-track">
-            <!-- Repeated for infinite scroll effect -->
-            <div class="ticker-item"><span class="ticker-text gold-text">ACESSO IMEDIATO</span><span
-                    class="ticker-dot gold-text">✦</span></div>
-            <div class="ticker-item"><span class="ticker-text gold-text">GOLDEN CLUB DIGITAL</span><span
-                    class="ticker-dot gold-text">✦</span></div>
-            <div class="ticker-item"><span class="ticker-text gold-text">AULAS SEMANAIS</span><span
-                    class="ticker-dot gold-text">✦</span></div>
-            <div class="ticker-item"><span class="ticker-text gold-text">COMUNIDADE EXCLUSIVA</span><span
-                    class="ticker-dot gold-text">✦</span></div>
-            <div class="ticker-item"><span class="ticker-text gold-text">CADERNO DE ATIVAÇÃO</span><span
-                    class="ticker-dot gold-text">✦</span></div>
-            <div class="ticker-item"><span class="ticker-text gold-text">ACESSO IMEDIATO</span><span
-                    class="ticker-dot gold-text">✦</span></div>
-            <div class="ticker-item"><span class="ticker-text gold-text">GOLDEN CLUB DIGITAL</span><span
-                    class="ticker-dot gold-text">✦</span></div>
-            <div class="ticker-item"><span class="ticker-text gold-text">AULAS SEMANAIS</span><span
-                    class="ticker-dot gold-text">✦</span></div>
-            <div class="ticker-item"><span class="ticker-text gold-text">COMUNIDADE EXCLUSIVA</span><span
-                    class="ticker-dot gold-text">✦</span></div>
-            <div class="ticker-item"><span class="ticker-text gold-text">CADERNO DE ATIVAÇÃO</span><span
-                    class="ticker-dot gold-text">✦</span></div>
-            <div class="ticker-item"><span class="ticker-text gold-text">ACESSO IMEDIATO</span><span
-                    class="ticker-dot gold-text">✦</span></div>
-            <div class="ticker-item"><span class="ticker-text gold-text">GOLDEN CLUB DIGITAL</span><span
-                    class="ticker-dot gold-text">✦</span></div>
-            <div class="ticker-item"><span class="ticker-text gold-text">AULAS SEMANAIS</span><span
-                    class="ticker-dot gold-text">✦</span></div>
-            <div class="ticker-item"><span class="ticker-text gold-text">COMUNIDADE EXCLUSIVA</span><span
-                    class="ticker-dot gold-text">✦</span></div>
+            <div class="ticker-item"><span class="ticker-text">ACESSO IMEDIATO</span><span class="ticker-dot">✦</span></div>
+            <div class="ticker-item"><span class="ticker-text">GOLDEN CLUB DIGITAL</span><span class="ticker-dot">✦</span></div>
+            <div class="ticker-item"><span class="ticker-text">AULAS SEMANAIS</span><span class="ticker-dot">✦</span></div>
+            <div class="ticker-item"><span class="ticker-text">COMUNIDADE EXCLUSIVA</span><span class="ticker-dot">✦</span></div>
+            <div class="ticker-item"><span class="ticker-text">CADERNO DE ATIVAÇÃO</span><span class="ticker-dot">✦</span></div>
+            <div class="ticker-item"><span class="ticker-text">ACESSO IMEDIATO</span><span class="ticker-dot">✦</span></div>
+            <div class="ticker-item"><span class="ticker-text">GOLDEN CLUB DIGITAL</span><span class="ticker-dot">✦</span></div>
+            <div class="ticker-item"><span class="ticker-text">AULAS SEMANAIS</span><span class="ticker-dot">✦</span></div>
+            <div class="ticker-item"><span class="ticker-text">COMUNIDADE EXCLUSIVA</span><span class="ticker-dot">✦</span></div>
+            <div class="ticker-item"><span class="ticker-text">CADERNO DE ATIVAÇÃO</span><span class="ticker-dot">✦</span></div>
+            <div class="ticker-item"><span class="ticker-text">ACESSO IMEDIATO</span><span class="ticker-dot">✦</span></div>
+            <div class="ticker-item"><span class="ticker-text">GOLDEN CLUB DIGITAL</span><span class="ticker-dot">✦</span></div>
+            <div class="ticker-item"><span class="ticker-text">AULAS SEMANAIS</span><span class="ticker-dot">✦</span></div>
+            <div class="ticker-item"><span class="ticker-text">COMUNIDADE EXCLUSIVA</span><span class="ticker-dot">✦</span></div>
         </div>
     </div>
 
@@ -747,6 +733,7 @@
     ═══════════════════════════════════════════════════════════════════ -->
     <section class="social-proof" id="depoimentos">
         <div class="sp-container">
+            <div class="section-divider"></div>
             <h2 class="sp-title">
                 O que dizem as empresárias guiadas por <span class="gold-shimmer">Leide Santos:</span>
             </h2>
@@ -801,6 +788,7 @@
          DOBRA 3: ACERVO DE CONTEÚDO (GRID DE CURSOS)
     ═══════════════════════════════════════════════════════════════════ -->
     <section class="courses-section" id="acervo">
+        <div class="section-divider"></div>
         <h2 class="courses-title">
             Acervo Completo:<br>
             Tudo o que você precisa para <span class="gold-text">escalar o seu negócio</span>
@@ -819,12 +807,10 @@
     <!-- Countdown Timer Script -->
     <script>
         (function () {
-            // Define countdown: 23h59m59s from first visit (persisted in localStorage)
             const STORAGE_KEY = 'gcd_countdown_end';
             let endTime = localStorage.getItem(STORAGE_KEY);
 
             if (!endTime) {
-                // First visit: set timer to 23:59:59 from now
                 endTime = Date.now() + (23 * 60 * 60 * 1000) + (59 * 60 * 1000) + (59 * 1000);
                 localStorage.setItem(STORAGE_KEY, endTime);
             } else {
@@ -836,7 +822,6 @@
                 let diff = endTime - now;
 
                 if (diff <= 0) {
-                    // Reset timer when it expires
                     endTime = Date.now() + (23 * 60 * 60 * 1000) + (59 * 60 * 1000) + (59 * 1000);
                     localStorage.setItem(STORAGE_KEY, endTime);
                     diff = endTime - Date.now();
