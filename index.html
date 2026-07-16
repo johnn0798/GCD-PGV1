@@ -17,35 +17,25 @@
 
     <style>
         /* ══════════════════════════════════════════════════════════
-           DESIGN SYSTEM — GOLDEN CLUB DIGITAL (LIGHT THEME)
+           DESIGN SYSTEM — GOLDEN CLUB DIGITAL (PREMIUM DARK THEME)
         ══════════════════════════════════════════════════════════ */
         :root {
-            /* Light Core Colors */
-            --color-bg: #FAF7F2;
-            --color-bg-alt: #F3EEE6;
-            --color-bg-card: #FFFFFF;
-            --color-text: #1A1A1A;
-            --color-text-muted: #5A5550;
-            --color-text-light: #8C857D;
-
-            /* Gold Palette — Dourado rico e quente */
-            --color-gold: #C8A165;
-            --color-gold-light: #DBBF8A;
-            --color-gold-dark: #A8854E;
-
-            /* Accent */
-            --color-deep-cream: #E8DFD0;
-        }
-
-        /* ═══ DARK MODE OVERRIDES (Temporary) ═══ */
-        body[data-theme="dark"] {
+            /* Definitive Premium Dark Theme */
             --color-bg: #101010;
-            --color-bg-alt: #080808;
-            --color-bg-card: rgba(20, 20, 20, 0.6);
+            --color-bg-alt: #1A362B;
+            --color-bg-card: rgba(30, 30, 30, 0.5);
             --color-text: #EBE4D5;
             --color-text-muted: rgba(235, 228, 213, 0.8);
             --color-text-light: rgba(235, 228, 213, 0.5);
-            --color-deep-cream: rgba(255, 255, 255, 0.05); /* Usado em bordas discretas no dark */
+
+            /* Gold Palette — Dourado rico e quente */
+            --color-gold: #C8A165;
+            --color-gold-light: #e8d5b0;
+            --color-gold-dark: #A8854E;
+
+            /* Accent */
+            --color-deep-cream: rgba(255, 255, 255, 0.05);
+            --color-deep-green: #1A362B;
         }
 
         /* ═══ Reset & Base ═══ */
@@ -82,14 +72,14 @@
 
         /* ═══ Utility Styles ═══ */
         .gold-text {
-            background: linear-gradient(135deg, #C8A165 0%, #DBBF8A 45%, #C8A165 100%);
+            background: linear-gradient(135deg, #C8A165 0%, #e8d5b0 45%, #C8A165 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
         .gold-shimmer {
-            background: linear-gradient(90deg, #C8A165 0%, #DBBF8A 25%, #C8A165 50%, #DBBF8A 75%, #C8A165 100%);
+            background: linear-gradient(90deg, #C8A165 0%, #e8d5b0 25%, #C8A165 50%, #e8d5b0 75%, #C8A165 100%);
             background-size: 200% auto;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -97,9 +87,19 @@
             animation: shimmer 6s linear infinite;
         }
 
+        .gold-border-glow {
+            border: 1px solid rgba(200, 161, 101, 0.4);
+            box-shadow: 0 0 20px rgba(200, 161, 101, 0.1);
+        }
+
         @keyframes shimmer {
-            0% { background-position: -200% center; }
-            100% { background-position: 200% center; }
+            0% {
+                background-position: -200% center;
+            }
+
+            100% {
+                background-position: 200% center;
+            }
         }
 
         /* ═══ CTA Buttons ═══ */
@@ -108,7 +108,7 @@
             align-items: center;
             justify-content: center;
             background: linear-gradient(135deg, #C8A165 0%, #A8854E 100%);
-            color: #FFFFFF;
+            color: #1A362B;
             font-weight: 800;
             font-family: 'Montserrat', sans-serif;
             text-transform: uppercase;
@@ -122,7 +122,7 @@
 
         .cta-button:hover {
             transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 8px 32px rgba(200, 161, 101, 0.5);
+            box-shadow: 0 8px 30px rgba(200, 161, 101, 0.4);
         }
 
         /* ═════════════════════════════════════════════════════════════
@@ -196,11 +196,11 @@
             display: block;
         }
 
-        /* Gradientes para mesclar a imagem ao fundo claro */
+        /* Gradientes para mesclar a imagem ao fundo escuro */
         .grad-mobile-bottom {
             position: absolute;
             inset: 0;
-            background: linear-gradient(to top, var(--color-bg) 0%, rgba(250, 247, 242, 0.15) 25%, transparent 50%);
+            background: linear-gradient(to top, var(--color-bg) 0%, rgba(16, 16, 16, 0.15) 25%, transparent 50%);
             pointer-events: none;
         }
 
@@ -208,7 +208,7 @@
             position: absolute;
             inset: 0;
             display: none;
-            background: linear-gradient(to top, var(--color-bg) 0%, rgba(250, 247, 242, 0.1) 20%, transparent 40%);
+            background: linear-gradient(to top, var(--color-bg) 0%, rgba(16, 16, 16, 0.1) 20%, transparent 40%);
             pointer-events: none;
         }
 
@@ -216,14 +216,6 @@
             .grad-desktop-bottom {
                 display: block;
             }
-        }
-
-        /* Overrides para gradientes mesclarem com o fundo escuro corretamente */
-        body[data-theme="dark"] .grad-mobile-bottom {
-            background: linear-gradient(to top, var(--color-bg) 0%, rgba(16, 16, 16, 0.15) 25%, transparent 50%);
-        }
-        body[data-theme="dark"] .grad-desktop-bottom {
-            background: linear-gradient(to top, var(--color-bg) 0%, rgba(16, 16, 16, 0.1) 20%, transparent 40%);
         }
 
         .grad-desktop-left {
@@ -265,11 +257,15 @@
         }
 
         @media (min-width: 1024px) {
-            .hero-text-col { padding-left: 96px; }
+            .hero-text-col {
+                padding-left: 96px;
+            }
         }
 
         @media (min-width: 1280px) {
-            .hero-text-col { padding-left: 128px; }
+            .hero-text-col {
+                padding-left: 128px;
+            }
         }
 
         /* Tipografia Hero */
@@ -285,7 +281,9 @@
         }
 
         @media (min-width: 768px) {
-            .hero-title { margin-top: -48px; }
+            .hero-title {
+                margin-top: -48px;
+            }
         }
 
         @media (max-width: 767px) {
@@ -329,7 +327,10 @@
         }
 
         @media (min-width: 768px) {
-            .hero-cta-wrapper { justify-content: flex-start; }
+            .hero-cta-wrapper {
+                justify-content: flex-start;
+            }
+
             .cta-button {
                 width: auto;
                 font-size: 0.875rem;
@@ -346,20 +347,16 @@
 
         .ticker-wrap {
             overflow: hidden;
-            background: linear-gradient(135deg, #C8A165 0%, #DBBF8A 50%, #C8A165 100%);
-            padding: 14px 0;
-        }
-        body[data-theme="dark"] .ticker-wrap {
-            /* Verde escuro da página referência no modo dark */
-            background: #1A362B; 
+            background: var(--color-bg-alt);
             border-top: 1px solid rgba(200, 161, 101, 0.15);
             border-bottom: 1px solid rgba(200, 161, 101, 0.15);
+            padding: 14px 0;
         }
-        body[data-theme="dark"] .ticker-text {
-            /* Restaura o dourado no texto quando o fundo é verde escuro */
+
+        .ticker-text {
             color: var(--color-gold);
             -webkit-text-fill-color: transparent;
-            background: linear-gradient(135deg, #C8A165 0%, #DBBF8A 45%, #C8A165 100%);
+            background: linear-gradient(135deg, #C8A165 0%, #e8d5b0 45%, #C8A165 100%);
             -webkit-background-clip: text;
         }
 
@@ -370,8 +367,13 @@
         }
 
         @keyframes ticker-scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
         }
 
         .ticker-item {
@@ -387,9 +389,10 @@
             font-weight: 700;
             letter-spacing: 0.25em;
             text-transform: uppercase;
-            color: #FFFFFF;
-            -webkit-text-fill-color: #FFFFFF;
-            background: none;
+            color: var(--color-gold);
+            -webkit-text-fill-color: transparent;
+            background: linear-gradient(135deg, #C8A165 0%, #e8d5b0 45%, #C8A165 100%);
+            -webkit-background-clip: text;
         }
 
         .ticker-dot {
@@ -408,18 +411,17 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background: rgba(250, 247, 242, 0.92);
+            background: rgba(16, 16, 16, 0.95);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border-bottom: 1px solid rgba(184, 145, 63, 0.12);
             transition: background 0.3s ease, padding 0.3s ease;
         }
-        body[data-theme="dark"] .site-header {
-            background: rgba(16, 16, 16, 0.95);
-        }
 
         @media (min-width: 768px) {
-            .site-header { padding: 8px 48px; }
+            .site-header {
+                padding: 8px 48px;
+            }
         }
 
         .header-logo img {
@@ -428,7 +430,9 @@
         }
 
         @media (min-width: 768px) {
-            .header-logo img { height: 65px; }
+            .header-logo img {
+                height: 65px;
+            }
         }
 
         .header-countdown {
@@ -449,7 +453,9 @@
         }
 
         @media (min-width: 768px) {
-            .countdown-label { display: block; }
+            .countdown-label {
+                display: block;
+            }
         }
 
         .countdown-block {
@@ -498,7 +504,9 @@
         }
 
         @media (min-width: 768px) {
-            .social-proof { padding: 60px 48px 120px 48px; }
+            .social-proof {
+                padding: 60px 48px 120px 48px;
+            }
         }
 
         .sp-container {
@@ -525,7 +533,8 @@
         }
 
         /* Gradientes laterais para suavizar a entrada/saída do carrossel */
-        .sp-carousel-wrap::before, .sp-carousel-wrap::after {
+        .sp-carousel-wrap::before,
+        .sp-carousel-wrap::after {
             content: '';
             position: absolute;
             top: 0;
@@ -534,10 +543,12 @@
             z-index: 2;
             pointer-events: none;
         }
+
         .sp-carousel-wrap::before {
             left: 0;
             background: linear-gradient(to right, var(--color-bg-alt) 0%, transparent 100%);
         }
+
         .sp-carousel-wrap::after {
             right: 0;
             background: linear-gradient(to left, var(--color-bg-alt) 0%, transparent 100%);
@@ -555,8 +566,13 @@
         }
 
         @keyframes scroll-testimonials {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); } 
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
         }
 
         /* ─── Card Vertical (Miniatura de Vídeo) ─── */
@@ -568,7 +584,8 @@
             overflow: hidden;
             flex-shrink: 0;
             background-color: var(--color-deep-cream);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Sombra suave para o fundo claro */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            /* Sombra suave para o fundo claro */
             transition: transform 0.3s ease;
             cursor: pointer;
         }
@@ -650,6 +667,727 @@
             margin-top: 4px;
         }
 
+        /* ═══ Nova Dobra (Carta Aberta) ═══ */
+        .open-letter {
+            background: var(--color-bg-card);
+            padding: 80px 24px;
+            position: relative;
+        }
+
+        @media (min-width: 768px) {
+            .open-letter {
+                padding: 120px 48px;
+            }
+        }
+
+        .ol-container {
+            max-width: 1024px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        @media (min-width: 768px) {
+            .ol-container {
+                grid-template-columns: 5fr 7fr;
+                gap: 60px;
+            }
+        }
+
+        .ol-image-wrap {
+            position: relative;
+            border-radius: 16px;
+            /* A imagem vai aparecer acima naturalmente pela ordem do HTML */
+        }
+
+        .ol-image-bg-effect {
+            position: absolute;
+            inset: -16px;
+            background: rgba(200, 161, 101, 0.15);
+            border-radius: 20px;
+            transform: rotate(2deg);
+            z-index: 1;
+        }
+
+        body[data-theme="dark"] .ol-image-bg-effect {
+            background: rgba(200, 161, 101, 0.08);
+            /* darker effect for dark mode */
+        }
+
+        .ol-image {
+            position: relative;
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            z-index: 2;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .ol-content {
+            /* Fica abaixo da imagem no mobile naturalmente pela ordem do HTML */
+        }
+
+        .ol-badge {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--color-gold-dark);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .ol-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 3.5vw, 2.5rem);
+            color: var(--color-text);
+            line-height: 1.25;
+            margin-bottom: 24px;
+            font-weight: 800;
+        }
+
+        .ol-text {
+            color: var(--color-text-muted);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .ol-text strong {
+            color: var(--color-text);
+            font-weight: 700;
+        }
+
+        .ol-highlight {
+            font-weight: 700;
+            color: var(--color-text);
+            text-decoration: underline;
+            text-decoration-color: var(--color-gold);
+            text-decoration-thickness: 2px;
+            text-underline-offset: 4px;
+        }
+
+        /* ═══ Quarta Dobra (Quiz) & Quinta (Hook) ═══ */
+        .quiz-section {
+            background: var(--color-bg);
+            padding: 80px 24px;
+            position: relative;
+            border-top: 1px solid rgba(200, 161, 101, 0.15);
+            border-bottom: 1px solid rgba(200, 161, 101, 0.15);
+        }
+
+        @media (min-width: 768px) {
+            .quiz-section {
+                padding: 120px 48px;
+            }
+        }
+
+        .qz-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .qz-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 3.5vw, 2.5rem);
+            color: var(--color-text);
+            text-align: center;
+            margin-bottom: 48px;
+            font-weight: 800;
+        }
+
+        .qz-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-bottom: 60px;
+        }
+
+        .qz-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 24px;
+            border-radius: 12px;
+            border: 1px solid rgba(200, 161, 101, 0.2);
+            background: rgba(30, 30, 30, 0.5);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+        }
+
+        .qz-item:hover {
+            border-color: var(--color-gold);
+            background: rgba(26, 54, 43, 0.6);
+            /* Verde escuro translúcido no hover */
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .qz-checkbox {
+            width: 28px;
+            height: 28px;
+            flex-shrink: 0;
+            margin-top: -2px;
+            border: 2px solid var(--color-gold);
+            border-radius: 6px;
+            accent-color: var(--color-gold);
+            cursor: pointer;
+        }
+
+        .qz-label {
+            font-size: 1.1rem;
+            color: var(--color-text);
+            font-weight: 500;
+            line-height: 1.4;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .qz-divider {
+            width: 100%;
+            height: 1px;
+            background: rgba(200, 161, 101, 0.2);
+            margin: 0 auto 48px auto;
+        }
+
+        .hook-text-wrapper {
+            font-size: 1.15rem;
+            line-height: 1.7;
+            text-align: center;
+            color: var(--color-text-muted);
+            max-width: 700px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .hook-text-wrapper p {
+            margin: 0;
+        }
+
+        .hook-highlight {
+            font-weight: 700;
+            background: rgba(200, 161, 101, 0.12);
+            padding: 4px 8px;
+            border-radius: 6px;
+            color: var(--color-text);
+        }
+
+        .hook-community {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--color-text);
+            margin: 16px 0;
+            display: block;
+        }
+
+        /* ═══ Metodologia (Roda) ═══ */
+        .methodology-section {
+            background-color: var(--color-bg);
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .met-header {
+            text-align: center;
+            margin-bottom: 60px;
+            z-index: 10;
+        }
+
+        .met-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 3.5vw, 2.5rem);
+            color: var(--color-text);
+            margin: 0 0 15px 0;
+            font-weight: 800;
+        }
+
+        .met-header h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--color-gold);
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        /* Cores do círculo (Ouro Vibrante e Luminoso) */
+        .methodology-section {
+            --m-c1: #FFD640;
+            --m-c2: #FFAE00;
+            --m-c3: #D96A00;
+            --m-c4: #8F3B00;
+            --m-c5: #FFB800;
+            --m-c6: #FFEE80;
+        }
+
+        .met-main-wrapper {
+            position: relative;
+            width: 1200px;
+            height: 650px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .met-wheel-scaler {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .met-wheel-container {
+            position: relative;
+            width: 440px;
+            height: 440px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.06);
+        }
+
+        .met-wheel-glow {
+            position: absolute;
+            width: 110%;
+            height: 110%;
+            border-radius: 50%;
+            background: conic-gradient(var(--m-c1), var(--m-c2), var(--m-c3), var(--m-c4), var(--m-c5), var(--m-c6), var(--m-c1));
+            filter: blur(60px);
+            opacity: 0.6;
+            z-index: 0;
+        }
+
+        .met-wheel {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: conic-gradient(var(--m-c1) 0deg 60deg,
+                    var(--m-c2) 60deg 120deg,
+                    var(--m-c3) 120deg 180deg,
+                    var(--m-c4) 180deg 240deg,
+                    var(--m-c5) 240deg 300deg,
+                    var(--m-c6) 300deg 360deg);
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .met-wheel::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                linear-gradient(90deg, transparent calc(50% - 1.5px), var(--color-bg) calc(50% - 1.5px), var(--color-bg) calc(50% + 1.5px), transparent calc(50% + 1.5px)),
+                linear-gradient(30deg, transparent calc(50% - 1.5px), var(--color-bg) calc(50% - 1.5px), var(--color-bg) calc(50% + 1.5px), transparent calc(50% + 1.5px)),
+                linear-gradient(150deg, transparent calc(50% - 1.5px), var(--color-bg) calc(50% - 1.5px), var(--color-bg) calc(50% + 1.5px), transparent calc(50% + 1.5px));
+            border-radius: 50%;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .met-wheel-center {
+            position: absolute;
+            width: 160px;
+            height: 160px;
+            background-color: var(--color-bg);
+            border-radius: 50%;
+            z-index: 5;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: inset 0 4px 15px rgba(0, 0, 0, 0.05), 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .met-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2px;
+        }
+
+        .met-logo span {
+            font-size: 35px;
+            font-family: 'Playfair Display', serif;
+            font-weight: 900;
+            color: var(--color-gold);
+            letter-spacing: -1px;
+        }
+
+        .met-logo-sub {
+            font-size: 10px;
+            font-weight: 700;
+            color: var(--color-text);
+            text-align: center;
+            line-height: 1.2;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .met-phase-label {
+            position: absolute;
+            z-index: 4;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transform: translate(-50%, -50%);
+            color: #1A1105;
+        }
+
+        .met-phase-label .phase-text {
+            font-size: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: -4px;
+        }
+
+        .met-phase-label .phase-num {
+            font-size: 46px;
+            font-family: 'Playfair Display', serif;
+            font-weight: 900;
+            line-height: 1;
+        }
+
+        .met-p1 {
+            top: 21%;
+            left: 67%;
+        }
+
+        .met-p2 {
+            top: 50%;
+            left: 84%;
+        }
+
+        .met-p3 {
+            top: 79%;
+            left: 67%;
+        }
+
+        .met-p4 {
+            top: 79%;
+            left: 33%;
+        }
+
+        .met-p5 {
+            top: 50%;
+            left: 16%;
+        }
+
+        .met-p6 {
+            top: 21%;
+            left: 33%;
+        }
+
+        .met-info-box {
+            position: absolute;
+            width: 260px;
+            z-index: 10;
+        }
+
+        .met-info-box h3 {
+            font-size: 20px;
+            margin: 0 0 12px 0;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--color-text);
+        }
+
+        .met-info-box p {
+            font-size: 14px;
+            color: var(--color-text-muted);
+            margin: 0;
+            line-height: 1.5;
+            font-weight: 400;
+        }
+
+        .met-lines-svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .met-lines-svg path {
+            fill: none;
+            stroke: rgba(200, 161, 101, 0.4);
+            stroke-width: 1.5px;
+            stroke-dasharray: 4 4;
+        }
+
+        .box-escala {
+            top: 75px;
+            left: 80px;
+            text-align: left;
+        }
+
+        .box-vendas {
+            top: 275px;
+            left: 80px;
+            text-align: left;
+        }
+
+        .box-processo {
+            top: 535px;
+            left: 80px;
+            text-align: left;
+        }
+
+        .box-habilidade {
+            top: 75px;
+            right: 80px;
+            text-align: right;
+        }
+
+        .box-validacao {
+            top: 275px;
+            right: 80px;
+            text-align: right;
+        }
+
+        .box-especializacao {
+            top: 535px;
+            right: 80px;
+            text-align: right;
+        }
+
+        @media (max-width: 1250px) and (min-width: 901px) {
+            .methodology-section {
+                padding: 40px 10px;
+            }
+
+            .met-main-wrapper {
+                transform: scale(calc(100vw / 1250));
+                transform-origin: top center;
+                margin-bottom: calc(650px * (calc(100vw / 1250) - 1));
+            }
+        }
+
+        @media (max-width: 900px) {
+            .methodology-section {
+                padding: 50px 20px;
+            }
+
+            .met-header {
+                margin-bottom: 40px;
+            }
+
+            .met-main-wrapper {
+                width: 100%;
+                height: auto;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                transform: none;
+                margin-bottom: 0;
+            }
+
+            /* Roda Redimensionada de forma nativa e não via Scale() */
+            .met-wheel-scaler {
+                position: relative;
+                order: -1;
+                width: 280px;
+                height: 280px;
+                margin-bottom: 50px;
+            }
+
+            .met-wheel-container {
+                width: 280px;
+                height: 280px;
+            }
+
+            .met-wheel-center {
+                width: 100px;
+                height: 100px;
+            }
+
+            .met-logo span {
+                font-size: 24px;
+            }
+
+            .met-logo-sub {
+                font-size: 8px;
+            }
+
+            .met-phase-label {
+                width: 60px;
+                height: 60px;
+            }
+
+            .met-phase-label .phase-text {
+                font-size: 9px;
+                margin-bottom: -2px;
+            }
+
+            .met-phase-label .phase-num {
+                font-size: 30px;
+            }
+
+            .met-lines-svg {
+                display: none;
+            }
+
+            /* Novo Design das Caixas no Mobile (Estilo Timeline Step) */
+            .met-info-box {
+                position: relative;
+                top: auto !important;
+                left: auto !important;
+                bottom: auto !important;
+                right: auto !important;
+                width: 100%;
+                max-width: 480px;
+                text-align: left !important;
+                background: rgba(30, 30, 30, 0.5);
+                backdrop-filter: blur(10px);
+                border: 1px solid rgba(200, 161, 101, 0.15);
+                border-radius: 0 16px 16px 0;
+                /* Flat na fita indicadora */
+                padding: 24px 20px 24px 34px;
+                margin-bottom: 24px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+                overflow: hidden;
+            }
+
+            /* Marca d'água linda com o número da fase */
+            .met-info-box::after {
+                position: absolute;
+                right: 15px;
+                top: 50%;
+                transform: translateY(-50%);
+                font-size: 90px;
+                font-family: 'Playfair Display', serif;
+                font-weight: 900;
+                opacity: 0.08;
+                z-index: 0;
+            }
+
+            /* Fita lateral timeline */
+            .met-info-box::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                width: 8px;
+            }
+
+            .met-info-box h3,
+            .met-info-box p {
+                position: relative;
+                z-index: 2;
+            }
+
+            .met-info-box h3 {
+                font-size: 22px;
+                margin-bottom: 10px;
+            }
+
+            .box-habilidade {
+                order: 1;
+                border-top: 1px solid rgba(200, 161, 101, 0.15);
+            }
+
+            .box-habilidade::before {
+                background: var(--m-c1);
+            }
+
+            .box-habilidade::after {
+                content: '1';
+                color: var(--m-c1);
+            }
+
+            .box-validacao {
+                order: 2;
+                border-top: 1px solid rgba(200, 161, 101, 0.15);
+            }
+
+            .box-validacao::before {
+                background: var(--m-c2);
+            }
+
+            .box-validacao::after {
+                content: '2';
+                color: var(--m-c2);
+            }
+
+            .box-especializacao {
+                order: 3;
+                border-top: 1px solid rgba(200, 161, 101, 0.15);
+            }
+
+            .box-especializacao::before {
+                background: var(--m-c3);
+            }
+
+            .box-especializacao::after {
+                content: '3';
+                color: var(--m-c3);
+            }
+
+            .box-processo {
+                order: 4;
+                border-top: 1px solid rgba(200, 161, 101, 0.15);
+            }
+
+            .box-processo::before {
+                background: var(--m-c4);
+            }
+
+            .box-processo::after {
+                content: '4';
+                color: var(--m-c4);
+            }
+
+            .box-vendas {
+                order: 5;
+                border-top: 1px solid rgba(200, 161, 101, 0.15);
+            }
+
+            .box-vendas::before {
+                background: var(--m-c5);
+            }
+
+            .box-vendas::after {
+                content: '5';
+                color: var(--m-c5);
+            }
+
+            .box-escala {
+                order: 6;
+                border-top: 1px solid rgba(200, 161, 101, 0.15);
+            }
+
+            .box-escala::before {
+                background: var(--m-c6);
+            }
+
+            .box-escala::after {
+                content: '6';
+                color: var(--m-c6);
+            }
+        }
+
         /* ═══ Terceira Dobra (Grid de Cursos) ═══ */
         .courses-section {
             background: var(--color-bg);
@@ -692,7 +1430,8 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
             border: 1px solid rgba(184, 145, 63, 0.12);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            background: var(--color-bg-card);
+            background: rgba(30, 30, 30, 0.5);
+            backdrop-filter: blur(10px);
         }
 
         .course-thumb:hover {
@@ -715,6 +1454,26 @@
             border-radius: 2px;
             margin: 0 auto 24px auto;
         }
+
+        /* Animação Roll-in 3D para Dynamismo */
+        .benefit-card,
+        .qz-item,
+        .coi-card,
+        .course-thumb,
+        .met-info-box,
+        .stack-box,
+        .faq-item {
+            opacity: 0;
+            transform: translateY(60px) rotateX(-20deg);
+            transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+            transform-origin: top center;
+            will-change: opacity, transform;
+        }
+
+        .animate-roll-in {
+            opacity: 1 !important;
+            transform: translateY(0) rotateX(0) !important;
+        }
     </style>
 </head>
 
@@ -725,11 +1484,6 @@
         <a href="#" class="header-logo">
             <img src="imagem/logo.png" alt="Golden Club Digital" />
         </a>
-
-        <!-- Botão temporário para alternar Modo Dark/Light -->
-        <button id="themeToggle" style="padding: 8px 16px; margin-left: auto; margin-right: 16px; background: #C8A165; color: #101010; border: none; border-radius: 30px; font-weight: 800; cursor: pointer; font-family: 'Montserrat', sans-serif; font-size: 0.75rem; letter-spacing: 0.05em; text-transform: uppercase;">
-            🌓 Modo Dark
-        </button>
 
         <div class="header-countdown">
             <span class="countdown-label">Oferta encerra em</span>
@@ -758,11 +1512,11 @@
         <!-- Bloco de Imagem -->
         <div class="hero-image-col">
             <!-- Desktop: Imagem de Fundo (Contain) -->
-            <div class="hero-image-desktop" style="background-image: url('imagem/imageshero-desktop.png.png');"></div>
+            <div class="hero-image-desktop" style="background-image: url('imagem/imageshero-desktop.png.jpeg');"></div>
 
             <!-- Mobile: Imagem direta com gradiente em cima -->
             <div class="hero-image-mobile-wrapper">
-                <img src="imagem/imageshero-mobile.jpeg.jpeg" alt="A Escola de Negócios Para Bronzeadoras"
+                <img src="imagem/imageshero-mobile.jpeg.png" alt="A Escola de Negócios Para Bronzeadoras"
                     class="hero-image-mobile" />
                 <div class="grad-mobile-bottom"></div>
             </div>
@@ -779,9 +1533,10 @@
                 sua vida
             </h1>
 
-            <p class="hero-subtitle">
-                Nós vamos trabalhar juntas para construir um negócio lucrativo. Te mostrando os <strong>melhores caminhos</strong>, acelerando seus resultados e <strong>acompanhando o seu desenvolvimento</strong>.
-            </p>
+            <h2 class="hero-subtitle">
+                As maiores empresárias do mercado vão se reunir por 12 meses com um único objetivo: <strong>Fazer você
+                    crescer e faturar 3x mais.</strong>
+            </h2>
 
             <div class="hero-cta-wrapper">
                 <a href="#oferta" class="cta-button">Garantir Acesso Imediato</a>
@@ -794,20 +1549,34 @@
     ═══════════════════════════════════════════════════════════════════ -->
     <div class="ticker-wrap">
         <div class="ticker-track">
-            <div class="ticker-item"><span class="ticker-text">ACESSO IMEDIATO</span><span class="ticker-dot">✦</span></div>
-            <div class="ticker-item"><span class="ticker-text">GOLDEN CLUB DIGITAL</span><span class="ticker-dot">✦</span></div>
-            <div class="ticker-item"><span class="ticker-text">AULAS SEMANAIS</span><span class="ticker-dot">✦</span></div>
-            <div class="ticker-item"><span class="ticker-text">COMUNIDADE EXCLUSIVA</span><span class="ticker-dot">✦</span></div>
-            <div class="ticker-item"><span class="ticker-text">CADERNO DE ATIVAÇÃO</span><span class="ticker-dot">✦</span></div>
-            <div class="ticker-item"><span class="ticker-text">ACESSO IMEDIATO</span><span class="ticker-dot">✦</span></div>
-            <div class="ticker-item"><span class="ticker-text">GOLDEN CLUB DIGITAL</span><span class="ticker-dot">✦</span></div>
-            <div class="ticker-item"><span class="ticker-text">AULAS SEMANAIS</span><span class="ticker-dot">✦</span></div>
-            <div class="ticker-item"><span class="ticker-text">COMUNIDADE EXCLUSIVA</span><span class="ticker-dot">✦</span></div>
-            <div class="ticker-item"><span class="ticker-text">CADERNO DE ATIVAÇÃO</span><span class="ticker-dot">✦</span></div>
-            <div class="ticker-item"><span class="ticker-text">ACESSO IMEDIATO</span><span class="ticker-dot">✦</span></div>
-            <div class="ticker-item"><span class="ticker-text">GOLDEN CLUB DIGITAL</span><span class="ticker-dot">✦</span></div>
-            <div class="ticker-item"><span class="ticker-text">AULAS SEMANAIS</span><span class="ticker-dot">✦</span></div>
-            <div class="ticker-item"><span class="ticker-text">COMUNIDADE EXCLUSIVA</span><span class="ticker-dot">✦</span></div>
+            <div class="ticker-item"><span class="ticker-text">ACESSO IMEDIATO</span><span class="ticker-dot">✦</span>
+            </div>
+            <div class="ticker-item"><span class="ticker-text">GOLDEN CLUB DIGITAL</span><span
+                    class="ticker-dot">✦</span></div>
+            <div class="ticker-item"><span class="ticker-text">AULAS SEMANAIS</span><span class="ticker-dot">✦</span>
+            </div>
+            <div class="ticker-item"><span class="ticker-text">COMUNIDADE EXCLUSIVA</span><span
+                    class="ticker-dot">✦</span></div>
+            <div class="ticker-item"><span class="ticker-text">CADERNO DE ATIVAÇÃO</span><span
+                    class="ticker-dot">✦</span></div>
+            <div class="ticker-item"><span class="ticker-text">ACESSO IMEDIATO</span><span class="ticker-dot">✦</span>
+            </div>
+            <div class="ticker-item"><span class="ticker-text">GOLDEN CLUB DIGITAL</span><span
+                    class="ticker-dot">✦</span></div>
+            <div class="ticker-item"><span class="ticker-text">AULAS SEMANAIS</span><span class="ticker-dot">✦</span>
+            </div>
+            <div class="ticker-item"><span class="ticker-text">COMUNIDADE EXCLUSIVA</span><span
+                    class="ticker-dot">✦</span></div>
+            <div class="ticker-item"><span class="ticker-text">CADERNO DE ATIVAÇÃO</span><span
+                    class="ticker-dot">✦</span></div>
+            <div class="ticker-item"><span class="ticker-text">ACESSO IMEDIATO</span><span class="ticker-dot">✦</span>
+            </div>
+            <div class="ticker-item"><span class="ticker-text">GOLDEN CLUB DIGITAL</span><span
+                    class="ticker-dot">✦</span></div>
+            <div class="ticker-item"><span class="ticker-text">AULAS SEMANAIS</span><span class="ticker-dot">✦</span>
+            </div>
+            <div class="ticker-item"><span class="ticker-text">COMUNIDADE EXCLUSIVA</span><span
+                    class="ticker-dot">✦</span></div>
         </div>
     </div>
 
@@ -963,23 +1732,757 @@
     </section>
 
     <!-- ═══════════════════════════════════════════════════════════════════
-         DOBRA 3: ACERVO DE CONTEÚDO (GRID DE CURSOS)
+         NOVA DOBRA: CARTA ABERTA
     ═══════════════════════════════════════════════════════════════════ -->
-    <section class="courses-section" id="acervo">
-        <div class="section-divider"></div>
-        <h2 class="courses-title">
-            Acervo Completo:<br>
-            Tudo o que você precisa para <span class="gold-text">escalar o seu negócio</span>
-        </h2>
+    <section class="open-letter">
+        <div class="ol-container">
+            <div class="ol-image-wrap">
+                <div class="ol-image-bg-effect"></div>
+                <!-- Imagem atualizada com fallback Desktop x Mobile -->
+                <picture>
+                    <source media="(min-width: 768px)" srcset="imagem/Carta%20aberta-desk.jpeg">
+                    <img src="imagem/Carta aberta.jpeg" alt="Carta Aberta" class="ol-image">
+                </picture>
+            </div>
 
-        <div class="courses-grid">
-            <div class="course-thumb"><img src="imagem/cursos/3.png" alt="Capa Curso 3"></div>
-            <div class="course-thumb"><img src="imagem/cursos/4.png" alt="Capa Curso 4"></div>
-            <div class="course-thumb"><img src="imagem/cursos/5.png" alt="Capa Curso 5"></div>
-            <div class="course-thumb"><img src="imagem/cursos/7.png" alt="Capa Curso 7"></div>
-            <div class="course-thumb"><img src="imagem/cursos/8.png" alt="Capa Curso 8"></div>
-            <div class="course-thumb"><img src="imagem/cursos/9.png" alt="Capa Curso 9"></div>
-            <div class="course-thumb"><img src="imagem/cursos/Inserir um título (5).png" alt="Capa Curso 10"></div>
+            <div class="ol-content">
+                <span class="ol-badge">UMA DECLARAÇÃO DA FUNDADORA:</span>
+                <h2 class="ol-title">"Esse conhecimento mudou a minha vida para sempre."</h2>
+
+                <div class="ol-text">
+                    <p><strong>De:</strong> Leide Santos<br>
+                        <strong>Para:</strong> Uma Futura Empresária de Sucesso
+                    </p>
+
+                    <p>Você já se perguntou como algumas bronzeadoras faturam R15, R20 mil todo mês, com lista de espera
+                        e tempo pra curtir a família.</p>
+
+                    <p>Enquanto a grande maioria luta para conseguir fechar o mês com R2mil, R3 mil reais. Se matando de
+                        trabalhar.</p>
+
+                    <p>O que separa as duas realidades não é talento e muito menos sorte.</p>
+
+                    <p>É algo que nenhum curso de bronze te ensinou. Que nenhum evento sequer mencionou.</p>
+
+                    <p>Uma fórmula comprovada que, quando aplicada corretamente, tem o poder de <strong
+                            class="gold-text"
+                            style="font-weight: 800; background: linear-gradient(135deg, #C8A165 0%, #A8854E 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">transformar
+                            não só negócios, mas vidas!</strong></p>
+
+                    <p>E agora acredito que chegou o momento de compartilhar esse segredo.</p>
+
+                    <p style="font-weight: 700; color: var(--color-text); margin-top: 10px;">Mas antes eu preciso te
+                        fazer três perguntas…</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════════
+         DOBRA 4 E 5: QUIZ E ESTRATÉGIA NO MERCADO
+    ═══════════════════════════════════════════════════════════════════ -->
+    <section class="quiz-section">
+        <div class="qz-container">
+            <!-- Dobra 4 -->
+            <h2 class="qz-title">Marque todas as perguntas cuja resposta seja SIM!</h2>
+
+            <div class="qz-list">
+                <label class="qz-item" for="chk1">
+                    <input type="checkbox" id="chk1" class="qz-checkbox">
+                    <span class="qz-label">Você já se sentiu perdida, tentando seguir métodos e estratégias, sem saber
+                        exatamente o que está faltando para dar certo</span>
+                </label>
+
+                <label class="qz-item" for="chk2">
+                    <input type="checkbox" id="chk2" class="qz-checkbox">
+                    <span class="qz-label">Sente que cobra barato, mas tem medo de aumentar o preço e perder
+                        clientes</span>
+                </label>
+
+                <label class="qz-item" for="chk3">
+                    <input type="checkbox" id="chk3" class="qz-checkbox">
+                    <span class="qz-label">Tem dificuldade para vender e lotar a agenda sem fazer promoções</span>
+                </label>
+
+                <label class="qz-item" for="chk4">
+                    <input type="checkbox" id="chk4" class="qz-checkbox">
+                    <span class="qz-label">Já tentou criar conteúdo, mas sentiu que nada engaja ou converte do jeito que
+                        você esperava</span>
+                </label>
+            </div>
+
+            <div class="qz-divider"></div>
+
+            <!-- Dobra 5 -->
+            <div class="hook-text-wrapper">
+                <p>Se você respondeu SIM a <strong class="hook-highlight">QUALQUER</strong> uma das perguntas acima, é
+                    de total interesse seu, e de extrema urgência para o seu negócio o que montamos para você</p>
+
+                <p>Isso porque:</p>
+
+                <p>Pela primeira vez, as maiores empresárias do mercado — cada uma especialista em uma área — vão se
+                    reunir com um único objetivo:</p>
+
+                <p><strong style="color: var(--color-text); font-size: 1.25rem;">Fazer você sair de onde está e chegar
+                        onde elas já chegaram, e ir mais longe.</strong></p>
+
+                <p>Através de uma metodologia à prova de falhas, que funciona da seguinte forma:</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════════
+         METODOLOGIA (A RODA DE RESULTADOS)
+    ═══════════════════════════════════════════════════════════════════ -->
+    <section class="methodology-section">
+        <div class="met-header">
+            <h2>Metodologia Orientada a Resultados</h2>
+            <h3>O nosso método</h3>
+        </div>
+
+        <div class="met-main-wrapper">
+            <!-- Connectors -->
+            <svg class="met-lines-svg" viewBox="0 0 1200 650">
+                <path d="M 80 105 L 410 105 L 475 145" />
+                <path d="M 80 305 L 385 305" />
+                <path d="M 80 565 L 410 565 L 475 505" />
+                <path d="M 1120 105 L 790 105 L 725 145" />
+                <path d="M 1120 305 L 815 305" />
+                <path d="M 1120 565 L 790 565 L 725 505" />
+            </svg>
+
+            <!-- Left Content -->
+            <div class="met-info-box box-escala">
+                <h3>Escala</h3>
+                <p>Vamos maximizar seus resultados por meio de pessoas e tecnologia.</p>
+            </div>
+            <div class="met-info-box box-vendas">
+                <h3>Vendas</h3>
+                <p>Vamos definir um motor de crescimento claro e que funciona.</p>
+            </div>
+            <div class="met-info-box box-processo">
+                <h3>Processo</h3>
+                <p>Vamos entender e aplicar conceitos que vão otimizar toda a operação e gestão da sua empresa.</p>
+            </div>
+
+            <!-- Center Wheel -->
+            <div class="met-wheel-scaler">
+                <div class="met-wheel-container">
+                    <div class="met-wheel-glow"></div>
+                    <div class="met-wheel">
+                        <div class="met-phase-label met-p1"><span class="phase-text">Fase</span><span
+                                class="phase-num">1</span></div>
+                        <div class="met-phase-label met-p2"><span class="phase-text">Fase</span><span
+                                class="phase-num">2</span></div>
+                        <div class="met-phase-label met-p3"><span class="phase-text">Fase</span><span
+                                class="phase-num">3</span></div>
+                        <div class="met-phase-label met-p4"><span class="phase-text">Fase</span><span
+                                class="phase-num">4</span></div>
+                        <div class="met-phase-label met-p5"><span class="phase-text">Fase</span><span
+                                class="phase-num">5</span></div>
+                        <div class="met-phase-label met-p6"><span class="phase-text">Fase</span><span
+                                class="phase-num">6</span></div>
+                    </div>
+                    <div class="met-wheel-center">
+                        <div class="met-logo">
+                            <span>GCD</span>
+                        </div>
+                        <div class="met-logo-sub">Golden<br>Club</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Content -->
+            <div class="met-info-box box-habilidade">
+                <h3>Habilidade</h3>
+                <p>Vamos desenvolver a sua capacidade de solucionar problemas, de acordo com as suas inclinações
+                    naturais.</p>
+            </div>
+            <div class="met-info-box box-validacao">
+                <h3>Validação</h3>
+                <p>Vamos definir o nosso público-alvo e encontrar pessoas dispostas a pagar pelo produto/serviço.</p>
+            </div>
+            <div class="met-info-box box-especializacao">
+                <h3>Especialização</h3>
+                <p>Vamos encontrar o melhor posicionamento de mercado dentro do seu nicho.</p>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        /* ═══ CSS Reta Final: Oferta, Bônus, Indecisão, FAQ ═══ */
+        .offer-bg {
+            background-color: var(--color-bg);
+            padding: 80px 20px;
+            position: relative;
+        }
+
+        .offer-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* Box de Entregáveis / Bônus */
+        .stack-box {
+            background: rgba(30, 30, 30, 0.5);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(200, 161, 101, 0.2);
+            border-radius: 24px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+        }
+
+        .stack-title {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            color: var(--color-text);
+            margin-bottom: 40px;
+        }
+
+        .stack-item {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(200, 161, 101, 0.1);
+        }
+
+        .stack-item:last-child {
+            border-bottom: none;
+        }
+
+        .stack-item-info {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .stack-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(200, 161, 101, 0.1);
+            color: var(--color-gold);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        .stack-name {
+            font-weight: 700;
+            color: var(--color-text);
+            font-size: 18px;
+        }
+
+        .stack-desc {
+            font-size: 13px;
+            color: var(--color-text);
+            opacity: 0.7;
+            margin-top: 4px;
+        }
+
+        .stack-price {
+            font-weight: 700;
+            color: var(--color-text);
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            text-decoration: line-through;
+            opacity: 0.6;
+        }
+
+        /* Acervo Integrado */
+        .acervo-integrado {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px dashed rgba(200, 161, 101, 0.2);
+        }
+
+        /* Total e Cartão de Oferta */
+        .total-stack {
+            text-align: center;
+            font-size: 20px;
+            color: var(--color-text);
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 2px solid var(--color-gold);
+        }
+
+        .pricing-card {
+            background: linear-gradient(145deg, #1A362B 0%, #101010 100%);
+            border: 1px solid var(--color-gold);
+            border-radius: 32px;
+            padding: 50px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--color-gold);
+            color: #1A1105;
+            padding: 6px 20px;
+            border-radius: 20px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 12px;
+            animation: pulse-gold 2s infinite;
+        }
+
+        @keyframes pulse-gold {
+            0% {
+                box-shadow: 0 0 0 0 rgba(200, 161, 101, 0.4);
+            }
+
+            70% {
+                box-shadow: 0 0 0 10px rgba(200, 161, 101, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(200, 161, 101, 0);
+            }
+        }
+
+        .pricing-title {
+            color: #FFF;
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            margin-top: 40px;
+            margin-bottom: 10px;
+        }
+
+        .pricing-subtitle {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+
+        .price-escalation {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .price-escalation span {
+            text-decoration: line-through;
+        }
+
+        .price-value {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            color: var(--color-gold);
+            line-height: 1;
+            margin-bottom: 30px;
+        }
+
+        .price-currency {
+            font-size: 24px;
+            font-weight: 700;
+            margin-top: 15px;
+            margin-right: 5px;
+        }
+
+        .price-amount {
+            font-size: 90px;
+            font-family: 'Playfair Display', serif;
+            font-weight: 900;
+        }
+
+        .price-cents {
+            font-size: 24px;
+            font-weight: 700;
+            margin-top: 15px;
+        }
+
+        .price-period {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.6);
+            align-self: flex-end;
+            margin-bottom: 20px;
+            margin-left: 5px;
+        }
+
+        .cta-gold-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #C8A165 0%, #A8854E 100%);
+            color: #1A362B;
+            text-decoration: none;
+            font-size: 22px;
+            font-weight: 800;
+            padding: 20px 50px;
+            border-radius: 50px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 10px 30px rgba(200, 161, 101, 0.3);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .cta-gold-btn:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(200, 161, 101, 0.5);
+        }
+
+        .guarantee-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        /* Indecisão */
+        .cost-of-inaction {
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            padding: 80px 20px;
+            border-top: 1px solid rgba(200, 161, 101, 0.1);
+        }
+
+        .coi-title {
+            text-align: center;
+            color: var(--color-text);
+            font-size: 28px;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 40px;
+        }
+
+        .coi-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .coi-card {
+            background: rgba(30, 30, 30, 0.5);
+            backdrop-filter: blur(10px);
+            border-left: 4px solid var(--color-gold);
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .coi-card h4 {
+            color: rgb(235, 228, 213);
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .coi-card p {
+            color: rgba(235, 228, 213, 0.8);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* FAQ */
+        .faq-section {
+            background: var(--color-bg);
+            padding: 80px 20px;
+            border-top: 1px solid rgba(200, 161, 101, 0.1);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-title {
+            text-align: center;
+            font-size: 36px;
+            font-family: 'Playfair Display', serif;
+            color: var(--color-text);
+            margin-bottom: 40px;
+        }
+
+        .faq-item {
+            background: rgba(30, 30, 30, 0.5);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(200, 161, 101, 0.2);
+            margin-bottom: 15px;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .faq-question {
+            padding: 20px 25px;
+            font-weight: 700;
+            color: var(--color-text);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+
+        .faq-answer {
+            padding: 0 25px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s;
+            color: var(--color-text);
+            opacity: 0.8;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 25px 25px 25px;
+            max-height: 300px;
+        }
+
+        .faq-icon {
+            transition: transform 0.3s;
+            color: var(--color-gold);
+            font-size: 24px;
+            line-height: 1;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        @media (max-width: 768px) {
+            .coi-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-card {
+                padding: 40px 20px;
+            }
+
+            .price-amount {
+                font-size: 70px;
+            }
+
+            .stack-item {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .stack-price {
+                align-self: flex-start;
+                padding-left: 55px;
+            }
+        }
+    </style>
+
+    <!-- ═══════════════════════════════════════════════════════════════════
+         DOBRA 4: OFERTA, VALUE STACKING E BÔNUS
+    ═══════════════════════════════════════════════════════════════════ -->
+    <section class="offer-bg" id="oferta">
+        <div class="offer-container">
+
+            <div class="stack-box">
+                <h2 class="stack-title">Tudo o que você leva aderindo hoje:</h2>
+
+                <div class="stack-item">
+                    <div class="stack-item-info">
+                        <div class="stack-icon">👑</div>
+                        <div>
+                            <div class="stack-name">Acesso Imediato ao Golden Club Digital</div>
+                            <div class="stack-desc">A comunidade exclusiva de empresárias do bronze. Mentorias,
+                                direcionamento e networking focado em resultados.</div>
+                        </div>
+                    </div>
+                    <div class="stack-price">R$ 997,00</div>
+                </div>
+
+                <div class="stack-item" style="flex-direction: column; align-items: stretch;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; width: 100%;">
+                        <div class="stack-item-info">
+                            <div class="stack-icon">📚</div>
+                            <div>
+                                <div class="stack-name">Acervo Completo (Cursos & Gravações)</div>
+                                <div class="stack-desc">Acesso liberado a toda a nossa biblioteca de gestão,
+                                    posicionamento e escala para o seu negócio.</div>
+                            </div>
+                        </div>
+                        <div class="stack-price">R$ 497,00</div>
+                    </div>
+
+                    <div class="acervo-integrado">
+                        <div class="courses-grid"
+                            style="grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 10px; margin-top: 0;">
+                            <div class="course-thumb" style="border-radius: 8px;"><img src="imagem/cursos/1.png"
+                                    alt="Capa Curso 1"></div>
+                            <div class="course-thumb" style="border-radius: 8px;"><img src="imagem/cursos/2.jpeg"
+                                    alt="Capa Curso 2"></div>
+                            <div class="course-thumb" style="border-radius: 8px;"><img src="imagem/cursos/3.png"
+                                    alt="Capa Curso 3"></div>
+                            <div class="course-thumb" style="border-radius: 8px;"><img src="imagem/cursos/4.png"
+                                    alt="Capa Curso 4"></div>
+                            <div class="course-thumb" style="border-radius: 8px;"><img src="imagem/cursos/5.png"
+                                    alt="Capa Curso 5"></div>
+                            <div class="course-thumb" style="border-radius: 8px;"><img src="imagem/cursos/6.png"
+                                    alt="Capa Curso 6"></div>
+                            <div class="course-thumb" style="border-radius: 8px;"><img src="imagem/cursos/7.png"
+                                    alt="Capa Curso 7"></div>
+                            <div class="course-thumb" style="border-radius: 8px;"><img src="imagem/cursos/8.png"
+                                    alt="Capa Curso 8"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stack-item">
+                    <div class="stack-item-info">
+                        <div class="stack-icon">🎁</div>
+                        <div>
+                            <div class="stack-name">Bônus Especial: Método X1®</div>
+                            <div class="stack-desc">O protocolo mestre para entregar um bronze perfeito usando apenas 1
+                                produto, maximizando o lucro de cada cliente.</div>
+                        </div>
+                    </div>
+                    <div class="stack-price">R$ 297,00</div>
+                </div>
+
+                <div class="stack-item">
+                    <div class="stack-item-info">
+                        <div class="stack-icon">💬</div>
+                        <div>
+                            <div class="stack-name">Bônus Especial: Scripts de Vendas Magnéticos</div>
+                            <div class="stack-desc">Modelos validados de persuasão para usar no WhatsApp e Direct,
+                                eliminando a objeção de "está caro".</div>
+                        </div>
+                    </div>
+                    <div class="stack-price">R$ 147,00</div>
+                </div>
+
+                <div class="stack-item">
+                    <div class="stack-item-info">
+                        <div class="stack-icon">📅</div>
+                        <div>
+                            <div class="stack-name">Bônus Especial: Planner da Empresária do Bronze</div>
+                            <div class="stack-desc">Ferramenta organizada para estruturar sua rotina, controle logístico
+                                e metas de faturamento 3x.</div>
+                        </div>
+                    </div>
+                    <div class="stack-price">R$ 97,00</div>
+                </div>
+
+                <div class="total-stack">
+                    Valor Total se comprado separadamente: <strong
+                        style="text-decoration: line-through; opacity: 0.6; margin-left: 10px;">R$ 2.035,00</strong>
+                </div>
+            </div>
+
+            <!-- Cartão Super Oferta -->
+            <div class="pricing-card">
+                <div class="pricing-badge">🔥 Lote de Fundação (Aberto)</div>
+                <h3 class="pricing-title">Golden Club Digital</h3>
+                <p class="pricing-subtitle">Seu passe garantido para a comunidade, todo o acervo e todos os bônus.</p>
+
+                <div class="price-escalation">
+                    <span>Lote 3: R$ 127/mês</span>
+                    <span>Lote 2: R$ 97/mês</span>
+                    <span style="color: var(--color-gold); text-decoration: none; font-weight: bold;">Lote Atual</span>
+                </div>
+
+                <div class="price-value">
+                    <div class="price-currency">R$</div>
+                    <div class="price-amount">79</div>
+                    <div class="price-cents">,90</div>
+                    <div class="price-period">/mês*</div>
+                </div>
+
+                <a href="#" class="cta-gold-btn">
+                    Garantir Meu Acesso
+                </a>
+
+                <div class="guarantee-info">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    </svg>
+                    <span>Garantia Incondicional de 7 Dias. Risco Zero.</span>
+                </div>
+                <p style="color: rgba(255,255,255,0.4); font-size: 11px; margin-top: 15px;">*Valor referente ao plano
+                    anual parcelado no cartão. Sujeito a alteração de lote a qualquer momento.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════════
+         DOBRA 5: PREÇO DA INDECISÃO
+    ═══════════════════════════════════════════════════════════════════ -->
+    <section class="cost-of-inaction">
+        <h2 class="coi-title">🚨 Qual é o verdadeiro preço de deixar para depois?</h2>
+        <div class="coi-grid">
+            <div class="coi-card">
+                <h4>Estagnação de Faturamento</h4>
+                <p>Enquanto você hesita esperando o 'momento certo', concorrentes da sua região estão aplicando nossa
+                    metodologia, aumentando seus preços com propriedade e lotando a agenda sem fazer promoções.</p>
+            </div>
+            <div class="coi-card">
+                <h4>Desgaste Físico Constante</h4>
+                <p>A consequência de não profissionalizar a gestão é continuar atendendo de sol a sol, se matando de
+                    trabalhar por quantias mínimas, sofrendo de exaustão sem desfrutar dos lucros.</p>
+            </div>
+            <div class="coi-card">
+                <h4>Solidão na Jornada</h4>
+                <p>Tentar descobrir o caminho das vendas complexas sozinha é cruel. Você permanecerá patinando nos
+                    mesmos erros de marketing e precificação que já foram resolvidos pelas mentoras do Golden Club.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════════
+         DOBRA 6: FAQ
+    ═══════════════════════════════════════════════════════════════════ -->
+    <section class="faq-section">
+        <div class="faq-container">
+            <h2 class="faq-title">Perguntas Frequentes</h2>
+
+            <div class="faq-item">
+                <div class="faq-question">Como funciona o acesso ao Golden Club? <span class="faq-icon">+</span></div>
+                <div class="faq-answer">Assim que sua inscrição for aprovada, você receberá um e-mail com seus dados de
+                    login exclusivos para a nossa plataforma privada. Lá, você terá liberação imediata ao Acervo de
+                    Cursos, aos Bônus (incluindo o Método X1) e o passe de entrada para iniciar na Comunidade.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Existe alguma taxa de fidelidade ou multa? <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">A assinatura do Golden Club tem vigência anual, focada no seu desenvolvimento de
+                    médio e longo prazo. Você paga pelo plano equivalente a 12 meses, garantindo suporte e evolução
+                    contínua ao seu negócio, sem cobranças "surpresas" mensais variáveis.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">O bônus do Método X1® já está incluso? <span class="faq-icon">+</span></div>
+                <div class="faq-answer">Com toda certeza! Ao garantir o seu ingresso no lote atual de Fundadores, o
+                    acesso às metodologias do Método X1 é destravado instantaneamente, ensinando como operar de forma
+                    limpa e maximizar a lucratividade no mesmo instante em que logar.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Como acontecem as orientações e mentorias? <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">Os encontros da comunidade acontecem de forma fechada. Nesses encontros,
+                    debatemos estratégias, analisamos gargalos das membras e fornecemos direcionamento estratégico. Tudo
+                    fica gravado e é adicionado à biblioteca do Acervo caso você não possa participar ao vivo.</div>
+            </div>
+
         </div>
     </section>
 
@@ -1022,13 +2525,42 @@
 
 
     <script>
-        document.getElementById('themeToggle').addEventListener('click', function() {
-            const body = document.body;
-            if (body.getAttribute('data-theme') === 'dark') {
-                body.removeAttribute('data-theme');
-            } else {
-                body.setAttribute('data-theme', 'dark');
-            }
+        // Animates elements on scroll
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-roll-in');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+            const cards = document.querySelectorAll('.benefit-card, .qz-item, .coi-card, .course-thumb, .met-info-box, .stack-box, .faq-item');
+            cards.forEach((card) => observer.observe(card));
+        });
+
+        // FAQ Toggle Logic
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+
+                // Close other open items
+                document.querySelectorAll('.faq-item.active').forEach(openItem => {
+                    if (openItem !== faqItem) {
+                        openItem.classList.remove('active');
+                        openItem.querySelector('.faq-icon').textContent = '+';
+                    }
+                });
+
+                faqItem.classList.toggle('active');
+                const icon = button.querySelector('.faq-icon');
+                if (faqItem.classList.contains('active')) {
+                    icon.style.transform = 'rotate(45deg)';
+                } else {
+                    icon.style.transform = 'rotate(0deg)';
+                }
+            });
         });
     </script>
 </body>
