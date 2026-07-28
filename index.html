@@ -2317,4 +2317,33 @@
                 });
             }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
-            const cards = document.querySelectorAll('.benefit-card, .qz-item, .c
+            const cards = document.querySelectorAll('.benefit-card, .qz-item, .coi-card, .course-thumb, .met-info-box, .stack-box, .faq-item');
+            cards.forEach((card) => observer.observe(card));
+        });
+
+        // FAQ Toggle Logic
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+
+                // Close other open items
+                document.querySelectorAll('.faq-item.active').forEach(openItem => {
+                    if (openItem !== faqItem) {
+                        openItem.classList.remove('active');
+                        openItem.querySelector('.faq-icon').textContent = '+';
+                    }
+                });
+
+                faqItem.classList.toggle('active');
+                const icon = button.querySelector('.faq-icon');
+                if (faqItem.classList.contains('active')) {
+                    icon.style.transform = 'rotate(45deg)';
+                } else {
+                    icon.style.transform = 'rotate(0deg)';
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
