@@ -151,7 +151,7 @@
         .hero {
             display: flex;
             flex-direction: column;
-            background-color: var(--color-bg);
+            background-color: #FFFFFF;
             width: 100%;
         }
 
@@ -160,7 +160,7 @@
             width: 100%;
             display: flex;
             justify-content: center;
-            background-color: var(--color-bg); /* Garante que as laterais fiquem na cor certa se a imagem for menor */
+            background-color: #FFFFFF;
         }
 
         .hero-top-img {
@@ -173,7 +173,7 @@
         .hero-gradient-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(to top, var(--color-bg) 0%, rgba(244,238,216,0.6) 25%, rgba(244,238,216,0) 50%);
+            background: linear-gradient(to top, #FFFFFF 0%, rgba(255,255,255,0.6) 25%, rgba(255,255,255,0) 50%);
             pointer-events: none;
         }
 
@@ -244,10 +244,10 @@
         }
         
         .hero-cta-wrapper .cta-button {
-            width: 100%;
-            max-width: 400px;
-            font-size: 1rem;
-            padding: 20px 24px;
+            width: auto;
+            max-width: 320px;
+            font-size: 0.9rem;
+            padding: 14px 32px;
         }
 
         .cta-note {
@@ -318,7 +318,7 @@
 
         /* ═══ Social Proof ═══ */
         .social-proof {
-            background-color: #EDE8D5;
+            background-color: #F5DFA0;
             padding: 80px 24px;
             overflow: hidden;
         }
@@ -334,7 +334,7 @@
             color: var(--color-text);
             text-align: center;
             max-width: 700px;
-            margin: 0 auto 60px auto;
+            margin: 0 auto 12px auto;
             line-height: 1.25;
             font-weight: 700;
         }
@@ -347,82 +347,79 @@
             position: relative;
         }
 
-        /* Gradientes laterais para suavizar a entrada/saída do carrossel */
-        .sp-carousel-wrap::before,
-        .sp-carousel-wrap::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            width: 80px;
-            z-index: 2;
-            pointer-events: none;
-        }
-
-        .sp-carousel-wrap::before {
-            left: 0;
-            background: linear-gradient(to right, #EDE8D5 0%, transparent 100%);
-        }
-
-        .sp-carousel-wrap::after {
-            right: 0;
-            background: linear-gradient(to left, #EDE8D5 0%, transparent 100%);
-        }
-
         .sp-track {
             display: flex;
-            gap: 16px;
-            width: max-content;
-            animation: scroll-testimonials 40s linear infinite;
+            transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
 
-        .sp-track:hover {
-            animation-play-state: paused;
+        .sp-slide {
+            min-width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            padding: 0 24px;
+            box-sizing: border-box;
         }
 
-        @keyframes scroll-testimonials {
-            0% {
-                transform: translateX(0);
+        @media (max-width: 640px) {
+            .sp-slide {
+                grid-template-columns: 1fr;
             }
-
-            100% {
-                transform: translateX(-50%);
-            }
         }
 
-        /* ─── Card Vertical (Miniatura de Vídeo) ─── */
-        /* ─── Card Horizontal de Texto ─── */
+        /* Dots de navegação */
+        .sp-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 24px;
+        }
+
+        .sp-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(26, 61, 43, 0.2);
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            padding: 0;
+        }
+
+        .sp-dot.active {
+            background: var(--gold-bright);
+            transform: scale(1.3);
+        }
+
+        /* ─── Card Estilo Mensagem ─── */
         .sp-card {
             position: relative;
-            width: 340px;
-            min-height: 180px;
-            padding: 28px 24px;
+            width: 100%;
+            padding: 24px;
             border-radius: 16px;
             flex-shrink: 0;
             background-color: #FFFFFF;
             border: 1px solid rgba(212, 160, 23, 0.25);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
             transition: all 0.3s ease;
-            cursor: pointer;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            gap: 16px;
         }
 
         .sp-card:hover {
-            transform: translateY(-5px);
             border-color: var(--gold-bright);
-            box-shadow: 0 15px 30px rgba(212, 160, 23, 0.15);
+            box-shadow: 0 8px 25px rgba(212, 160, 23, 0.15);
         }
 
         .sp-card-text-body {
             font-family: 'Montserrat', sans-serif;
             font-size: 0.95rem;
             color: var(--color-text);
-            line-height: 1.5;
+            line-height: 1.65;
             font-weight: 400;
-            margin-bottom: 24px;
-            font-style: italic;
+            font-style: normal;
+            order: 2;
         }
 
         .sp-card-info {
@@ -430,6 +427,7 @@
             align-items: center;
             gap: 12px;
             width: 100%;
+            order: 1;
         }
 
         .sp-card-avatar {
@@ -437,7 +435,7 @@
             height: 40px;
             border-radius: 50%;
             background: #F4EED8;
-            border: 2px solid var(--gold-bright);
+            border: 1px solid rgba(212, 160, 23, 0.4);
             flex-shrink: 0;
             display: flex;
             align-items: center;
@@ -445,9 +443,10 @@
             overflow: hidden;
         }
 
-        .sp-card-avatar::after {
-            content: "👑";
-            font-size: 1.2rem;
+        .sp-card-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .sp-card-text {
@@ -471,7 +470,7 @@
 
         /* ═══ Nova Dobra (Carta Aberta) ═══ */
         .open-letter {
-            background: rgba(139, 168, 136, 0.15); /* Sage green translúcido */
+            background: #FFFFFF;
             border-top: 1px solid rgba(212, 160, 23, 0.15);
             border-bottom: 1px solid rgba(212, 160, 23, 0.15);
             padding: 80px 24px;
@@ -570,7 +569,7 @@
 
         /* ═══ Quarta Dobra (Quiz) & Quinta (Hook) ═══ */
         .quiz-section {
-            background: var(--color-bg);
+            background: #F5DFA0;
             padding: 80px 24px;
             position: relative;
             border-top: 1px solid rgba(212, 160, 23, 0.15);
@@ -686,7 +685,7 @@
 
         /* ═══ Metodologia (Roda) ═══ */
         .methodology-section {
-            background-color: var(--color-bg);
+            background-color: #FFFFFF;
             padding: 80px 0;
             position: relative;
             overflow: hidden;
@@ -789,9 +788,9 @@
             right: 0;
             bottom: 0;
             background:
-                linear-gradient(90deg, transparent calc(50% - 1.5px), var(--color-bg) calc(50% - 1.5px), var(--color-bg) calc(50% + 1.5px), transparent calc(50% + 1.5px)),
-                linear-gradient(30deg, transparent calc(50% - 1.5px), var(--color-bg) calc(50% - 1.5px), var(--color-bg) calc(50% + 1.5px), transparent calc(50% + 1.5px)),
-                linear-gradient(150deg, transparent calc(50% - 1.5px), var(--color-bg) calc(50% - 1.5px), var(--color-bg) calc(50% + 1.5px), transparent calc(50% + 1.5px));
+                linear-gradient(90deg, transparent calc(50% - 1.5px), #FFFFFF calc(50% - 1.5px), #FFFFFF calc(50% + 1.5px), transparent calc(50% + 1.5px)),
+                linear-gradient(30deg, transparent calc(50% - 1.5px), #FFFFFF calc(50% - 1.5px), #FFFFFF calc(50% + 1.5px), transparent calc(50% + 1.5px)),
+                linear-gradient(150deg, transparent calc(50% - 1.5px), #FFFFFF calc(50% - 1.5px), #FFFFFF calc(50% + 1.5px), transparent calc(50% + 1.5px));
             border-radius: 50%;
             z-index: 2;
             pointer-events: none;
@@ -801,7 +800,7 @@
             position: absolute;
             width: 160px;
             height: 160px;
-            background-color: var(--color-bg);
+            background-color: #FFFFFF;
             border: 2px solid rgba(212, 160, 23, 0.3);
             border-radius: 50%;
             z-index: 5;
@@ -1351,11 +1350,11 @@
                 Vamos juntas construir <span class="hero-title-highlight gold-shimmer">os melhores 12 meses</span> da sua vida
             </h1>
             <h2 class="hero-subtitle">
-                O meu projeto mais importante até hoje. Nós vamos trabalhar juntas para construir um negócio lucrativo. Te mostrando os melhores caminhos, acelerando seus resultados e acompanhando o seu desenvolvimento.
+                Um plano de crescimento validado para você faturar de <strong class="gold-shimmer">3x a 5x mais</strong>, s <strong>52 encontros</strong>, em uma <strong>comunidade secreta</strong>, onde todas tem apenas um objetivo: <strong class="gold-shimmer">Dominar o mercado.</strong>
             </h2>
             <div class="hero-cta-wrapper">
                 <a href="#oferta" class="cta-button">Garantir Acesso Imediato</a>
-                <p class="cta-note">🔒 Acesso imediato · Vagas limitadas</p>
+                <p class="cta-note">(Você está a poucos minutos de ficar a frente de 98% do mercado)</p>
             </div>
         </div>
     </section>
@@ -1390,116 +1389,67 @@
         <div class="sp-container">
             <div class="section-divider"></div>
             <h2 class="sp-title">
-                O que dizem as empresárias guiadas por <span class="gold-shimmer">Leide Santos:</span>
+               Veja quem já chegou lá</span>
             </h2>
+            <p class="hero-subtitle" style="margin-bottom: 40px;">Se elas conseguiram resultados tão incríveis apenas com os conteúdos exclusivos que ensinei em lives, <strong>imagine o que você pode alcançar</strong></p>
 
-            <div class="sp-carousel-wrap">
-                <div class="sp-track">
-                    <!-- TESTEMUNHO 1 -->
-                    <div class="sp-card">
-                        <div class="sp-card-text-body">
-                            "Eu tinha medo de cobrar o preço justo e trabalhava até a exaustão. Com a Leide, aprendi a precificar e hoje faturo 3x mais trabalhando menos!"
-                        </div>
-                        <div class="sp-card-info">
-                            <div class="sp-card-avatar"></div>
-                            <div class="sp-card-text">
-                                <span class="sp-card-name">Camila Mendes</span>
-                                <span class="sp-card-handle">@camilamendes.bronze</span>
+            <div class="sp-carousel-wrap" id="spCarousel">
+                <div class="sp-track" id="spTrack">
+                    <!-- SLIDE 1: 2 cards -->
+                    <div class="sp-slide">
+                        <div class="sp-card">
+                            <div class="sp-card-info">
+                                <div class="sp-card-avatar"><img src="imagem/1.jpeg" alt="Camila Mendes"></div>
+                                <div class="sp-card-text">
+                                    <span class="sp-card-name">Camila Mendes</span>
+                                </div>
+                            </div>
+                            <div class="sp-card-text-body">
+                                Eu tinha medo de cobrar o preço justo. Com a Leide, aprendi a precificar e vender, hoje faturo 3x mais.
                             </div>
                         </div>
-                    </div>
-                    
-                    <!-- TESTEMUNHO 2 -->
-                    <div class="sp-card">
-                        <div class="sp-card-text-body">
-                            "O que mais mudou foi meu posicionamento. Deixei de ser 'a menina da marquinha' para ser reconhecida como empresária de estética de alto padrão."
-                        </div>
-                        <div class="sp-card-info">
-                            <div class="sp-card-avatar"></div>
-                            <div class="sp-card-text">
-                                <span class="sp-card-name">Amanda Rocha</span>
-                                <span class="sp-card-handle">@amandarochabronze</span>
+                        <div class="sp-card">
+                            <div class="sp-card-info">
+                                <div class="sp-card-avatar"><img src="imagem/2.jpeg" alt="Amanda Rocha"></div>
+                                <div class="sp-card-text">
+                                    <span class="sp-card-name">Amanda Rocha</span>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    
-                    <!-- TESTEMUNHO 3 -->
-                    <div class="sp-card">
-                        <div class="sp-card-text-body">
-                            "Antes eu comemorava quando conseguia R$ 2 mil no mês. Depois que apliquei o método, meu faturamento saltou para R$ 15 mil. A mentalidade muda tudo."
-                        </div>
-                        <div class="sp-card-info">
-                            <div class="sp-card-avatar"></div>
-                            <div class="sp-card-text">
-                                <span class="sp-card-name">Juliana Soares</span>
-                                <span class="sp-card-handle">@ju.soares_estetica</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- TESTEMUNHO 4 -->
-                    <div class="sp-card">
-                        <div class="sp-card-text-body">
-                            "Entender como precificar sem medo da concorrência foi libertador. Hoje minhas clientes não pedem desconto, elas pagam pela experiência!"
-                        </div>
-                        <div class="sp-card-info">
-                            <div class="sp-card-avatar"></div>
-                            <div class="sp-card-text">
-                                <span class="sp-card-name">Letícia Castro</span>
-                                <span class="sp-card-handle">@leticia_castro.bronze</span>
+                            <div class="sp-card-text-body">
+                                O que mais mudou foi meu posicionamento. Deixei de vender 'marquinha' para vender autocuidado, beleza e confiança. Hoje sou reconhecida como profissional de alto padrão. Gratidão, Leide!
                             </div>
                         </div>
                     </div>
 
-                    <!-- DUPLICATAS (Scroll Infinito) -->
-                    <div class="sp-card">
-                        <div class="sp-card-text-body">
-                            "Eu tinha medo de cobrar o preço justo e trabalhava até a exaustão. Com a Leide, aprendi a precificar e hoje faturo 3x mais trabalhando menos!"
+                    <!-- SLIDE 2: 2 cards -->
+                    <div class="sp-slide">
+                        <div class="sp-card">
+                            <div class="sp-card-info">
+                                <div class="sp-card-avatar"><img src="imagem/3.png" alt="Juliana Soares"></div>
+                                <div class="sp-card-text">
+                                    <span class="sp-card-name">Juliana Soares</span>
+                                </div>
+                            </div>
+                            <div class="sp-card-text-body">
+                                Antes eu comemorava quando conseguia 2/3 mil no mês. Depois que apliquei o que Leide ensina, meu faturamento saltou. A mentalidade muda tudo.
+                            </div>
                         </div>
-                        <div class="sp-card-info">
-                            <div class="sp-card-avatar"></div>
-                            <div class="sp-card-text">
-                                <span class="sp-card-name">Camila Mendes</span>
-                                <span class="sp-card-handle">@camilamendes.bronze</span>
+                        <div class="sp-card">
+                            <div class="sp-card-info">
+                                <div class="sp-card-avatar"><img src="imagem/4.png" alt="Letícia Castro"></div>
+                                <div class="sp-card-text">
+                                    <span class="sp-card-name">Letícia Castro</span>
+                                </div>
+                            </div>
+                            <div class="sp-card-text-body">
+                                Entender como precificar sem medo da concorrência foi libertador. Parei de fazer promoções e brigar por preços. Hoje minhas clientes não pedem desconto, elas pagam pela experiência!
                             </div>
                         </div>
                     </div>
-                    <div class="sp-card">
-                        <div class="sp-card-text-body">
-                            "O que mais mudou foi meu posicionamento. Deixei de ser 'a menina da marquinha' para ser reconhecida como empresária de estética de alto padrão."
-                        </div>
-                        <div class="sp-card-info">
-                            <div class="sp-card-avatar"></div>
-                            <div class="sp-card-text">
-                                <span class="sp-card-name">Amanda Rocha</span>
-                                <span class="sp-card-handle">@amandarochabronze</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="sp-card">
-                        <div class="sp-card-text-body">
-                            "Antes eu comemorava quando conseguia R$ 2 mil no mês. Depois que apliquei o método, meu faturamento saltou para R$ 15 mil. A mentalidade muda tudo."
-                        </div>
-                        <div class="sp-card-info">
-                            <div class="sp-card-avatar"></div>
-                            <div class="sp-card-text">
-                                <span class="sp-card-name">Juliana Soares</span>
-                                <span class="sp-card-handle">@ju.soares_estetica</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="sp-card">
-                        <div class="sp-card-text-body">
-                            "Entender como precificar sem medo da concorrência foi libertador. Hoje minhas clientes não pedem desconto, elas pagam pela experiência!"
-                        </div>
-                        <div class="sp-card-info">
-                            <div class="sp-card-avatar"></div>
-                            <div class="sp-card-text">
-                                <span class="sp-card-name">Letícia Castro</span>
-                                <span class="sp-card-handle">@leticia_castro.bronze</span>
-                            </div>
-                        </div>
-                    </div>
+                </div>
+            </div>
+            <!-- Dots -->
+            <div class="sp-dots" id="spDots"></div>
                 </div>
             </div>
         </div>
@@ -1521,7 +1471,7 @@
 
             <div class="ol-content">
                 <span class="ol-badge">UMA DECLARAÇÃO DA FUNDADORA:</span>
-                <h2 class="ol-title">"Esse conhecimento mudou a minha vida para sempre."</h2>
+                <h2 class="ol-title">"Esse conhecimento mudou a minha vida."</h2>
 
                 <div class="ol-text">
                     <p><strong>De:</strong> Leide Santos<br>
@@ -1543,10 +1493,10 @@
                             style="font-weight: 800;">transformar
                             não só negócios, mas vidas!</strong></p>
 
-                    <p>E agora acredito que chegou o momento de compartilhar esse segredo.</p>
+                    <p>E agora acredito que chegou o momento de compartilhar.</p>
 
                     <p style="font-weight: 700; color: var(--color-text); margin-top: 10px;">Mas antes eu preciso te
-                        fazer três perguntas…</p>
+                        fazer 4 perguntas…</p>
                 </div>
             </div>
         </div>
@@ -1590,7 +1540,7 @@
             <!-- Dobra 5 -->
             <div class="hook-text-wrapper">
                 <p>Se você respondeu SIM a <strong class="hook-highlight">QUALQUER</strong> uma das perguntas acima, é
-                    de total interesse seu, e de extrema urgência para o seu negócio o que montamos para você</p>
+                    de total interesse seu, e de extrema urgência para o seu negócio </p>
 
                 <p>Isso porque:</p>
 
@@ -1685,7 +1635,7 @@
     <style>
         /* ═══ CSS Reta Final: Oferta, Bônus, Indecisão, FAQ ═══ */
         .offer-bg {
-            background-color: var(--color-bg);
+            background-color: #FFFFFF;
             padding: 80px 20px;
             position: relative;
         }
@@ -1926,7 +1876,7 @@
 
         /* Indecisão */
         .cost-of-inaction {
-            background-color: var(--color-bg);
+            background-color: #F5DFA0;
             color: var(--color-text);
             padding: 80px 20px;
             border-top: 1px solid rgba(212, 160, 23, 0.15);
@@ -1976,7 +1926,7 @@
 
         /* FAQ */
         .faq-section {
-            background: var(--color-bg);
+            background: #FFFFFF;
             padding: 80px 20px;
             border-top: 1px solid rgba(212, 160, 23, 0.15);
         }
@@ -2308,6 +2258,79 @@
                 }
             });
         });
+    </script>
+
+    <!-- Carrossel de Depoimentos: Auto-slide com pausa ao toque -->
+    <script>
+        (function() {
+            const track = document.getElementById('spTrack');
+            const dotsContainer = document.getElementById('spDots');
+            const carousel = document.getElementById('spCarousel');
+            if (!track || !dotsContainer || !carousel) return;
+
+            const slides = track.querySelectorAll('.sp-slide');
+            const total = slides.length;
+            let current = 0;
+            let interval = null;
+            let resumeTimeout = null;
+            const DELAY = 4000; // 4 seconds per slide
+            const RESUME_DELAY = 5000; // Resume after 5s of no interaction
+
+            // Create dots
+            slides.forEach((_, i) => {
+                const dot = document.createElement('button');
+                dot.classList.add('sp-dot');
+                if (i === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => { goTo(i); pauseAndResume(); });
+                dotsContainer.appendChild(dot);
+            });
+
+            function goTo(index) {
+                current = index % total;
+                track.style.transform = `translateX(-${current * 100}%)`;
+                dotsContainer.querySelectorAll('.sp-dot').forEach((d, i) => {
+                    d.classList.toggle('active', i === current);
+                });
+            }
+
+            function next() { goTo(current + 1); }
+
+            function startAutoplay() {
+                stopAutoplay();
+                interval = setInterval(next, DELAY);
+            }
+
+            function stopAutoplay() {
+                if (interval) { clearInterval(interval); interval = null; }
+            }
+
+            function pauseAndResume() {
+                stopAutoplay();
+                if (resumeTimeout) clearTimeout(resumeTimeout);
+                resumeTimeout = setTimeout(startAutoplay, RESUME_DELAY);
+            }
+
+            // Pause on hover (desktop)
+            carousel.addEventListener('mouseenter', pauseAndResume);
+            // Pause on touch (mobile)
+            carousel.addEventListener('touchstart', pauseAndResume, { passive: true });
+
+            // Swipe support for mobile
+            let touchStartX = 0;
+            carousel.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+            carousel.addEventListener('touchend', (e) => {
+                const diff = e.changedTouches[0].screenX - touchStartX;
+                if (Math.abs(diff) > 50) {
+                    if (diff < 0) next();
+                    else goTo(current - 1 < 0 ? total - 1 : current - 1);
+                    pauseAndResume();
+                }
+            });
+
+            startAutoplay();
+        })();
     </script>
 </body>
 
