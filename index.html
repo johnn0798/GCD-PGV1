@@ -901,6 +901,53 @@
             box-shadow: 0 4px 10px rgba(212, 160, 23, 0.3);
         }
 
+        /* ─── Quote Box & CTA Button (Pós 3P) ─── */
+        .met-quote-box {
+            background-color: #FDF9EC;
+            border-left: 4px solid #E68A00; /* Laranja da imagem */
+            padding: 24px 32px;
+            max-width: 800px;
+            margin: 60px auto 40px auto;
+            border-radius: 0 8px 8px 0;
+            text-align: center;
+        }
+
+        .met-quote-box p {
+            font-family: Georgia, serif;
+            font-size: 1.25rem;
+            font-style: italic;
+            font-weight: 600;
+            color: var(--color-text);
+            margin: 0;
+        }
+
+        .met-cta {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .cta-button-orange {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #F09819; 
+            color: #FFFFFF;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+            padding: 16px 48px;
+            border-radius: 60px;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(240, 152, 25, 0.3);
+        }
+
+        .cta-button-orange:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(240, 152, 25, 0.45);
+            color: #FFFFFF;
+        }
+
         @media (max-width: 900px) {
             .met-3p-grid {
                 grid-template-columns: 1fr;
@@ -909,6 +956,16 @@
 
             .met-3p-card {
                 padding: 32px 24px 32px 28px;
+            }
+
+            .met-quote-box {
+                margin: 40px 24px 30px 24px;
+                padding: 20px 24px;
+                text-align: left;
+            }
+            
+            .met-quote-box p {
+                font-size: 1.1rem;
             }
         }
 
@@ -1312,7 +1369,7 @@
                     <span class="met-3p-label">Fase 1</span>
                 </div>
                 <h3 class="met-3p-title">Pessoa</h3>
-                <span class="met-3p-subheadline">A Base para o sucesso</span>
+                <span class="met-3p-subheadline">A Base para o crescimento</span>
                 <p class="met-3p-text">
                     Como desenvolver o posicionamento, a mentalidade e as conexões que fazem o mercado te enxergar e te procurar como referência.                 </p>
                 <div class="met-3p-covers">
@@ -1335,9 +1392,10 @@
                 <h3 class="met-3p-title">Processo</h3>
                 <span class="met-3p-subheadline">A Vantagem Injusta</span>
                 <p class="met-3p-text">
-                    Como fechar o mês sabendo, com antecedência, quanto vai entrar, porque sua receita não depende mais de sorte, indicação ou um post.
+                    Como fechar o mês sabendo, com antecedência, quanto vai faturar, porque sua receita não depende mais de sorte, indicação ou promoções.
+Isso é o que um processo bem feito compra: liberdade e tranquilidade.
 
-Isso é o que um processo bem feito compra: liberdade. Vendas recorrentes.
+Você vai dominar a contrução de processos de vendas, gestão e comunicação.
                 </p>
                 <div class="met-3p-covers">
                     <span class="met-3p-covers-title">Alguns módulos:</span>
@@ -1372,9 +1430,361 @@ Isso é o que um portfólio bem construído trás: mais dinheiro por atendimento
                 </div>
             </div>
         </div>
+
+        <div class="met-quote-box">
+            <p>"Tudo isso de forma mastigadinha para você apenas copiar e colar!"</p>
+        </div>
+
+        <div class="met-cta">
+            <a href="#oferta" class="cta-button-orange">Quero conhecer o Golden Club &rarr;</a>
+        </div>
     </section>
 
+    <!-- ═══════════════════════════════════════════════════════════════════
+         DOBRA: ECOSSISTEMA / COMUNIDADE (VIP)
+    ═══════════════════════════════════════════════════════════════════ -->
+    <section class="vip-eco-section">
+        <div class="vip-eco-bg-glow"></div>
+        <div class="vip-eco-container">
+            
+            <div class="vip-eco-header">
+                <h4 class="vip-eco-subtitle">O Próximo Nível</h4>
+                <h2 class="vip-eco-title">Muito além de um método.<br>Um <span class="gold-text">Ecossistema Vivo</span>.</h2>
+            </div>
+
+            <div class="vip-eco-content">
+                
+                <!-- Item 1 -->
+                <div class="vip-eco-item vip-item-left">
+                    <div class="vip-eco-card">
+                        <div class="vip-eco-num">01</div>
+                        <div class="vip-eco-text">
+                            <h3>Acesso a Tendências<br>& Inovações</h3>
+                            <p>O mercado de bronzeamento evolui rápido. Aqui, você nunca será a última a saber. Receba aulas e materiais constantemente atualizados sobre as novas técnicas, produtos e modelos de negócio que estão ditando o padrão no Brasil.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="vip-eco-item vip-item-right">
+                    <div class="vip-eco-card">
+                        <div class="vip-eco-num">02</div>
+                        <div class="vip-eco-text">
+                            <h3>A Comunidade das<br>Audaciosas</h3>
+                            <p>Dizem que você é a média das pessoas com quem convive. Imagine estar rodeada por empreendedoras que faturam de R$10k a múltiplos 5 dígitos. Um ambiente 100% seguro para tirar dúvidas, formar parcerias milionárias e elevar a sua própria régua.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════════
+         DOBRA: ANCORAGEM DE PREÇO (VALOR)
+    ═══════════════════════════════════════════════════════════════════ -->
+    <section class="value-anchor-section">
+        <div class="value-anchor-container">
+            <h2 class="va-title">Quanto você acha justo eu cobrar<br>por <span class="va-highlight">TODO ESSE ACESSO?</span></h2>
+            
+            <p class="va-subtitle">Toda a minha expertise e o meu método trabalhando para você, enquanto você participa de aulas sempre atualizadas e vive um ambiente de alto nível.</p>
+            
+            <p class="va-text-bold">Uma estrutura completa:</p>
+
+            <div class="va-box">
+                <ul class="va-list">
+                    <li><span class="va-check">✔</span> O Método 3P (Pessoa, Processo, Produto) passo a passo</li>
+                    <li><span class="va-check">✔</span> Acesso à Comunidade VIP de Audaciosas</li>
+                    <li><span class="va-check">✔</span> Aulas Constantes de Tendências e Inovações</li>
+                    <li><span class="va-check">✔</span> Processos de Gestão, Vendas e Precificação que colocam dinheiro no seu bolso todos os meses</li>
+                </ul>
+            </div>
+
+            <p class="va-text-highlight">Esse é o ecossistema MAIS COMPLETO que eu já criei na minha vida.</p>
+
+            <p class="va-text-final">Eu recebi muitas mensagens de alunas pedindo para eu cobrar, no mínimo, R$5.000 por esse acesso. E ainda assim eu teria uma FILA GIGANTESCA de pessoas querendo entrar.</p>
+        </div>
+    </section>
+
+
     <style>
+        /* ═══ VALUE ANCHOR SECTION ═══ */
+        .value-anchor-section {
+            background-color: #060907;
+            color: #FFFFFF;
+            padding: 100px 24px;
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+            border-top: 1px solid rgba(212, 160, 23, 0.1);
+        }
+
+        .value-anchor-container {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .va-title {
+            font-size: clamp(2rem, 4.5vw, 3.2rem);
+            font-weight: 800;
+            line-height: 1.2;
+            margin: 0 0 24px 0;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: -0.03em;
+        }
+
+        .va-highlight {
+            color: #1FC95B; /* Verde vibrante igual a referência, ou use var(--gold-bright) se preferir manter o padrão */
+        }
+
+        .va-subtitle {
+            font-size: 1.15rem;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+            margin: 0 0 40px 0;
+            max-width: 650px;
+        }
+
+        .va-text-bold {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin: 0 0 20px 0;
+        }
+
+        .va-box {
+            background-color: #101412;
+            border-bottom: 2px solid var(--gold-bright);
+            border-radius: 8px;
+            padding: 40px 50px;
+            width: 100%;
+            max-width: 650px;
+            text-align: left;
+            margin-bottom: 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+        }
+
+        .va-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .va-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            font-size: 1.05rem;
+            color: rgba(255, 255, 255, 0.95);
+            line-height: 1.5;
+            font-weight: 500;
+        }
+
+        .va-check {
+            color: #111;
+            font-size: 0.8rem;
+            flex-shrink: 0;
+            background: var(--gold-bright);
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-top: 3px;
+        }
+
+        .va-text-highlight {
+            font-size: 1.3rem;
+            font-weight: 800;
+            margin: 0 0 24px 0;
+        }
+
+        .va-text-final {
+            font-size: 1.05rem;
+            color: rgba(255, 255, 255, 0.75);
+            line-height: 1.6;
+            max-width: 700px;
+            margin: 0;
+        }
+        
+        @media (max-width: 640px) {
+            .va-box {
+                padding: 30px 20px;
+            }
+        }
+
+        /* ═══ VIP ECOSYSTEM SECTION ═══ */
+        .vip-eco-section {
+            background: #09130C; /* Verde escuro hiper luxuoso */
+            padding: 120px 24px;
+            position: relative;
+            overflow: hidden;
+            color: #FFFFFF;
+        }
+
+        .vip-eco-bg-glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80vw;
+            height: 80vw;
+            background: radial-gradient(circle, rgba(212, 160, 23, 0.08) 0%, rgba(9, 19, 12, 0) 60%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .vip-eco-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .vip-eco-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .vip-eco-subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.3em;
+            color: var(--gold-bright);
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .vip-eco-title {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2.2rem, 5vw, 3.8rem);
+            line-height: 1.15;
+            font-weight: 800;
+            color: #FFFFFF;
+            margin: 0;
+        }
+
+        .vip-eco-title .gold-text {
+            background: linear-gradient(to right, #F5DFA0, #D4A017, #F5DFA0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-style: italic;
+        }
+
+        .vip-eco-content {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .vip-eco-item {
+            width: 100%;
+            display: flex;
+        }
+
+        .vip-item-left {
+            justify-content: flex-start;
+        }
+
+        .vip-item-right {
+            justify-content: flex-end;
+        }
+
+        .vip-eco-card {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(212, 160, 23, 0.15);
+            border-radius: 20px;
+            padding: 60px;
+            width: 100%;
+            max-width: 850px;
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+            transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1), border-color 0.5s ease;
+        }
+
+        .vip-eco-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(212, 160, 23, 0.4);
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .vip-eco-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--gold-bright), var(--gold-deep));
+            opacity: 0.5;
+            transition: opacity 0.5s ease;
+        }
+        
+        .vip-eco-card:hover::before {
+            opacity: 1;
+        }
+
+        .vip-eco-num {
+            font-family: 'Cinzel', serif;
+            font-size: 7rem;
+            font-weight: 900;
+            color: transparent;
+            -webkit-text-stroke: 1px rgba(212, 160, 23, 0.3);
+            line-height: 1;
+            flex-shrink: 0;
+            transform: translateY(-10px);
+        }
+
+        .vip-eco-text h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin: 0 0 20px 0;
+            color: #FFFFFF;
+            line-height: 1.15;
+        }
+
+        .vip-eco-text p {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.7);
+            margin: 0;
+        }
+
+        @media (max-width: 900px) {
+            .vip-eco-card {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+                padding: 40px 30px;
+            }
+
+            .vip-eco-num {
+                font-size: 4.5rem;
+                transform: none;
+                margin-bottom: -20px;
+            }
+
+            .vip-eco-text h3 {
+                font-size: 1.8rem;
+                margin-top: 10px;
+            }
+        }
+
         /* ═══ CSS Reta Final: Oferta, Bônus, Indecisão, FAQ ═══ */
         .offer-bg {
             background-color: #FFFFFF;
