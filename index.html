@@ -350,20 +350,19 @@
         .sp-track {
             display: flex;
             transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+            gap: 20px;
+            padding-left: 0;
         }
 
         .sp-slide {
-            min-width: 100%;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            padding: 0 24px;
+            min-width: 85%;
+            display: flex;
             box-sizing: border-box;
         }
 
         @media (max-width: 640px) {
             .sp-slide {
-                grid-template-columns: 1fr;
+                min-width: 90%;
             }
         }
 
@@ -705,6 +704,7 @@
             color: var(--color-text);
             margin: 0 0 16px 0;
             font-weight: 800;
+            line-height: 1.15;
         }
 
         .met-header h3 {
@@ -848,13 +848,13 @@
         }
 
         .met-3p-covers-stack img {
-            width: 70px;
+            width: 95px;
             aspect-ratio: 4/5;
             object-fit: cover;
             border-radius: 6px;
             border: 2px solid #FFFFFF;
-            margin-left: -15px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            margin-left: -20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
             transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
             position: relative;
         }
@@ -874,18 +874,18 @@
         }
 
         .met-3p-covers-more {
-            width: 36px;
-            height: 36px;
+            width: 44px;
+            height: 44px;
             border-radius: 50%;
             background: var(--gold-bright);
             color: #fff;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.75rem;
+            font-size: 0.85rem;
             font-family: 'Montserrat', sans-serif;
             font-weight: 800;
-            margin-left: -8px;
+            margin-left: -10px;
             border: 2px solid #FFFFFF;
             z-index: 4;
             box-shadow: 0 4px 10px rgba(212, 160, 23, 0.3);
@@ -1121,7 +1121,7 @@
 
             <div class="sp-carousel-wrap" id="spCarousel">
                 <div class="sp-track" id="spTrack">
-                    <!-- SLIDE 1: 2 cards -->
+                    <!-- SLIDE 1 -->
                     <div class="sp-slide">
                         <div class="sp-card">
                             <div class="sp-card-info">
@@ -1134,6 +1134,10 @@
                                 Eu tinha medo de cobrar o preço justo. Com a Leide, aprendi a precificar e vender, hoje faturo 3x mais.
                             </div>
                         </div>
+                    </div>
+                    
+                    <!-- SLIDE 2 -->
+                    <div class="sp-slide">
                         <div class="sp-card">
                             <div class="sp-card-info">
                                 <div class="sp-card-avatar"><img src="imagem/2.jpeg" alt="Amanda Rocha"></div>
@@ -1147,7 +1151,7 @@
                         </div>
                     </div>
 
-                    <!-- SLIDE 2: 2 cards -->
+                    <!-- SLIDE 3 -->
                     <div class="sp-slide">
                         <div class="sp-card">
                             <div class="sp-card-info">
@@ -1160,6 +1164,10 @@
                                 Antes eu comemorava quando conseguia 2/3 mil no mês. Depois que apliquei o que Leide ensina, meu faturamento saltou. A mentalidade muda tudo.
                             </div>
                         </div>
+                    </div>
+                    
+                    <!-- SLIDE 4 -->
+                    <div class="sp-slide">
                         <div class="sp-card">
                             <div class="sp-card-info">
                                 <div class="sp-card-avatar"><img src="imagem/4.png" alt="Letícia Castro"></div>
@@ -2004,7 +2012,11 @@
 
             function goTo(index) {
                 current = index % total;
-                track.style.transform = `translateX(-${current * 100}%)`;
+                
+                // Pega a largura do slide + gap (20px) para fazer a transição exata em px
+                const slideWidth = slides[0].offsetWidth + 20; 
+                
+                track.style.transform = `translateX(-${current * slideWidth}px)`;
                 dotsContainer.querySelectorAll('.sp-dot').forEach((d, i) => {
                     d.classList.toggle('active', i === current);
                 });
