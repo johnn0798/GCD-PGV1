@@ -683,504 +683,230 @@
             display: block;
         }
 
-        /* ═══ Metodologia (Roda) ═══ */
+        /* ═══ Metodologia 3P ═══ */
         .methodology-section {
             background-color: #FFFFFF;
-            padding: 80px 0;
+            padding: 80px 24px;
             position: relative;
             overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
         }
 
         .met-header {
             text-align: center;
             margin-bottom: 60px;
-            z-index: 10;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .met-header h2 {
             font-family: 'Cinzel', serif;
-            font-size: clamp(2rem, 3.5vw, 2.5rem);
+            font-size: clamp(1.8rem, 3.5vw, 2.4rem);
             color: var(--color-text);
-            margin: 0 0 15px 0;
+            margin: 0 0 16px 0;
             font-weight: 800;
         }
 
         .met-header h3 {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--green-moss);
-            margin: 0;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-        }
-
-        /* Cores do círculo (Brandbook + Verde Musgo #5A8A5A + Dourados #F5DFA0 e #EDD88A) */
-        .methodology-section {
-            --m-c1: #FBEBBA; /* Dourado Claro 1 */
-            --m-c2: #CFE0D3; /* Verde Claro 1 */
-            --m-c3: #F6DFA3; /* Dourado Claro 2 */
-            --m-c4: #A8C5B2; /* Verde Claro 2 */
-            --m-c5: #FDF5D3; /* Dourado Claro 3 */
-            --m-c6: #E1ECE4; /* Verde Claro 3 */
-        }
-
-        .met-main-wrapper {
-            position: relative;
-            width: 1200px;
-            height: 650px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .met-wheel-scaler {
-            position: absolute;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .met-wheel-container {
-            position: relative;
-            width: 440px;
-            height: 440px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
-        }
-
-        .met-wheel-glow {
-            position: absolute;
-            width: 110%;
-            height: 110%;
-            border-radius: 50%;
-            background: conic-gradient(var(--m-c1), var(--m-c2), var(--m-c3), var(--m-c4), var(--m-c5), var(--m-c6), var(--m-c1));
-            filter: blur(60px);
-            opacity: 0.6;
-            z-index: 0;
-        }
-
-        .met-wheel {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            background: conic-gradient(var(--m-c1) 0deg 60deg,
-                    var(--m-c2) 60deg 120deg,
-                    var(--m-c3) 120deg 180deg,
-                    var(--m-c4) 180deg 240deg,
-                    var(--m-c5) 240deg 300deg,
-                    var(--m-c6) 300deg 360deg);
-            z-index: 1;
-            overflow: hidden;
-        }
-
-        .met-wheel::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background:
-                linear-gradient(90deg, transparent calc(50% - 1.5px), #FFFFFF calc(50% - 1.5px), #FFFFFF calc(50% + 1.5px), transparent calc(50% + 1.5px)),
-                linear-gradient(30deg, transparent calc(50% - 1.5px), #FFFFFF calc(50% - 1.5px), #FFFFFF calc(50% + 1.5px), transparent calc(50% + 1.5px)),
-                linear-gradient(150deg, transparent calc(50% - 1.5px), #FFFFFF calc(50% - 1.5px), #FFFFFF calc(50% + 1.5px), transparent calc(50% + 1.5px));
-            border-radius: 50%;
-            z-index: 2;
-            pointer-events: none;
-        }
-
-        .met-wheel-center {
-            position: absolute;
-            width: 160px;
-            height: 160px;
-            background-color: #FFFFFF;
-            border: 2px solid rgba(212, 160, 23, 0.3);
-            border-radius: 50%;
-            z-index: 5;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            box-shadow: inset 0 4px 15px rgba(0, 0, 0, 0.4), 0 4px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        .met-logo {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 2px;
-        }
-
-        .met-logo span {
-            font-size: 35px;
-            font-family: 'Cinzel', serif;
-            font-weight: 900;
-            color: var(--green-deep);
-            letter-spacing: -1px;
-        }
-
-        .met-logo-sub {
-            font-size: 10px;
             font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            color: var(--color-text);
-            text-align: center;
-            line-height: 1.2;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-        }
-
-        .met-phase-label {
-            position: absolute;
-            z-index: 4;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            transform: translate(-50%, -50%);
-            color: #0D1F16;
-        }
-
-        .met-phase-label .phase-text {
-            font-size: 12px;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            margin-bottom: -4px;
-        }
-
-        .met-phase-label .phase-num {
-            font-size: 46px;
-            font-family: 'Cinzel', serif;
-            font-weight: 900;
-            line-height: 1;
-        }
-
-        .met-p1 {
-            top: 21%;
-            left: 67%;
-        }
-
-        .met-p2 {
-            top: 50%;
-            left: 84%;
-        }
-
-        .met-p3 {
-            top: 79%;
-            left: 67%;
-        }
-
-        .met-p4 {
-            top: 79%;
-            left: 33%;
-        }
-
-        .met-p5 {
-            top: 50%;
-            left: 16%;
-        }
-
-        .met-p6 {
-            top: 21%;
-            left: 33%;
-        }
-
-        .met-info-box {
-            position: absolute;
-            width: 260px;
-            z-index: 10;
-        }
-
-        .met-info-box h3 {
-            font-size: 20px;
-            margin: 0 0 12px 0;
-            font-family: 'Cinzel', serif;
-            font-weight: 700;
-            color: var(--green-deep);
-        }
-
-        .met-info-box p {
-            font-size: 14px;
+            font-size: 1rem;
+            font-weight: 500;
             color: var(--color-text-muted);
             margin: 0;
             line-height: 1.5;
-            font-weight: 400;
         }
 
-        .met-lines-svg {
+        .met-3p-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .met-3p-card {
+            background: #FFFFFF;
+            border: 1px solid rgba(212, 160, 23, 0.2);
+            border-radius: 20px;
+            padding: 40px 32px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .met-3p-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 40px rgba(212, 160, 23, 0.15);
+            border-color: var(--gold-bright);
+        }
+
+        .met-3p-card::before {
+            content: attr(data-num);
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            right: 16px;
+            top: 10px;
+            font-size: 120px;
+            font-family: 'Cinzel', serif;
+            font-weight: 900;
+            opacity: 0.06;
+            line-height: 1;
+            color: var(--gold-deep);
             pointer-events: none;
-            z-index: 1;
         }
 
-        .met-lines-svg path {
-            fill: none;
-            stroke: rgba(212, 160, 23, 0.4);
-            stroke-width: 1.5px;
-            stroke-dasharray: 4 4;
+        .met-3p-card::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 5px;
+            border-radius: 20px 0 0 20px;
         }
 
-        .box-escala {
-            top: 75px;
-            left: 80px;
-            text-align: left;
+        .met-3p-card[data-num="1"]::after { background: var(--gold-bright); }
+        .met-3p-card[data-num="2"]::after { background: var(--green-moss); }
+        .met-3p-card[data-num="3"]::after { background: var(--gold-deep); }
+
+        .met-3p-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 16px;
         }
 
-        .box-vendas {
-            top: 275px;
-            left: 80px;
-            text-align: left;
+        .met-3p-num {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Cinzel', serif;
+            font-size: 1rem;
+            font-weight: 900;
+            color: #FFFFFF;
         }
 
-        .box-processo {
-            top: 535px;
-            left: 80px;
-            text-align: left;
+        .met-3p-card[data-num="1"] .met-3p-num { background: var(--gold-bright); }
+        .met-3p-card[data-num="2"] .met-3p-num { background: var(--green-moss); }
+        .met-3p-card[data-num="3"] .met-3p-num { background: var(--gold-deep); }
+
+        .met-3p-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--color-text-muted);
         }
 
-        .box-habilidade {
-            top: 75px;
-            right: 80px;
-            text-align: right;
+        .met-3p-title {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(1.3rem, 2vw, 1.6rem);
+            font-weight: 800;
+            color: var(--color-text);
+            margin: 0 0 16px 0;
         }
 
-        .box-validacao {
-            top: 275px;
-            right: 80px;
-            text-align: right;
+        .met-3p-text {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            color: var(--color-text-muted);
+            line-height: 1.7;
+            margin: 0;
+            flex-grow: 1;
         }
 
-        .box-especializacao {
-            top: 535px;
-            right: 80px;
-            text-align: right;
+        /* ─── Stack de Capas Dinâmicas nos Cards 3P ─── */
+        .met-3p-covers {
+            margin-top: 24px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(212, 160, 23, 0.15);
+            position: relative;
+            z-index: 2;
         }
 
-        @media (max-width: 1250px) and (min-width: 901px) {
-            .methodology-section {
-                padding: 40px 10px;
-            }
+        .met-3p-covers-title {
+            display: block;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--color-text);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 12px;
+        }
 
-            .met-main-wrapper {
-                transform: scale(calc(100vw / 1250));
-                transform-origin: top center;
-                margin-bottom: calc(650px * (calc(100vw / 1250) - 1));
-            }
+        .met-3p-covers-stack {
+            display: flex;
+            align-items: center;
+            padding-left: 10px;
+        }
+
+        .met-3p-covers-stack img {
+            width: 70px;
+            aspect-ratio: 4/5;
+            object-fit: cover;
+            border-radius: 6px;
+            border: 2px solid #FFFFFF;
+            margin-left: -15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+        }
+
+        .met-3p-covers-stack img:nth-child(1) { z-index: 3; }
+        .met-3p-covers-stack img:nth-child(2) { z-index: 2; }
+        .met-3p-covers-stack img:nth-child(3) { z-index: 1; }
+
+        .met-3p-card:hover .met-3p-covers-stack img {
+            transform: translateX(12px) rotate(3deg);
+        }
+        .met-3p-card:hover .met-3p-covers-stack img:nth-child(1) { 
+            transform: translateX(0) rotate(-2deg); 
+        }
+        .met-3p-card:hover .met-3p-covers-stack img:nth-child(2) { 
+            transform: translateX(8px) rotate(1deg); 
+        }
+
+        .met-3p-covers-more {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--gold-bright);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            margin-left: -8px;
+            border: 2px solid #FFFFFF;
+            z-index: 4;
+            box-shadow: 0 4px 10px rgba(212, 160, 23, 0.3);
         }
 
         @media (max-width: 900px) {
-            .methodology-section {
-                padding: 50px 20px;
+            .met-3p-grid {
+                grid-template-columns: 1fr;
+                max-width: 500px;
             }
 
-            .met-header {
-                margin-bottom: 40px;
-            }
-
-            .met-main-wrapper {
-                width: 100%;
-                height: auto;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                transform: none;
-                margin-bottom: 0;
-            }
-
-            /* Roda Redimensionada de forma nativa e não via Scale() */
-            .met-wheel-scaler {
-                position: relative;
-                order: -1;
-                width: 280px;
-                height: 280px;
-                margin-bottom: 50px;
-            }
-
-            .met-wheel-container {
-                width: 280px;
-                height: 280px;
-            }
-
-            .met-wheel-center {
-                width: 100px;
-                height: 100px;
-            }
-
-            .met-logo span {
-                font-size: 24px;
-            }
-
-            .met-logo-sub {
-                font-size: 8px;
-            }
-
-            .met-phase-label {
-                width: 60px;
-                height: 60px;
-            }
-
-            .met-phase-label .phase-text {
-                font-size: 9px;
-                margin-bottom: -2px;
-            }
-
-            .met-phase-label .phase-num {
-                font-size: 30px;
-            }
-
-            .met-lines-svg {
-                display: none;
-            }
-
-            /* Novo Design das Caixas no Mobile (Estilo Timeline Step) */
-            .met-info-box {
-                position: relative;
-                top: auto !important;
-                left: auto !important;
-                bottom: auto !important;
-                right: auto !important;
-                width: 100%;
-                max-width: 480px;
-                text-align: left !important;
-                background: #FFFFFF;
-                border: 1px solid rgba(212, 160, 23, 0.2);
-                border-radius: 0 16px 16px 0;
-                padding: 24px 20px 24px 34px;
-                margin-bottom: 24px;
-                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
-                overflow: hidden;
-            }
-
-            /* Marca d'água linda com o número da fase */
-            .met-info-box::after {
-                position: absolute;
-                right: 15px;
-                top: 50%;
-                transform: translateY(-50%);
-                font-size: 90px;
-                font-family: 'Cinzel', serif;
-                font-weight: 900;
-                opacity: 0.12;
-                z-index: 0;
-            }
-
-            /* Fita lateral timeline */
-            .met-info-box::before {
-                content: '';
-                position: absolute;
-                left: 0;
-                top: 0;
-                bottom: 0;
-                width: 8px;
-            }
-
-            .met-info-box h3,
-            .met-info-box p {
-                position: relative;
-                z-index: 2;
-            }
-
-            .met-info-box h3 {
-                font-size: 22px;
-                margin-bottom: 10px;
-            }
-
-            .box-habilidade {
-                order: 1;
-                border-top: 1px solid rgba(212, 160, 23, 0.15);
-            }
-
-            .box-habilidade::before {
-                background: var(--m-c1);
-            }
-
-            .box-habilidade::after {
-                content: '1';
-                color: var(--m-c1);
-            }
-
-            .box-validacao {
-                order: 2;
-                border-top: 1px solid rgba(212, 160, 23, 0.15);
-            }
-
-            .box-validacao::before {
-                background: var(--m-c2);
-            }
-
-            .box-validacao::after {
-                content: '2';
-                color: var(--m-c2);
-            }
-
-            .box-especializacao {
-                order: 3;
-                border-top: 1px solid rgba(212, 160, 23, 0.15);
-            }
-
-            .box-especializacao::before {
-                background: var(--m-c3);
-            }
-
-            .box-especializacao::after {
-                content: '3';
-                color: var(--m-c3);
-            }
-
-            .box-processo {
-                order: 4;
-                border-top: 1px solid rgba(212, 160, 23, 0.15);
-            }
-
-            .box-processo::before {
-                background: var(--m-c4);
-            }
-
-            .box-processo::after {
-                content: '4';
-                color: var(--m-c4);
-            }
-
-            .box-vendas {
-                order: 5;
-                border-top: 1px solid rgba(212, 160, 23, 0.15);
-            }
-
-            .box-vendas::before {
-                background: var(--m-c5);
-            }
-
-            .box-vendas::after {
-                content: '5';
-                color: var(--m-c5);
-            }
-
-            .box-escala {
-                order: 6;
-                border-top: 1px solid rgba(212, 160, 23, 0.15);
-            }
-
-            .box-escala::before {
-                background: var(--m-c6);
-            }
-
-            .box-escala::after {
-                content: '6';
-                color: var(--m-c6);
+            .met-3p-card {
+                padding: 32px 24px 32px 28px;
             }
         }
+
+
+
+
+
+
 
         /* ═══ Terceira Dobra (Grid de Cursos) ═══ */
         .courses-section {
@@ -1350,8 +1076,8 @@
                 Vamos juntas construir <span class="hero-title-highlight gold-shimmer">os melhores 12 meses</span> da sua vida
             </h1>
             <h2 class="hero-subtitle">
-                Um plano de crescimento validado para você faturar de <strong class="gold-shimmer">3x a 5x mais</strong>, s <strong>52 encontros</strong>, em uma <strong>comunidade secreta</strong>, onde todas tem apenas um objetivo: <strong class="gold-shimmer">Dominar o mercado.</strong>
-            </h2>
+               A maior plataforma de desenvolvimento para bronzeadoras audaciosas. 
+         </h2>
             <div class="hero-cta-wrapper">
                 <a href="#oferta" class="cta-button">Garantir Acesso Imediato</a>
                 <p class="cta-note">(Você está a poucos minutos de ficar a frente de 98% do mercado)</p>
@@ -1471,7 +1197,7 @@
 
             <div class="ol-content">
                 <span class="ol-badge">UMA DECLARAÇÃO DA FUNDADORA:</span>
-                <h2 class="ol-title">"Esse conhecimento mudou a minha vida."</h2>
+                <h2 class="ol-title">"Esse conhecimento muda vidas."</h2>
 
                 <div class="ol-text">
                     <p><strong>De:</strong> Leide Santos<br>
@@ -1486,7 +1212,7 @@
 
                     <p>O que separa as duas realidades não é talento e muito menos sorte.</p>
 
-                    <p>É algo que nenhum curso de bronze te ensinou. Que nenhum evento sequer mencionou.</p>
+                    <p>É algo que nenhum curso de bronze ou evento te ensinou.</p>
 
                     <p>Uma fórmula comprovada que, quando aplicada corretamente, tem o poder de <strong
                             class="gold-text"
@@ -1540,94 +1266,85 @@
             <!-- Dobra 5 -->
             <div class="hook-text-wrapper">
                 <p>Se você respondeu SIM a <strong class="hook-highlight">QUALQUER</strong> uma das perguntas acima, é
-                    de total interesse seu, e de extrema urgência para o seu negócio </p>
+                    de total interesse seu, e de <strong>extrema urgência</strong> para o seu negócio entrar no GCD.</p>
 
-                <p>Isso porque:</p>
+                <p>Isso porque</p>
 
-                <p>Pela primeira vez, as maiores empresárias do mercado — cada uma especialista em uma área — vão se
-                    reunir com um único objetivo:</p>
+                <p>Pela primeira vez, você vai abandonar a incerteza e seguir um <strong>plano claro, entregue semana a semana</strong>, para sair de onde está e chegar onde merece estar.</p>
 
-                <p><strong style="color: var(--color-text); font-size: 1.25rem;">Fazer você sair de onde está e chegar
-                        onde elas já chegaram, e ir mais longe.</strong></p>
-
-                <p>Através de uma metodologia à prova de falhas, que funciona da seguinte forma:</p>
+                <p><strong style="color: var(--color-text); font-size: 1.15rem;">Aqui está exatamente o que você vai aprender no GCD:</strong></p>
             </div>
         </div>
     </section>
 
     <!-- ═══════════════════════════════════════════════════════════════════
-         METODOLOGIA (A RODA DE RESULTADOS)
+         METODOLOGIA (3P)
     ═══════════════════════════════════════════════════════════════════ -->
     <section class="methodology-section">
         <div class="met-header">
-            <h2>Metodologia Orientada a Resultados</h2>
-            <h3>O nosso método</h3>
+            <h2>A Formúla 3P por trás de toda bronzeadora que fatura alto</h2>
+            <h3>Domine o resultado é inevitável.</h3>
         </div>
 
-        <div class="met-main-wrapper">
-            <!-- Connectors -->
-            <svg class="met-lines-svg" viewBox="0 0 1200 650">
-                <path d="M 80 105 L 410 105 L 475 145" />
-                <path d="M 80 305 L 385 305" />
-                <path d="M 80 565 L 410 565 L 475 505" />
-                <path d="M 1120 105 L 790 105 L 725 145" />
-                <path d="M 1120 305 L 815 305" />
-                <path d="M 1120 565 L 790 565 L 725 505" />
-            </svg>
-
-            <!-- Left Content -->
-            <div class="met-info-box box-escala">
-                <h3>Escala</h3>
-                <p>Vamos maximizar seus resultados por meio de pessoas e tecnologia.</p>
-            </div>
-            <div class="met-info-box box-vendas">
-                <h3>Vendas</h3>
-                <p>Vamos definir um motor de crescimento claro e que funciona.</p>
-            </div>
-            <div class="met-info-box box-processo">
-                <h3>Processo</h3>
-                <p>Vamos entender e aplicar conceitos que vão otimizar toda a operação e gestão da sua empresa.</p>
-            </div>
-
-            <!-- Center Wheel -->
-            <div class="met-wheel-scaler">
-                <div class="met-wheel-container">
-                    <div class="met-wheel-glow"></div>
-                    <div class="met-wheel">
-                        <div class="met-phase-label met-p1"><span class="phase-text">Fase</span><span
-                                class="phase-num">1</span></div>
-                        <div class="met-phase-label met-p2"><span class="phase-text">Fase</span><span
-                                class="phase-num">2</span></div>
-                        <div class="met-phase-label met-p3"><span class="phase-text">Fase</span><span
-                                class="phase-num">3</span></div>
-                        <div class="met-phase-label met-p4"><span class="phase-text">Fase</span><span
-                                class="phase-num">4</span></div>
-                        <div class="met-phase-label met-p5"><span class="phase-text">Fase</span><span
-                                class="phase-num">5</span></div>
-                        <div class="met-phase-label met-p6"><span class="phase-text">Fase</span><span
-                                class="phase-num">6</span></div>
-                    </div>
-                    <div class="met-wheel-center">
-                        <div class="met-logo">
-                            <span>GCD</span>
-                        </div>
+        <div class="met-3p-grid">
+            <!-- P1: Pessoa -->
+            <div class="met-3p-card" data-num="1">
+                <div class="met-3p-badge">
+                    <div class="met-3p-num">1</div>
+                    <span class="met-3p-label">Fase 1</span>
+                </div>
+                <h3 class="met-3p-title">Pessoa</h3>
+                <p class="met-3p-text">
+                    Tudo começa em você. Vamos trabalhar o seu posicionamento, a sua mentalidade e a forma como você se apresenta ao mercado.                 </p>
+                <div class="met-3p-covers">
+                    <span class="met-3p-covers-title">Alguns módulos liberados:</span>
+                    <div class="met-3p-covers-stack">
+                        <img src="imagem/cursos/7.png" alt="Módulo">
+                        <img src="imagem/cursos/5.png" alt="Módulo">
+                        <img src="imagem/cursos/8.png" alt="Módulo">
+                        <div class="met-3p-covers-more">+21</div>
                     </div>
                 </div>
             </div>
 
-            <!-- Right Content -->
-            <div class="met-info-box box-habilidade">
-                <h3>Habilidade</h3>
-                <p>Vamos desenvolver a sua capacidade de solucionar problemas, de acordo com as suas inclinações
-                    naturais.</p>
+            <!-- P2: Processo -->
+            <div class="met-3p-card" data-num="2">
+                <div class="met-3p-badge">
+                    <div class="met-3p-num">2</div>
+                    <span class="met-3p-label">Fase 2</span>
+                </div>
+                <h3 class="met-3p-title">Processo</h3>
+                <p class="met-3p-text">
+                    Não basta ser boa no que faz — você precisa de um sistema que funcione sem você se matar. Vamos organizar sua agenda, seu financeiro, suas vendas e sua captação de clientes em um processo que roda semana a semana, com previsibilidade.
+                </p>
+                <div class="met-3p-covers">
+                    <span class="met-3p-covers-title">Alguns módulos liberados:</span>
+                    <div class="met-3p-covers-stack">
+                        <img src="imagem/cursos/6.png" alt="Módulo">
+                        <img src="imagem/cursos/4.png" alt="Módulo">
+                        <div class="met-3p-covers-more">+15</div>
+                    </div>
+                </div>
             </div>
-            <div class="met-info-box box-validacao">
-                <h3>Validação</h3>
-                <p>Vamos definir o nosso público-alvo e encontrar pessoas dispostas a pagar pelo produto/serviço.</p>
-            </div>
-            <div class="met-info-box box-especializacao">
-                <h3>Especialização</h3>
-                <p>Vamos encontrar o melhor posicionamento de mercado dentro do seu nicho.</p>
+
+            <!-- P3: Produto -->
+            <div class="met-3p-card" data-num="3">
+                <div class="met-3p-badge">
+                    <div class="met-3p-num">3</div>
+                    <span class="met-3p-label">Fase 3</span>
+                </div>
+                <h3 class="met-3p-title">Produto</h3>
+                <p class="met-3p-text">
+                    Aqui é onde o jogo muda de verdade. Além de refinar o seu serviço atual e precificar com segurança, você vai dominar <strong>novas técnicas de bronze</strong>, aprender a oferecer <strong>serviços complementares</strong> que suas clientes já querem comprar, e descobrir <strong>novas fontes de renda</strong> que a maioria das profissionais nem sabe que existem.                </p>
+                <div class="met-3p-covers">
+                    <span class="met-3p-covers-title">Alguns módulos liberados:</span>
+                    <div class="met-3p-covers-stack">
+                        <img src="imagem/cursos/3.png" alt="Módulo">
+                        <img src="imagem/cursos/2.jpeg" alt="Módulo">
+                        <img src="imagem/cursos/9.png" alt="Módulo">
+                        <div class="met-3p-covers-more">+30</div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
