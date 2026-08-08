@@ -17,7 +17,7 @@
 
     <style>
         /* ══════════════════════════════════════════════════════════
-           DESIGN SYSTEM — GOLDEN CLUB DIGITAL (VERSÃO CLARA / TROPICAL)
+           DESIGN SYSTEM — GOLDEN CLUB DIGITAL
         ══════════════════════════════════════════════════════════ */
         :root {
             /* Fundos Claros Luminosos */
@@ -107,19 +107,9 @@
             animation: shimmer 6s linear infinite;
         }
 
-        .gold-border-glow {
-            border: 1px solid rgba(212, 160, 23, 0.3);
-            box-shadow: 0 0 20px rgba(212, 160, 23, 0.1);
-        }
-
         @keyframes shimmer {
-            0% {
-                background-position: -200% center;
-            }
-
-            100% {
-                background-position: 200% center;
-            }
+            0% { background-position: -200% center; }
+            100% { background-position: 200% center; }
         }
 
         /* ═══ CTA Buttons ═══ */
@@ -145,6 +135,31 @@
             box-shadow: 0 8px 35px rgba(26, 61, 43, 0.45);
         }
 
+        .top-alert-bar {
+            background: linear-gradient(90deg, #FFA600, #FF8C00);
+            color: #241a04;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 16px;
+            padding: 10px 20px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            font-weight: 800;
+            width: 100%;
+            z-index: 1000;
+            position: relative;
+            line-height: 1.2;
+        }
+
+        @media (min-width: 768px) {
+            .top-alert-bar {
+                font-size: 0.85rem;
+                padding: 14px 24px;
+            }
+        }
+
         /* ═════════════════════════════════════════════════════════════
            DOBRA 1: HERO
         ═════════════════════════════════════════════════════════════ */
@@ -165,7 +180,7 @@
 
         .hero-top-img {
             width: 100%;
-            max-width: 1000px; /* Evita que a imagem fique gigante em monitores ultrawide */
+            max-width: 1000px;
             height: auto;
             display: block;
         }
@@ -173,7 +188,7 @@
         .hero-gradient-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(to top, #FFFFFF 0%, rgba(255,255,255,0.6) 25%, rgba(255,255,255,0) 50%);
+            background: linear-gradient(to top, #FFFFFF 0%, rgba(255, 255, 255, 0.6) 25%, rgba(255, 255, 255, 0) 50%);
             pointer-events: none;
         }
 
@@ -192,7 +207,55 @@
             margin-top: 0;
         }
 
-        /* Tipografia Hero */
+        .hero-students-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 16px;
+            background: rgba(26, 61, 43, 0.12);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 160, 23, 0.35);
+            padding: 8px 22px;
+            border-radius: 50px;
+            box-shadow: 0 4px 20px rgba(26, 61, 43, 0.12);
+            margin-bottom: 4px;
+        }
+
+        .hsb-text {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.92rem;
+            font-weight: 500;
+            color: #1A3D2B;
+            letter-spacing: 0.02em;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .hsb-number {
+            color: #1A3D2B;
+            font-weight: 500;
+        }
+
+        .hsb-avatars {
+            display: flex;
+            align-items: center;
+        }
+
+        .hsb-avatars img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1px solid #FFFFFF;
+            margin-left: -8px;
+            box-shadow: 0 2px 6px rgba(26, 61, 43, 0.12);
+        }
+
+        .hsb-avatars img:first-child {
+            margin-left: 0;
+        }
+
         .hero-title {
             font-family: 'Cinzel', serif;
             font-size: clamp(1.6rem, 6vw, 4.2rem);
@@ -222,8 +285,6 @@
         .hero-subtitle strong {
             color: var(--color-text);
             font-weight: 700;
-            -webkit-text-fill-color: var(--color-text);
-            background: none;
         }
 
         @media (min-width: 768px) {
@@ -231,8 +292,6 @@
                 font-size: 1.25rem;
             }
         }
-
-        /* (Classes hero-image-wrapper removidas — não usadas mais) */
 
         .hero-cta-wrapper {
             display: flex;
@@ -242,7 +301,7 @@
             width: 100%;
             gap: 12px;
         }
-        
+
         .hero-cta-wrapper .cta-button {
             width: auto;
             max-width: 320px;
@@ -259,9 +318,7 @@
         }
 
         @media (min-width: 768px) {
-            .hero-cta-wrapper .cta-button {
-                font-size: 1.1rem;
-            }
+            .hero-cta-wrapper .cta-button { font-size: 1.1rem; }
         }
 
         .ticker-wrap {
@@ -279,13 +336,8 @@
         }
 
         @keyframes ticker-scroll {
-            0% {
-                transform: translateX(0);
-            }
-
-            100% {
-                transform: translateX(-50%);
-            }
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
         }
 
         .ticker-item {
@@ -311,22 +363,18 @@
         .ticker-dot {
             font-size: 0.6rem;
             color: var(--gold-bright);
-            -webkit-text-fill-color: var(--gold-bright);
-            background: none;
         }
-
 
         /* ═══ Social Proof ═══ */
         .social-proof {
-            background-color: #F5DFA0;
+            background: linear-gradient(160deg, #f8f3e4 0%, #F4EED8 50%, #eee8d0 100%);
             padding: 80px 24px;
             overflow: hidden;
+            border-top: 1px solid rgba(212, 160, 23, 0.15);
+            border-bottom: 1px solid rgba(212, 160, 23, 0.15);
         }
 
-        .sp-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+        .sp-container { max-width: 1200px; margin: 0 auto; }
 
         .sp-title {
             font-family: 'Cinzel', serif;
@@ -354,43 +402,13 @@
             padding-left: 0;
         }
 
-        .sp-slide {
-            min-width: 85%;
-            display: flex;
-            box-sizing: border-box;
-        }
+        .sp-slide { min-width: 85%; display: flex; box-sizing: border-box; }
+        @media (max-width: 640px) { .sp-slide { min-width: 90%; } }
 
-        @media (max-width: 640px) {
-            .sp-slide {
-                min-width: 90%;
-            }
-        }
+        .sp-dots { display: flex; justify-content: center; gap: 10px; margin-top: 24px; }
+        .sp-dot { width: 10px; height: 10px; border-radius: 50%; background: rgba(26, 61, 43, 0.2); border: none; cursor: pointer; transition: all 0.3s; padding: 0; }
+        .sp-dot.active { background: var(--gold-bright); transform: scale(1.3); }
 
-        /* Dots de navegação */
-        .sp-dots {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 24px;
-        }
-
-        .sp-dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: rgba(26, 61, 43, 0.2);
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s;
-            padding: 0;
-        }
-
-        .sp-dot.active {
-            background: var(--gold-bright);
-            transform: scale(1.3);
-        }
-
-        /* ─── Card Estilo Mensagem ─── */
         .sp-card {
             position: relative;
             width: 100%;
@@ -417,55 +435,18 @@
             color: var(--color-text);
             line-height: 1.65;
             font-weight: 400;
-            font-style: normal;
             order: 2;
         }
 
-        .sp-card-info {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            width: 100%;
-            order: 1;
-        }
-
+        .sp-card-info { display: flex; align-items: center; gap: 12px; width: 100%; order: 1; }
         .sp-card-avatar {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: #F4EED8;
-            border: 1px solid rgba(212, 160, 23, 0.4);
-            flex-shrink: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
+            width: 40px; height: 40px; border-radius: 50%; background: #F4EED8;
+            border: 1px solid rgba(212, 160, 23, 0.4); flex-shrink: 0;
+            display: flex; align-items: center; justify-content: center; overflow: hidden;
         }
-
-        .sp-card-avatar img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .sp-card-text {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .sp-card-name {
-            color: var(--color-text);
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            font-size: 0.95rem;
-            line-height: 1.2;
-        }
-
-        .sp-card-handle {
-            color: var(--color-text-muted);
-            font-size: 0.8rem;
-            margin-top: 2px;
-        }
+        .sp-card-avatar img { width: 100%; height: 100%; object-fit: cover; }
+        .sp-card-text { display: flex; flex-direction: column; }
+        .sp-card-name { color: var(--color-text); font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.95rem; line-height: 1.2; }
 
         /* ═══ Nova Dobra (Carta Aberta) ═══ */
         .open-letter {
@@ -476,656 +457,964 @@
             position: relative;
         }
 
-        @media (min-width: 768px) {
-            .open-letter {
-                padding: 120px 48px;
-            }
-        }
+        @media (min-width: 768px) { .open-letter { padding: 120px 48px; } }
 
         .ol-container {
-            max-width: 1024px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 40px;
-            align-items: center;
+            max-width: 1024px; margin: 0 auto; display: grid; grid-template-columns: 1fr;
+            gap: 40px; align-items: center;
         }
 
         @media (min-width: 768px) {
-            .ol-container {
-                grid-template-columns: 5fr 7fr;
-                gap: 60px;
-            }
+            .ol-container { grid-template-columns: 5fr 7fr; gap: 60px; }
         }
 
-        .ol-image-wrap {
-            position: relative;
-            border-radius: 16px;
-        }
-
+        .ol-image-wrap { position: relative; border-radius: 16px; }
         .ol-image-bg-effect {
-            position: absolute;
-            inset: -16px;
-            background: rgba(139, 168, 136, 0.25);
-            border: 1px solid rgba(212, 160, 23, 0.25);
-            border-radius: 20px;
-            transform: rotate(2deg);
-            z-index: 1;
+            position: absolute; inset: -16px; background: rgba(139, 168, 136, 0.25);
+            border: 1px solid rgba(212, 160, 23, 0.25); border-radius: 20px;
+            transform: rotate(2deg); z-index: 1;
         }
-
         .ol-image {
-            position: relative;
-            width: 100%;
-            height: auto;
-            border-radius: 12px;
-            z-index: 2;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            position: relative; width: 100%; height: auto; border-radius: 12px;
+            z-index: 2; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
             border: 1px solid rgba(212, 160, 23, 0.2);
         }
 
         .ol-badge {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.8rem;
-            font-weight: 700;
-            color: var(--green-moss);
-            text-transform: uppercase;
-            letter-spacing: 0.18em;
-            margin-bottom: 12px;
-            display: block;
+            font-family: 'Montserrat', sans-serif; font-size: 0.8rem; font-weight: 700;
+            color: var(--green-moss); text-transform: uppercase; letter-spacing: 0.18em;
+            margin-bottom: 12px; display: block;
         }
 
         .ol-title {
-            font-family: 'Cinzel', serif;
-            font-size: clamp(2rem, 3.5vw, 2.5rem);
-            color: var(--color-text);
-            line-height: 1.25;
-            margin-bottom: 24px;
-            font-weight: 700;
+            font-family: 'Cinzel', serif; font-size: clamp(2rem, 3.5vw, 2.5rem);
+            color: var(--color-text); line-height: 1.25; margin-bottom: 24px; font-weight: 700;
         }
 
         .ol-text {
-            color: var(--color-text-muted);
-            font-size: 1.1rem;
-            line-height: 1.7;
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
+            color: var(--color-text-muted); font-size: 1.1rem; line-height: 1.7;
+            display: flex; flex-direction: column; gap: 16px;
         }
-
-        .ol-text strong {
-            color: var(--color-text);
-            font-weight: 700;
-        }
-
-        .ol-highlight {
-            font-weight: 700;
-            color: var(--green-moss);
-            text-decoration: underline;
-            text-decoration-color: var(--gold-bright);
-            text-decoration-thickness: 2px;
-            text-underline-offset: 4px;
-        }
+        .ol-text strong { color: var(--color-text); font-weight: 700; }
 
         /* ═══ Quarta Dobra (Quiz) & Quinta (Hook) ═══ */
         .quiz-section {
-            background: #F5DFA0;
-            padding: 80px 24px;
-            position: relative;
+            background: linear-gradient(160deg, #f8f3e4 0%, #F4EED8 50%, #eee8d0 100%); padding: 80px 24px; position: relative;
             border-top: 1px solid rgba(212, 160, 23, 0.15);
             border-bottom: 1px solid rgba(212, 160, 23, 0.15);
         }
 
-        @media (min-width: 768px) {
-            .quiz-section {
-                padding: 120px 48px;
-            }
-        }
+        @media (min-width: 768px) { .quiz-section { padding: 120px 48px; } }
 
-        .qz-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .qz-title {
-            font-family: 'Cinzel', serif;
-            font-size: clamp(2rem, 3.5vw, 2.5rem);
-            color: var(--color-text);
-            text-align: center;
-            margin-bottom: 48px;
-            font-weight: 700;
-        }
-
-        .qz-list {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-            margin-bottom: 60px;
-        }
-
+        .qz-container { max-width: 800px; margin: 0 auto; }
+        .qz-title { font-family: 'Cinzel', serif; font-size: clamp(2rem, 3.5vw, 2.5rem); color: var(--color-text); text-align: center; margin-bottom: 48px; font-weight: 700; }
+        
+        .qz-list { display: flex; flex-direction: column; gap: 16px; margin-bottom: 60px; }
         .qz-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 16px;
-            padding: 24px;
-            border-radius: 12px;
-            border: 1px solid rgba(212, 160, 23, 0.2);
-            background: #FFFFFF;
-            transition: all 0.3s ease;
-            cursor: pointer;
+            display: flex; align-items: flex-start; gap: 16px; padding: 24px;
+            border-radius: 12px; border: 1px solid rgba(212, 160, 23, 0.2);
+            background: #FFFFFF; transition: all 0.3s ease; cursor: pointer;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
         }
+        .qz-item:hover { border-color: var(--green-moss); background: rgba(139, 168, 136, 0.15); transform: translateY(-2px); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); }
+        .qz-checkbox { width: 28px; height: 28px; flex-shrink: 0; margin-top: -2px; border: 2px solid var(--green-moss); border-radius: 6px; accent-color: var(--green-moss); cursor: pointer; }
+        .qz-label { font-size: 1.1rem; color: var(--color-text); font-weight: 500; line-height: 1.4; cursor: pointer; width: 100%; }
 
-        .qz-item:hover {
-            border-color: var(--green-moss);
-            background: rgba(139, 168, 136, 0.15); /* Soft sage hover */
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .qz-checkbox {
-            width: 28px;
-            height: 28px;
-            flex-shrink: 0;
-            margin-top: -2px;
-            border: 2px solid var(--green-moss);
-            border-radius: 6px;
-            accent-color: var(--green-moss);
-            cursor: pointer;
-        }
-
-        .qz-label {
-            font-size: 1.1rem;
-            color: var(--color-text);
-            font-weight: 500;
-            line-height: 1.4;
-            cursor: pointer;
-            width: 100%;
-        }
-
-        .qz-divider {
-            width: 100%;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--green-moss), transparent);
-            margin: 0 auto 48px auto;
-        }
+        .qz-divider { width: 100%; height: 1px; background: linear-gradient(90deg, transparent, var(--green-moss), transparent); margin: 0 auto 48px auto; }
 
         .hook-text-wrapper {
-            font-size: 1.15rem;
-            line-height: 1.7;
-            text-align: center;
-            color: var(--color-text-muted);
-            max-width: 700px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
+            font-size: 1.15rem; line-height: 1.7; text-align: center; color: var(--color-text-muted);
+            max-width: 700px; margin: 0 auto; display: flex; flex-direction: column; gap: 24px;
         }
-
-        .hook-text-wrapper p {
-            margin: 0;
-        }
-
-        .hook-highlight {
-            font-weight: 700;
-            background: rgba(212, 160, 23, 0.12);
-            padding: 4px 8px;
-            border-radius: 6px;
-            color: var(--color-text);
-        }
-
-        .hook-community {
-            font-family: 'Cinzel', serif;
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--color-text);
-            margin: 16px 0;
-            display: block;
-        }
+        .hook-text-wrapper p { margin: 0; }
+        .hook-highlight { font-weight: 700; background: rgba(212, 160, 23, 0.12); padding: 4px 8px; border-radius: 6px; color: var(--color-text); }
 
         /* ═══ Metodologia 3P ═══ */
-        .methodology-section {
-            background-color: #FFFFFF;
-            padding: 80px 24px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .met-header {
-            text-align: center;
-            margin-bottom: 60px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .met-header h2 {
-            font-family: 'Cinzel', serif;
-            font-size: clamp(1.8rem, 3.5vw, 2.4rem);
-            color: var(--color-text);
-            margin: 0 0 16px 0;
-            font-weight: 800;
-            line-height: 1.15;
-        }
-
-        .met-header h3 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1rem;
-            font-weight: 500;
-            color: var(--color-text-muted);
-            margin: 0;
-            line-height: 1.5;
-        }
-
-        .met-3p-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
+        .methodology-section { background-color: #FFFFFF; padding: 80px 24px; position: relative; overflow: hidden; }
+        .met-header { text-align: center; margin-bottom: 60px; max-width: 800px; margin-left: auto; margin-right: auto; }
+        .met-header h2 { font-family: 'Cinzel', serif; font-size: clamp(1.8rem, 3.5vw, 2.4rem); color: var(--color-text); margin: 0 0 16px 0; font-weight: 800; line-height: 1.15; }
+        .met-header h3 { font-family: 'Montserrat', sans-serif; font-size: 1rem; font-weight: 500; color: var(--color-text-muted); margin: 0; line-height: 1.5; }
+        
+        .met-3p-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 1100px; margin: 0 auto; }
+        
         .met-3p-card {
-            background: #FFFFFF;
-            border: 1px solid rgba(212, 160, 23, 0.2);
-            border-radius: 20px;
-            padding: 40px 32px;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
-            transition: all 0.4s ease;
-            display: flex;
-            flex-direction: column;
+            background: #FFFFFF; border: 1px solid rgba(212, 160, 23, 0.2); border-radius: 20px;
+            padding: 40px 32px; position: relative; overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06); transition: all 0.4s ease; display: flex; flex-direction: column;
         }
-
-        .met-3p-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 16px 40px rgba(212, 160, 23, 0.15);
-            border-color: var(--gold-bright);
-        }
-
+        .met-3p-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(212, 160, 23, 0.15); border-color: var(--gold-bright); }
         .met-3p-card::before {
-            content: attr(data-num);
-            position: absolute;
-            right: 16px;
-            top: 10px;
-            font-size: 120px;
-            font-family: 'Cinzel', serif;
-            font-weight: 900;
-            opacity: 0.06;
-            line-height: 1;
-            color: var(--gold-deep);
-            pointer-events: none;
+            content: attr(data-num); position: absolute; right: 16px; top: 10px;
+            font-size: 120px; font-family: 'Cinzel', serif; font-weight: 900;
+            opacity: 0.06; line-height: 1; color: var(--gold-deep); pointer-events: none;
         }
-
-        .met-3p-card::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 5px;
-            border-radius: 20px 0 0 20px;
-        }
-
+        .met-3p-card::after { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 5px; border-radius: 20px 0 0 20px; }
         .met-3p-card[data-num="1"]::after { background: var(--gold-bright); }
         .met-3p-card[data-num="2"]::after { background: var(--green-moss); }
         .met-3p-card[data-num="3"]::after { background: var(--gold-deep); }
 
-        .met-3p-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 16px;
-        }
-
+        .met-3p-badge { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 16px; }
         .met-3p-num {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Cinzel', serif;
-            font-size: 1rem;
-            font-weight: 900;
-            color: #FFFFFF;
+            width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-family: 'Cinzel', serif; font-size: 1rem; font-weight: 900; color: #FFFFFF;
         }
-
         .met-3p-card[data-num="1"] .met-3p-num { background: var(--gold-bright); }
         .met-3p-card[data-num="2"] .met-3p-num { background: var(--green-moss); }
         .met-3p-card[data-num="3"] .met-3p-num { background: var(--gold-deep); }
-
-        .met-3p-label {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            color: var(--color-text-muted);
-        }
-
-        .met-3p-title {
-            font-family: 'Cinzel', serif;
-            font-size: clamp(1.3rem, 2vw, 1.6rem);
-            font-weight: 800;
-            color: var(--color-text);
-            margin: 0 0 4px 0;
-        }
-
-        .met-3p-subheadline {
-            display: block;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.9rem;
-            font-weight: 700;
-            color: var(--color-text);
-            margin: 0 0 16px 0;
-            font-style: italic;
-        }
-
-        .met-3p-text {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.95rem;
-            color: var(--color-text-muted);
-            line-height: 1.7;
-            margin: 0;
-            flex-grow: 1;
-        }
+        
+        .met-3p-label { font-family: 'Montserrat', sans-serif; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; color: var(--color-text-muted); }
+        .met-3p-title { font-family: 'Cinzel', serif; font-size: clamp(1.3rem, 2vw, 1.6rem); font-weight: 800; color: var(--color-text); margin: 0 0 4px 0; }
+        .met-3p-subheadline { display: block; font-family: 'Montserrat', sans-serif; font-size: 0.9rem; font-weight: 700; color: var(--color-text); margin: 0 0 16px 0; font-style: italic; }
+        .met-3p-text { font-family: 'Montserrat', sans-serif; font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.7; margin: 0; flex-grow: 1; }
 
         /* ─── Stack de Capas Dinâmicas nos Cards 3P ─── */
-        .met-3p-covers {
-            margin-top: 24px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(212, 160, 23, 0.15);
-            position: relative;
-            z-index: 2;
-        }
-
-        .met-3p-covers-title {
-            display: block;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.75rem;
-            font-weight: 700;
-            color: var(--color-text);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 12px;
-        }
-
-        .met-3p-covers-stack {
-            display: flex;
-            align-items: center;
-            padding-left: 10px;
-        }
-
+        .met-3p-covers { margin-top: 24px; padding-top: 20px; border-top: 1px solid rgba(212, 160, 23, 0.15); position: relative; z-index: 2; }
+        .met-3p-covers-title { display: block; font-family: 'Montserrat', sans-serif; font-size: 0.75rem; font-weight: 700; color: var(--color-text); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px; }
+        .met-3p-covers-stack { display: flex; align-items: center; padding-left: 10px; }
         .met-3p-covers-stack img {
-            width: 95px;
-            aspect-ratio: 4/5;
-            object-fit: cover;
-            border-radius: 6px;
-            border: 2px solid #FFFFFF;
-            margin-left: -20px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-            transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-            position: relative;
+            width: 95px; aspect-ratio: 4/5; object-fit: cover; border-radius: 6px; border: 2px solid #FFFFFF;
+            margin-left: -20px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); position: relative;
         }
-
         .met-3p-covers-stack img:nth-child(1) { z-index: 3; }
         .met-3p-covers-stack img:nth-child(2) { z-index: 2; }
         .met-3p-covers-stack img:nth-child(3) { z-index: 1; }
 
-        .met-3p-card:hover .met-3p-covers-stack img {
-            transform: translateX(12px) rotate(3deg);
-        }
-        .met-3p-card:hover .met-3p-covers-stack img:nth-child(1) { 
-            transform: translateX(0) rotate(-2deg); 
-        }
-        .met-3p-card:hover .met-3p-covers-stack img:nth-child(2) { 
-            transform: translateX(8px) rotate(1deg); 
-        }
+        .met-3p-card:hover .met-3p-covers-stack img { transform: translateX(12px) rotate(3deg); }
+        .met-3p-card:hover .met-3p-covers-stack img:nth-child(1) { transform: translateX(0) rotate(-2deg); }
+        .met-3p-card:hover .met-3p-covers-stack img:nth-child(2) { transform: translateX(8px) rotate(1deg); }
 
         .met-3p-covers-more {
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            background: var(--gold-bright);
-            color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.85rem;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 800;
-            margin-left: -10px;
-            border: 2px solid #FFFFFF;
-            z-index: 4;
-            box-shadow: 0 4px 10px rgba(212, 160, 23, 0.3);
+            width: 44px; height: 44px; border-radius: 50%; background: var(--gold-bright); color: #fff;
+            display: flex; align-items: center; justify-content: center; font-size: 0.85rem;
+            font-family: 'Montserrat', sans-serif; font-weight: 800; margin-left: -10px; border: 2px solid #FFFFFF; z-index: 4; box-shadow: 0 4px 10px rgba(212, 160, 23, 0.3);
         }
 
-        /* ─── Quote Box & CTA Button (Pós 3P) ─── */
         .met-quote-box {
-            background-color: #FDF9EC;
-            border-left: 4px solid #E68A00; /* Laranja da imagem */
-            padding: 24px 32px;
-            max-width: 800px;
-            margin: 60px auto 40px auto;
-            border-radius: 0 8px 8px 0;
-            text-align: center;
+            background-color: #FDF9EC; border-left: 4px solid #E68A00; padding: 24px 32px; max-width: 800px;
+            margin: 60px auto 40px auto; border-radius: 0 8px 8px 0; text-align: center;
         }
-
-        .met-quote-box p {
-            font-family: Georgia, serif;
-            font-size: 1.25rem;
-            font-style: italic;
-            font-weight: 600;
-            color: var(--color-text);
-            margin: 0;
-        }
-
-        .met-cta {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
+        .met-quote-box p { font-family: Georgia, serif; font-size: 1.25rem; font-style: italic; font-weight: 600; color: var(--color-text); margin: 0; }
+        .met-cta { text-align: center; margin-bottom: 20px; }
+        
         .cta-button-orange {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #F09819; 
-            color: #FFFFFF;
-            font-weight: 700;
-            font-family: 'Montserrat', sans-serif;
-            padding: 16px 48px;
-            border-radius: 60px;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            box-shadow: 0 4px 15px rgba(240, 152, 25, 0.3);
+            display: inline-flex; align-items: center; justify-content: center; background-color: #F09819;
+            color: #FFFFFF; font-weight: 700; font-family: 'Montserrat', sans-serif; padding: 16px 48px; border-radius: 60px;
+            font-size: 1.1rem; transition: all 0.3s ease; text-decoration: none; box-shadow: 0 4px 15px rgba(240, 152, 25, 0.3);
         }
-
-        .cta-button-orange:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(240, 152, 25, 0.45);
-            color: #FFFFFF;
-        }
+        .cta-button-orange:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(240, 152, 25, 0.45); color: #FFFFFF; }
 
         @media (max-width: 900px) {
-            .met-3p-grid {
-                grid-template-columns: 1fr;
-                max-width: 500px;
-            }
-
-            .met-3p-card {
-                padding: 32px 24px 32px 28px;
-            }
-
-            .met-quote-box {
-                margin: 40px 24px 30px 24px;
-                padding: 20px 24px;
-                text-align: left;
-            }
-            
-            .met-quote-box p {
-                font-size: 1.1rem;
-            }
-        }
-
-
-
-
-
-
-
-        /* ═══ Terceira Dobra (Grid de Cursos) ═══ */
-        .courses-section {
-            background: #EDE8D5;
-            padding: 80px 0;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .courses-title {
-            font-family: 'Cinzel', serif;
-            font-size: clamp(2rem, 3.5vw, 2.5rem);
-            color: var(--color-text);
-            text-align: center;
-            max-width: 600px;
-            margin: 0 auto 40px auto;
-            line-height: 1.3;
-            padding: 0 24px;
-        }
-
-        /* ─── Grid de Miniaturas ─── */
-        .courses-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 12px;
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 16px;
-        }
-
-        @media (min-width: 768px) {
-            .courses-grid {
-                gap: 24px;
-                padding: 0 24px;
-            }
-        }
-
-        .course-thumb {
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            border: 1px solid rgba(212, 160, 23, 0.15);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            background: #FFFFFF;
-        }
-
-        .course-thumb:hover {
-            transform: scale(1.05) translateY(-5px);
-            box-shadow: 0 15px 40px rgba(212, 160, 23, 0.15);
-        }
-
-        .course-thumb img {
-            width: 100%;
-            height: auto;
-            display: block;
-            border-radius: 15px;
+            .met-3p-grid { grid-template-columns: 1fr; max-width: 500px; }
+            .met-3p-card { padding: 32px 24px 32px 28px; }
+            .met-quote-box { margin: 40px 24px 30px 24px; padding: 20px 24px; text-align: left; }
+            .met-quote-box p { font-size: 1.1rem; }
         }
 
         /* ═══ Decorative Elements ═══ */
         .section-divider {
-            width: 60px;
-            height: 3px;
-            background: linear-gradient(90deg, var(--gold-bright), var(--gold-pale));
-            border-radius: 2px;
-            margin: 0 auto 24px auto;
+            width: 60px; height: 3px; background: linear-gradient(90deg, var(--gold-bright), var(--gold-pale));
+            border-radius: 2px; margin: 0 auto 24px auto;
         }
 
         /* Animação Roll-in 3D para Dynamismo */
-        .benefit-card,
-        .qz-item,
-        .coi-card,
-        .course-thumb,
-        .met-info-box,
-        .stack-box,
-        .faq-item {
-            opacity: 0;
-            transform: translateY(60px) rotateX(-20deg);
-            transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-            transform-origin: top center;
-            will-change: opacity, transform;
+        .benefit-card, .qz-item, .course-thumb, .met-info-box, .stack-box {
+            opacity: 0; transform: translateY(60px) rotateX(-20deg); transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+            transform-origin: top center; will-change: opacity, transform;
         }
+        .animate-roll-in { opacity: 1 !important; transform: translateY(0) rotateX(0) !important; }
+        /* New offer section items use their own animation */
+        .of-bonus-card, .coi-card, .faq-item { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .of-bonus-card.animate-roll-in, .coi-card.animate-roll-in, .faq-item.animate-roll-in { opacity: 1 !important; transform: translateY(0) !important; }
 
-        .animate-roll-in {
-            opacity: 1 !important;
-            transform: translateY(0) rotateX(0) !important;
+        /* ═══ VIP ECOSYSTEM SECTION ═══ */
+        .vip-eco-section {
+            background: radial-gradient(circle at 50% 20%, rgba(245, 223, 160, 0.25) 0%, transparent 65%), linear-gradient(160deg, #629462 0%, #5A8A5A 50%, #466E46 100%);
+            padding: 120px 24px; position: relative; overflow: hidden; color: #F4EED8;
         }
-        .top-alert-bar {
-            background: linear-gradient(90deg, #FFA600, #FF8C00);
-            color: #241a04;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 16px;
-            padding: 10px 20px;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 14px;
-            font-weight: 600;
-            width: 100%;
-            z-index: 1000;
-            position: relative;
-            line-height: 1.2;
+        .vip-eco-bg-glow {
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80vw; height: 80vw;
+            background: radial-gradient(circle, rgba(212, 160, 23, 0.15) 0%, rgba(90, 138, 90, 0) 65%); z-index: 0; pointer-events: none;
         }
+        .vip-eco-container { max-width: 1200px; margin: 0 auto; position: relative; z-index: 2; }
+        .vip-eco-header { text-align: center; margin-bottom: 80px; }
+        .vip-eco-subtitle {
+            font-family: 'Montserrat', sans-serif; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.3em;
+            color: #F5DFA0; text-transform: uppercase; margin-bottom: 20px; text-shadow: 0 2px 4px rgba(0,0,0,0.15);
+        }
+        .vip-eco-title { font-family: 'Cinzel', serif; font-size: clamp(2.2rem, 5vw, 3.8rem); line-height: 1.15; font-weight: 800; color: #FFFFFF; margin: 0; text-shadow: 0 4px 15px rgba(26,61,43,0.3); }
+        .vip-eco-title .gold-text {
+            background: linear-gradient(to right, #FFF2C6, #F5DFA0, #D4A017); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; font-style: italic;
+        }
+        .vip-eco-content { display: flex; flex-direction: column; gap: 40px; }
+        .vip-eco-item { width: 100%; display: flex; }
+        .vip-item-left { justify-content: flex-start; }
+        .vip-item-right { justify-content: flex-end; }
         
-        .top-alert-bar .lb-msg strong {
-            font-weight: 800;
+        .vip-eco-card {
+            background: #FFFFFF; border: 1px solid rgba(212, 160, 23, 0.3);
+            border-radius: 20px; padding: 50px 60px; width: 100%; max-width: 850px;
+            display: flex; align-items: center; gap: 40px; position: relative; overflow: hidden;
+            box-shadow: 0 20px 50px rgba(26, 61, 43, 0.15); transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+        }
+        .vip-eco-card:hover { transform: translateY(-5px); border-color: rgba(212, 160, 23, 0.6); box-shadow: 0 25px 60px rgba(26, 61, 43, 0.22); }
+        .vip-eco-card::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 5px; height: 100%;
+            background: linear-gradient(to bottom, #D4A017, #B8860B); opacity: 0.85; transition: opacity 0.4s ease;
+        }
+        .vip-eco-card:hover::before { opacity: 1; }
+
+        .vip-eco-num {
+            font-family: 'Cinzel', serif; font-size: 6.5rem; font-weight: 900; color: rgba(212, 160, 23, 0.12);
+            -webkit-text-stroke: 1.5px rgba(212, 160, 23, 0.5); line-height: 1; flex-shrink: 0; transform: translateY(-5px);
+        }
+        .vip-eco-text h3 { font-family: 'Cinzel', serif; font-size: 2.1rem; font-weight: 800; margin: 0 0 16px 0; color: #1A3D2B; line-height: 1.18; }
+        .vip-eco-text p { font-family: 'Montserrat', sans-serif; font-size: 1.02rem; line-height: 1.7; color: rgba(26, 61, 43, 0.85); margin: 0; }
+
+        @media (max-width: 900px) {
+            .vip-eco-card { flex-direction: column; align-items: flex-start; gap: 20px; padding: 40px 30px; }
+            .vip-eco-num { font-size: 4.5rem; transform: none; margin-bottom: -20px; }
+            .vip-eco-text h3 { font-size: 1.8rem; margin-top: 10px; }
         }
 
-        .top-alert-bar .lb-timer {
-            display: inline-flex;
-            gap: 8px;
+        /* ══════════════════════════════════════════════════════════════
+           NOVA DOBRA DE OFERTA UNIFICADA (O GRANDE FECHAMENTO)
+        ══════════════════════════════════════════════════════════════ */
+        .ultimate-offer-section {
+            background: linear-gradient(160deg, #09130C 0%, #1A3D2B 50%, #0D2618 100%);
+            padding: 100px 24px 120px;
+            position: relative;
+            overflow: hidden;
+            font-family: 'Montserrat', sans-serif;
+            border-top: 1px solid rgba(212, 160, 23, 0.2);
         }
 
-        .top-alert-bar .lb-cell {
-            display: inline-flex;
-            flex-direction: column;
-            align-items: center;
-            min-width: 44px;
-            background: rgba(0,0,0,.16);
-            border-radius: 8px;
-            padding: 5px 8px;
+        .ultimate-offer-section::before {
+            content: ''; position: absolute; top: -20%; left: 50%; transform: translateX(-50%);
+            width: 1000px; height: 1000px; background: radial-gradient(circle, rgba(212, 160, 23, 0.15) 0%, transparent 65%);
+            pointer-events: none; z-index: 0;
         }
 
-        .top-alert-bar .lb-cell b {
-            font-size: 18px;
-            font-weight: 800;
-            line-height: 1;
+        .uo-container { max-width: 900px; margin: 0 auto; position: relative; z-index: 2; }
+
+        /* Header (Urgência) */
+        .uo-header { text-align: center; margin-bottom: 50px; }
+
+        .uo-eyebrow {
+            display: inline-flex; align-items: center; gap: 8px; background: rgba(212, 160, 23, 0.15);
+            border: 1px solid rgba(212, 160, 23, 0.4); border-radius: 50px; padding: 8px 24px;
+            font-size: 0.75rem; font-weight: 800; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold-bright); margin-bottom: 24px;
+        }
+        .uo-eyebrow-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold-bright); animation: pulse-dot 1.5s infinite; }
+
+        @keyframes pulse-dot { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(0.8); } }
+
+        .uo-title { font-family: 'Cinzel', serif; font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 800; color: #FFFFFF; line-height: 1.15; margin-bottom: 16px; }
+        .uo-title .gold-line {
+            background: linear-gradient(90deg, var(--gold-pale), var(--gold-bright), var(--gold-pale));
+            -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; display: block;
         }
 
-        .top-alert-bar .lb-cell i {
-            font-size: 9px;
-            font-style: normal;
-            text-transform: uppercase;
-            letter-spacing: .6px;
-            opacity: .82;
-            margin-top: 3px;
+        .uo-subtitle { font-size: 1.1rem; color: rgba(255, 255, 255, 0.7); max-width: 600px; margin: 0 auto 30px; line-height: 1.6; }
+
+        /* Countdown */
+        .uo-countdown-wrapper { margin-bottom: 40px; }
+        .uo-countdown-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255, 255, 255, 0.5); margin-bottom: 12px; display: block; }
+        .uo-countdown { display: flex; justify-content: center; gap: 12px; }
+        .uo-cd-unit { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+        .uo-cd-box {
+            background: rgba(0, 0, 0, 0.3); border: 1px solid rgba(212, 160, 23, 0.4); border-radius: 12px;
+            width: 80px; height: 80px; display: flex; align-items: center; justify-content: center;
+            font-family: 'Cinzel', serif; font-size: 2.2rem; font-weight: 900; color: var(--gold-pale); box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        .uo-cd-sep { font-family: 'Cinzel', serif; font-size: 2.2rem; font-weight: 900; color: rgba(212, 160, 23, 0.5); line-height: 80px; }
+        .uo-cd-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255, 255, 255, 0.4); }
+
+        /* Box Principal de Oferta (Stack + Preço) */
+        .uo-offer-box {
+            background: #FFFFFF; border-radius: 24px; overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.4), 0 0 0 1px rgba(212, 160, 23, 0.5); display: flex; flex-direction: column;
         }
 
-        @media (min-width: 768px) {
-            .top-alert-bar {
-                font-size: 0.85rem;
-                padding: 14px 24px;
-            }
+        /* Metade 1: O Stack (Ancoragem) */
+        .uo-stack-section { background: #FDF9EC; padding: 40px 48px; border-bottom: 2px dashed rgba(212, 160, 23, 0.3); }
+        .uo-stack-title { font-family: 'Cinzel', serif; font-size: 1.6rem; font-weight: 800; color: var(--color-text); text-align: center; margin-bottom: 24px; }
+        
+        .uo-list { list-style: none; display: flex; flex-direction: column; gap: 16px; }
+        .uo-list-item { display: flex; justify-content: space-between; align-items: center; padding-bottom: 16px; border-bottom: 1px solid rgba(212, 160, 23, 0.15); }
+        .uo-list-item:last-child { border-bottom: none; padding-bottom: 0; }
+        .uo-item-left { display: flex; align-items: center; gap: 16px; }
+        .uo-item-icon {
+            font-size: 1.5rem; background: rgba(212, 160, 23, 0.15); width: 44px; height: 44px;
+            border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
         }
-    </style>
+        .uo-item-text strong { display: block; font-size: 1.05rem; font-weight: 800; color: var(--color-text); line-height: 1.2; }
+        .uo-item-text span { font-size: 0.85rem; color: var(--color-text-muted); }
+        .uo-item-price { font-family: 'Cinzel', serif; font-size: 1.1rem; font-weight: 700; color: rgba(26, 61, 43, 0.4); text-decoration: line-through; text-decoration-color: #D32F2F; white-space: nowrap; }
+
+        .uo-total-box {
+            margin-top: 24px; background: rgba(26, 61, 43, 0.05); border-radius: 12px; padding: 16px 24px;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .uo-total-label { font-size: 0.9rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-text-muted); }
+        .uo-total-value { font-family: 'Cinzel', serif; font-size: 1.8rem; font-weight: 900; color: var(--color-text); text-decoration: line-through; text-decoration-color: #D32F2F; text-decoration-thickness: 3px; }
+
+        /* Metade 2: O Preço Final */
+        .uo-price-section { background: linear-gradient(135deg, #F4EED8 0%, #FFFFFF 100%); padding: 40px 48px; text-align: center; }
+        .uo-price-transition { font-size: 1.1rem; font-weight: 600; color: var(--color-text-muted); margin-bottom: 24px; line-height: 1.5; }
+        .uo-price-transition strong { color: var(--gold-dark); font-weight: 800; }
+
+        .uo-main-price-card {
+            background: linear-gradient(145deg, #1A3D2B 0%, #0F2A1C 100%); border: 2px solid var(--gold-bright);
+            border-radius: 20px; padding: 30px; position: relative; box-shadow: 0 15px 35px rgba(26, 61, 43, 0.2); margin-bottom: 20px; color: #FFF;
+        }
+        .uo-badge-fundadora {
+            position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: linear-gradient(90deg, var(--gold-pale), var(--gold-bright));
+            color: #09130C; padding: 6px 24px; border-radius: 30px; font-size: 0.8rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.15em;
+            box-shadow: 0 4px 15px rgba(212, 160, 23, 0.4); white-space: nowrap;
+        }
+
+        .uo-price-annual { display: flex; align-items: flex-start; justify-content: center; color: var(--gold-pale); line-height: 1; margin: 15px 0 10px; }
+        .uo-currency { font-size: 1.8rem; font-weight: 700; margin-top: 15px; margin-right: 6px; }
+        .uo-amount { font-family: 'Cinzel', serif; font-size: 6rem; font-weight: 900; letter-spacing: -0.03em; }
+        .uo-cents { font-size: 1.8rem; font-weight: 700; margin-top: 15px; }
+        .uo-price-details { font-size: 0.95rem; color: rgba(244, 238, 216, 0.8); font-weight: 500; }
+
+        /* Contraste Mensal & Futuro */
+        .uo-alt-price {
+            display: flex; align-items: center; justify-content: center; gap: 12px; font-size: 0.95rem;
+            font-weight: 700; color: var(--color-text-muted); margin-bottom: 30px; background: rgba(212, 160, 23, 0.1); padding: 12px; border-radius: 12px;
+        }
+        .uo-future-price { text-decoration: line-through; color: #D32F2F; }
+
+        /* Big CTA */
+        .uo-cta-btn {
+            display: inline-flex; align-items: center; justify-content: center; width: 100%;
+            background: linear-gradient(135deg, #D4A017 0%, #B8860B 100%); color: #FFFFFF; font-size: 1.2rem;
+            font-weight: 900; text-transform: uppercase; letter-spacing: 0.1em; padding: 24px; border-radius: 50px;
+            box-shadow: 0 10px 30px rgba(184, 134, 11, 0.4); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .uo-cta-btn:hover { transform: translateY(-4px) scale(1.02); box-shadow: 0 15px 40px rgba(184, 134, 11, 0.6); background: linear-gradient(135deg, #F0C040 0%, #D4A017 100%); }
+
+        .uo-guarantee {
+            display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 20px; font-size: 0.9rem; font-weight: 600; color: var(--color-text-muted);
+        }
+
+        @media (max-width: 768px) {
+            .uo-stack-section, .uo-price-section { padding: 30px 20px; }
+            .uo-amount { font-size: 4.5rem; }
+            .uo-cd-box { width: 65px; height: 65px; font-size: 1.8rem; }
+            .uo-list-item { flex-direction: column; align-items: flex-start; gap: 8px; }
+            .uo-item-price { padding-left: 60px; }
+            .uo-total-box { flex-direction: column; gap: 10px; text-align: center; }
+        }
+
+        /* ═══ INDECISÃO (COST OF INACTION) ═══ */
+        .cost-of-inaction { background: linear-gradient(160deg, #f8f3e4 0%, #F4EED8 50%, #eee8d0 100%); padding: 80px 24px; border-top: 1px solid rgba(212, 160, 23, 0.2); }
+        .coi-title { text-align: center; color: var(--color-text); font-size: clamp(1.8rem, 3vw, 2.4rem); font-family: 'Cinzel', serif; font-weight: 800; margin-bottom: 50px; max-width: 800px; margin-left: auto; margin-right: auto; }
+        .coi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; max-width: 1000px; margin: 0 auto; }
+        .coi-card { background: #FFFFFF; border-left: 4px solid #D32F2F; padding: 30px 24px; border-radius: 8px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05); }
+        .coi-card h4 { color: var(--color-text); font-family: 'Cinzel', serif; font-size: 1.2rem; margin-bottom: 12px; font-weight: 800; }
+        .coi-card p { color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.6; }
+        @media (max-width: 768px) { .coi-grid { grid-template-columns: 1fr; } }
+
+        /* ═══ FAQ ═══ */
+        .faq-section { background: #FFFFFF; padding: 100px 24px; }
+        .faq-container { max-width: 800px; margin: 0 auto; }
+        .faq-title { text-align: center; font-size: clamp(2rem, 4vw, 2.8rem); font-family: 'Cinzel', serif; font-weight: 800; color: var(--color-text); margin-bottom: 50px; }
+        .faq-item { background: #FFFFFF; border: 1px solid rgba(212, 160, 23, 0.2); margin-bottom: 16px; border-radius: 12px; overflow: hidden; transition: all 0.3s; }
+        .faq-question { padding: 24px; font-weight: 700; color: var(--color-text); cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 1.05rem; }
+        .faq-answer { padding: 0 24px; max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out, padding 0.3s; color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.7; }
+        .faq-item.active .faq-answer { padding: 0 24px 24px; max-height: 400px; }
+        .faq-icon { color: var(--gold-dark); font-size: 1.5rem; font-weight: 300; transition: transform 0.3s; }
+        .faq-item.active .faq-icon { transform: rotate(45deg); }
+    
+/* ============================================================
+   DOBRA DE OFERTA - ALINHADA AO BRANDBOOK GOLDEN CLUB
+   Paleta: #F4EED8 (creme), #1A3D2B (verde), #D4A017 (ouro)
+   Fundo: gradiente diagonal luz solar → verde profundo
+============================================================ */
+
+.of-section {
+    background: linear-gradient(160deg,
+        #f8f3e4 0%,
+        #eee8d0 20%,
+        #dde8d4 45%,
+        #c5d9bf 65%,
+        #9bbaa0 82%,
+        #7aaa85 100%);
+    color: #1A3D2B;
+    font-family: 'Montserrat', sans-serif;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Névoa solar top-esquerda, como no brandbook */
+.of-section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 55%; height: 55%;
+    background: radial-gradient(ellipse at 10% 5%,
+        rgba(245,224,112,0.45) 0%,
+        rgba(237,216,138,0.25) 30%,
+        transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* ── BARRA DE URGÊNCIA ── */
+.of-urgency-bar {
+    background: linear-gradient(90deg, #8B6914, #D4A017, #F0C040, #D4A017, #8B6914);
+    background-size: 300% auto;
+    animation: goldShimmer 4s linear infinite;
+    color: #fff8e7;
+    text-align: center;
+    padding: 12px 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 1;
+}
+
+.of-urgency-bar .of-cd {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: rgba(26,61,43,0.3);
+    border-radius: 5px;
+    padding: 2px 10px;
+    margin-left: 10px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.95rem;
+    letter-spacing: 0.1em;
+}
+
+@keyframes goldShimmer {
+    to { background-position: 300% center; }
+}
+
+/* ── WRAP ── */
+.of-wrap {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 80px 24px;
+    position: relative;
+    z-index: 1;
+}
+
+/* ── TÍTULO CONTEXTO ── */
+.of-context-title {
+    text-align: center;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 700;
+    line-height: 1.3;
+    color: #1A3D2B;
+    margin-bottom: 12px;
+}
+
+.of-context-title em {
+    font-style: normal;
+    background: linear-gradient(135deg, #B8860B, #D4A017, #F0C040);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.of-context-sub {
+    text-align: center;
+    font-size: 0.82rem;
+    color: rgba(26,61,43,0.55);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 56px;
+}
+
+/* ── CARD PRINCIPAL ── */
+.of-card {
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow:
+        0 20px 60px rgba(26,61,43,0.15),
+        0 0 0 1px rgba(212,160,23,0.2);
+}
+
+/* ── CABEÇALHO: Produto + Imagem ── */
+.of-card-head {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 2px solid rgba(212,160,23,0.15);
+    background: #fff;
+}
+
+.of-card-cover {
+    width: 100%;
+    overflow: hidden;
+    background: linear-gradient(160deg, #f0ebd8 0%, #dde8d4 50%, #c5d9bf 100%);
+    position: relative;
+}
+
+.of-card-cover img {
+    width: 100%;
+    max-height: 360px;
+    object-fit: cover;
+    display: block;
+    border-bottom: 1px solid rgba(212,160,23,0.2);
+}
+
+.of-card-head-body {
+    padding: 32px 40px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+}
+
+.of-badge {
+    display: inline-block;
+    background: linear-gradient(90deg, #B8860B, #D4A017, #F0C040, #D4A017, #B8860B);
+    background-size: 200% auto;
+    color: #fff8e7;
+    font-size: 0.68rem;
+    font-weight: 900;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 5px 18px;
+    border-radius: 30px;
+    margin-bottom: 16px;
+    width: fit-content;
+    animation: goldShimmer 4s linear infinite;
+}
+
+.of-product-desc {
+    font-size: 1.02rem;
+    color: rgba(26,61,43,0.75);
+    line-height: 1.65;
+    max-width: 720px;
+    margin: 0 auto 16px auto;
+}
+
+.of-old-price-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.of-old-price-label {
+    font-size: 0.75rem;
+    color: rgba(26,61,43,0.5);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+}
+
+.of-old-price-val {
+    font-size: 1.3rem;
+    color: rgba(26,61,43,0.35);
+    text-decoration: line-through;
+    font-weight: 700;
+}
+
+/* ── BÔNUS ── */
+.of-bonuses {
+    padding: 40px 48px;
+    background: #F4EED8;
+    border-bottom: 2px solid rgba(212,160,23,0.12);
+}
+
+.of-bonuses-title {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #B8860B;
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.of-bonuses-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(212,160,23,0.5), transparent);
+}
+
+.of-bonus-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.of-bonus-card {
+    background: #fff;
+    border: 1px solid rgba(212,160,23,0.2);
+    border-radius: 14px;
+    padding: 22px 20px;
+    transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+    box-shadow: 0 2px 10px rgba(26,61,43,0.05);
+}
+
+.of-bonus-card:hover {
+    border-color: rgba(212,160,23,0.5);
+    box-shadow: 0 8px 25px rgba(26,61,43,0.1);
+    transform: translateY(-3px);
+}
+
+.of-bonus-card-icon {
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.of-bonus-card-name {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #1A3D2B;
+    margin-bottom: 6px;
+    line-height: 1.3;
+}
+
+.of-bonus-card-desc {
+    font-size: 0.8rem;
+    color: rgba(26,61,43,0.58);
+    line-height: 1.55;
+    margin-bottom: 16px;
+}
+
+.of-bonus-card-val {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-top: 1px solid rgba(212,160,23,0.15);
+    padding-top: 12px;
+}
+
+.of-bonus-card-val .strike {
+    font-size: 0.8rem;
+    color: rgba(26,61,43,0.3);
+    text-decoration: line-through;
+}
+
+.of-bonus-card-val .free-tag {
+    font-size: 0.7rem;
+    font-weight: 800;
+    color: #2D5E40;
+    letter-spacing: 0.08em;
+    background: rgba(45,94,64,0.1);
+    border: 1px solid rgba(45,94,64,0.2);
+    padding: 2px 8px;
+    border-radius: 10px;
+}
+
+/* ── CHECKOUT ── */
+.of-checkout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.of-summary {
+    padding: 40px 48px;
+    border-right: 1px solid rgba(212,160,23,0.15);
+    background: #fff;
+}
+
+.of-summary-title {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(26,61,43,0.4);
+    margin-bottom: 22px;
+}
+
+.of-summary-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(26,61,43,0.05);
+    font-size: 0.86rem;
+    color: rgba(26,61,43,0.7);
+}
+
+.of-sval {
+    color: rgba(26,61,43,0.3) !important;
+    text-decoration: line-through;
+    font-size: 0.8rem;
+}
+
+.of-summary-divider {
+    height: 1px;
+    background: linear-gradient(90deg, rgba(212,160,23,0.4), transparent);
+    margin: 16px 0;
+}
+
+.of-summary-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: #1A3D2B;
+}
+
+.of-economy-tag {
+    margin-top: 16px;
+    background: rgba(45,94,64,0.08);
+    border: 1px solid rgba(45,94,64,0.2);
+    color: #2D5E40;
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 12px 16px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* ── CTA COLUNA ── */
+.of-cta-col {
+    padding: 40px 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: linear-gradient(160deg, #f0ebd8 0%, #e6f0e3 100%);
+    justify-content: center;
+}
+
+.of-price-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: rgba(26,61,43,0.45);
+    margin-bottom: 6px;
+}
+
+.of-price-display {
+    display: flex;
+    align-items: flex-start;
+    gap: 2px;
+    line-height: 1;
+    margin-bottom: 4px;
+}
+
+.of-price-display .cur {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #B8860B;
+    padding-top: 12px;
+}
+
+.of-price-display .val {
+    font-size: 5.2rem;
+    font-weight: 900;
+    color: #1A3D2B;
+    letter-spacing: -4px;
+    line-height: 1;
+}
+
+.of-price-display .cts {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #1A3D2B;
+    padding-top: 12px;
+}
+
+.of-price-note {
+    font-size: 0.8rem;
+    color: rgba(26,61,43,0.45);
+    margin-top: 2px;
+}
+
+/* ── BOTÃO CTA ── */
+.of-cta-btn {
+    display: block;
+    background: linear-gradient(135deg, #8B6914 0%, #D4A017 35%, #F0C040 55%, #D4A017 75%, #8B6914 100%);
+    background-size: 200% auto;
+    color: #1a0e00;
+    text-align: center;
+    padding: 20px 24px;
+    border-radius: 14px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: all 0.45s ease;
+    box-shadow: 0 8px 24px rgba(184,134,11,0.3), 0 2px 6px rgba(184,134,11,0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.of-cta-btn::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -80%;
+    width: 50%; height: 100%;
+    background: linear-gradient(to right, transparent, rgba(255,255,255,0.3), transparent);
+    transform: skewX(-20deg);
+    transition: left 0.65s ease;
+}
+
+.of-cta-btn:hover::before { left: 160%; }
+.of-cta-btn:hover {
+    background-position: right center;
+    box-shadow: 0 4px 0 rgba(139,105,20,0.8), 0 14px 35px rgba(184,134,11,0.45);
+    transform: translateY(-2px);
+}
+
+.of-cta-sub {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    margin-top: 7px;
+    opacity: 0.65;
+    text-transform: none;
+    letter-spacing: 0.02em;
+}
+
+/* ── PAGAMENTOS ── */
+.of-payments {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.of-pay-item {
+    background: rgba(26,61,43,0.06);
+    border: 1px solid rgba(26,61,43,0.12);
+    border-radius: 6px;
+    padding: 5px 10px;
+    font-size: 0.68rem;
+    color: rgba(26,61,43,0.5);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+}
+
+/* ── GARANTIA ── */
+.of-guarantee {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background: rgba(45,94,64,0.07);
+    border: 1px solid rgba(45,94,64,0.15);
+    border-radius: 12px;
+    padding: 14px 18px;
+}
+
+.of-guarantee svg { flex-shrink: 0; color: #2D5E40; margin-top: 2px; }
+
+.of-guarantee p {
+    font-size: 0.78rem;
+    color: rgba(26,61,43,0.6);
+    line-height: 1.45;
+    margin: 0;
+}
+
+.of-guarantee strong { color: #2D5E40; }
+
+/* ── CUSTO DA INAÇÃO ── */
+.coi-section {
+    background: #F4EED8;
+    padding: 90px 24px;
+    border-top: 1px solid rgba(212,160,23,0.2);
+}
+
+.coi-inner {
+    max-width: 1120px;
+    margin: 0 auto;
+}
+
+.coi-section-title {
+    text-align: center;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+    font-weight: 700;
+    color: #1A3D2B;
+    margin-bottom: 10px;
+}
+
+.coi-section-sub {
+    text-align: center;
+    font-size: 0.82rem;
+    color: rgba(26,61,43,0.45);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+}
+
+.coi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.coi-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 32px 28px;
+    border: 1px solid rgba(212,160,23,0.15);
+    box-shadow: 0 4px 20px rgba(26,61,43,0.07);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.coi-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 40px rgba(26,61,43,0.12);
+}
+
+.coi-card-icon {
+    font-size: 2rem;
+    margin-bottom: 16px;
+    display: block;
+}
+
+.coi-card h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1A3D2B;
+    margin-bottom: 10px;
+    line-height: 1.3;
+}
+
+.coi-card p {
+    font-size: 0.87rem;
+    color: rgba(26,61,43,0.6);
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* ── RESPONSIVO ── */
+@media (max-width: 1024px) {
+    .of-bonus-grid { grid-template-columns: 1fr 1fr; }
+    .of-checkout { grid-template-columns: 1fr; }
+    .of-summary { border-right: none; border-bottom: 1px solid rgba(212,160,23,0.12); }
+    .coi-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 640px) {
+    .of-wrap { padding: 50px 16px; }
+    .of-card-head-body, .of-bonuses, .of-summary, .of-cta-col { padding: 28px 20px; }
+    .of-bonus-grid { grid-template-columns: 1fr; }
+    .of-price-display .val { font-size: 3.8rem; }
+    .coi-section { padding: 60px 16px; }
+}
+</style>
 </head>
 
 <body>
     <div class="top-alert-bar">
         CONVITE EXCLUSIVO PARA ALUNAS
     </div>
-
 
     <!-- ═══════════════════════════════════════════════════════════════════
          DOBRA 1: HERO
@@ -1139,12 +1428,26 @@
 
         <!-- Bloco de Texto -->
         <div class="hero-text-block">
+            <!-- Selo de Prova Social com Contador Animado -->
+            <div class="hero-students-badge">
+                <div class="hsb-text">+<span id="heroStudentsCounter" class="hsb-number">0</span> alunas</div>
+                <div class="hsb-avatars">
+                    <img src="imagem/1.jpeg" alt="Aluna">
+                    <img src="imagem/2.jpeg" alt="Aluna">
+                    <img src="imagem/3.png" alt="Aluna">
+                    <img src="imagem/4.png" alt="Aluna">
+                    <img src="imagem/6.jpeg" alt="Aluna">
+                    <img src="imagem/7.jpeg" alt="Aluna">
+                </div>
+            </div>
+
             <h1 class="hero-title">
-                Vamos juntas construir <span class="hero-title-highlight gold-shimmer">os melhores 12 meses</span> da sua vida
+                Vamos juntas construir <span class="hero-title-highlight gold-shimmer">os melhores 12 meses</span> da
+                sua vida
             </h1>
             <h2 class="hero-subtitle">
-               A maior plataforma de desenvolvimento para bronzeadoras audaciosas. 
-         </h2>
+                A maior plataforma de desenvolvimento para bronzeadoras audaciosas.
+            </h2>
             <div class="hero-cta-wrapper">
                 <a href="#oferta" class="cta-button">Garantir Acesso Imediato</a>
                 <p class="cta-note">(Você está a poucos minutos de ficar a frente de 98% do mercado)</p>
@@ -1169,9 +1472,6 @@
             <div class="ticker-item"><span class="ticker-text">GOLDEN CLUB DIGITAL</span><span class="ticker-dot">✦</span></div>
             <div class="ticker-item"><span class="ticker-text">COMUNIDADE EXCLUSIVA</span><span class="ticker-dot">✦</span></div>
             <div class="ticker-item"><span class="ticker-text">ENCONTROS SEMANAIS</span><span class="ticker-dot">✦</span></div>
-            <div class="ticker-item"><span class="ticker-text">GOLDEN CLUB DIGITAL</span><span class="ticker-dot">✦</span></div>
-            <div class="ticker-item"><span class="ticker-text">COMUNIDADE EXCLUSIVA</span><span class="ticker-dot">✦</span></div>
-            <div class="ticker-item"><span class="ticker-text">ENCONTROS SEMANAIS</span><span class="ticker-dot">✦</span></div>
         </div>
     </div>
 
@@ -1182,9 +1482,10 @@
         <div class="sp-container">
             <div class="section-divider"></div>
             <h2 class="sp-title">
-               Veja quem já chegou lá</span>
+                Veja quem já chegou lá
             </h2>
-            <p class="hero-subtitle" style="margin-bottom: 40px;">Se elas conseguiram resultados tão incríveis apenas com os conteúdos exclusivos que ensinei em lives, <strong>imagine o que você pode alcançar</strong></p>
+            <p class="hero-subtitle" style="margin-bottom: 40px; text-align: center;">Se elas conseguiram resultados tão incríveis apenas
+                com os conteúdos exclusivos que ensinei em lives, <strong>imagine o que você pode alcançar</strong></p>
 
             <div class="sp-carousel-wrap" id="spCarousel">
                 <div class="sp-track" id="spTrack">
@@ -1198,11 +1499,12 @@
                                 </div>
                             </div>
                             <div class="sp-card-text-body">
-                                Eu tinha medo de cobrar o preço justo. Com a Leide, aprendi a precificar e vender, hoje faturo 3x mais.
+                                Eu tinha medo de cobrar o preço justo. Com a Leide, aprendi a precificar e vender, hoje
+                                faturo 3x mais.
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- SLIDE 2 -->
                     <div class="sp-slide">
                         <div class="sp-card">
@@ -1213,7 +1515,9 @@
                                 </div>
                             </div>
                             <div class="sp-card-text-body">
-                                O que mais mudou foi meu posicionamento. Deixei de vender 'marquinha' para vender autocuidado, beleza e confiança. Hoje sou reconhecida como profissional de alto padrão. Gratidão, Leide!
+                                O que mais mudou foi meu posicionamento. Deixei de vender 'marquinha' para vender
+                                autocuidado, beleza e confiança. Hoje sou reconhecida como profissional de alto padrão.
+                                Gratidão, Leide!
                             </div>
                         </div>
                     </div>
@@ -1228,11 +1532,12 @@
                                 </div>
                             </div>
                             <div class="sp-card-text-body">
-                                Antes eu comemorava quando conseguia 2/3 mil no mês. Depois que apliquei o que Leide ensina, meu faturamento saltou. A mentalidade muda tudo.
+                                Antes eu comemorava quando conseguia 2/3 mil no mês. Depois que apliquei o que Leide
+                                ensina, meu faturamento saltou. A mentalidade muda tudo.
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- SLIDE 4 -->
                     <div class="sp-slide">
                         <div class="sp-card">
@@ -1243,7 +1548,9 @@
                                 </div>
                             </div>
                             <div class="sp-card-text-body">
-                                Entender como precificar sem medo da concorrência foi libertador. Parei de fazer promoções e brigar por preços. Hoje minhas clientes não pedem desconto, elas pagam pela experiência!
+                                Entender como precificar sem medo da concorrência foi libertador. Parei de fazer
+                                promoções e brigar por preços. Hoje minhas clientes não pedem desconto, elas pagam pela
+                                experiência!
                             </div>
                         </div>
                     </div>
@@ -1251,13 +1558,11 @@
             </div>
             <!-- Dots -->
             <div class="sp-dots" id="spDots"></div>
-                </div>
-            </div>
         </div>
     </section>
 
     <!-- ═══════════════════════════════════════════════════════════════════
-         NOVA DOBRA: CARTA ABERTA
+         DOBRA 3: CARTA ABERTA
     ═══════════════════════════════════════════════════════════════════ -->
     <section class="open-letter">
         <div class="ol-container">
@@ -1290,8 +1595,7 @@
                     <p>É algo que nenhum curso de bronze ou evento te ensinou.</p>
 
                     <p>Uma fórmula comprovada que, quando aplicada corretamente, tem o poder de <strong
-                            class="gold-text"
-                            style="font-weight: 800;">transformar
+                            class="gold-text" style="font-weight: 800;">transformar
                             não só negócios, mas vidas!</strong></p>
 
                     <p>E agora acredito que chegou o momento de compartilhar.</p>
@@ -1345,9 +1649,11 @@
 
                 <p>Isso porque</p>
 
-                <p>Pela primeira vez, você vai abandonar a incerteza e seguir um <strong>plano claro, entregue semana a semana</strong>, para sair de onde está e chegar onde merece estar.</p>
+                <p>Pela primeira vez, você vai abandonar a incerteza e seguir um <strong>plano claro, entregue semana a
+                        semana</strong>, para sair de onde está e chegar onde merece estar.</p>
 
-                <p><strong style="color: var(--color-text); font-size: 1.15rem;">Aqui está exatamente o que você vai aprender no GCD:</strong></p>
+                <p><strong style="color: var(--color-text); font-size: 1.15rem;">Aqui está exatamente o que você vai
+                        aprender no GCD:</strong></p>
             </div>
         </div>
     </section>
@@ -1363,7 +1669,7 @@
 
         <div class="met-3p-grid">
             <!-- P1: Pessoa -->
-            <div class="met-3p-card" data-num="1">
+            <div class="met-3p-card benefit-card" data-num="1">
                 <div class="met-3p-badge">
                     <div class="met-3p-num">1</div>
                     <span class="met-3p-label">Fase 1</span>
@@ -1371,7 +1677,9 @@
                 <h3 class="met-3p-title">Pessoa</h3>
                 <span class="met-3p-subheadline">A Base para o crescimento</span>
                 <p class="met-3p-text">
-                    Como desenvolver o posicionamento, a mentalidade e as conexões que fazem o mercado te enxergar e te procurar como referência.                 </p>
+                    Como desenvolver o posicionamento, a mentalidade e as conexões que fazem o mercado te enxergar e te
+                    procurar como referência.
+                </p>
                 <div class="met-3p-covers">
                     <span class="met-3p-covers-title">Alguns módulos:</span>
                     <div class="met-3p-covers-stack">
@@ -1384,7 +1692,7 @@
             </div>
 
             <!-- P2: Processo -->
-            <div class="met-3p-card" data-num="2">
+            <div class="met-3p-card benefit-card" data-num="2">
                 <div class="met-3p-badge">
                     <div class="met-3p-num">2</div>
                     <span class="met-3p-label">Fase 2</span>
@@ -1392,10 +1700,9 @@
                 <h3 class="met-3p-title">Processo</h3>
                 <span class="met-3p-subheadline">A Vantagem Injusta</span>
                 <p class="met-3p-text">
-                    Como fechar o mês sabendo, com antecedência, quanto vai faturar, porque sua receita não depende mais de sorte, indicação ou promoções.
-Isso é o que um processo bem feito compra: liberdade e tranquilidade.
-
-Você vai dominar a contrução de processos de vendas, gestão e comunicação.
+                    Como fechar o mês sabendo, com antecedência, quanto vai faturar, porque sua receita não depende mais
+                    de sorte, indicação ou promoções.
+                    Você vai dominar a contrução de processos de vendas, gestão e comunicação.
                 </p>
                 <div class="met-3p-covers">
                     <span class="met-3p-covers-title">Alguns módulos:</span>
@@ -1408,7 +1715,7 @@ Você vai dominar a contrução de processos de vendas, gestão e comunicação.
             </div>
 
             <!-- P3: Produto -->
-            <div class="met-3p-card" data-num="3">
+            <div class="met-3p-card benefit-card" data-num="3">
                 <div class="met-3p-badge">
                     <div class="met-3p-num">3</div>
                     <span class="met-3p-label">Fase 3</span>
@@ -1416,9 +1723,9 @@ Você vai dominar a contrução de processos de vendas, gestão e comunicação.
                 <h3 class="met-3p-title">Produto</h3>
                 <span class="met-3p-subheadline">O Arsenal de Alto Valor</span>
                 <p class="met-3p-text">
-                    Como fazer o mesmo número de clientes gerar mais faturamento. Imagine as clientes pedindo o próximo produto/serviço antes mesmo de você oferecer.
-
-Isso é o que um portfólio bem construído trás: mais dinheiro por atendimento e fluxos de renda que 90% das profissionais não sabe fazer.                </p>
+                    Como fazer o mesmo número de clientes gerar mais faturamento. Imagine as clientes pedindo o próximo
+                    produto/serviço antes mesmo de você oferecer. Mais dinheiro por atendimento.
+                </p>
                 <div class="met-3p-covers">
                     <span class="met-3p-covers-title">Alguns módulos:</span>
                     <div class="met-3p-covers-stack">
@@ -1446,21 +1753,23 @@ Isso é o que um portfólio bem construído trás: mais dinheiro por atendimento
     <section class="vip-eco-section">
         <div class="vip-eco-bg-glow"></div>
         <div class="vip-eco-container">
-            
+
             <div class="vip-eco-header">
                 <h4 class="vip-eco-subtitle">O Próximo Nível</h4>
                 <h2 class="vip-eco-title">Muito além de um método.<br>Um <span class="gold-text">Ecossistema Vivo</span>.</h2>
             </div>
 
             <div class="vip-eco-content">
-                
+
                 <!-- Item 1 -->
                 <div class="vip-eco-item vip-item-left">
                     <div class="vip-eco-card">
                         <div class="vip-eco-num">01</div>
                         <div class="vip-eco-text">
                             <h3>Acesso a Tendências<br>& Inovações</h3>
-                            <p>O mercado de bronzeamento evolui rápido. Aqui, você nunca será a última a saber. Receba aulas e materiais constantemente atualizados sobre as novas técnicas, produtos e modelos de negócio que estão ditando o padrão no Brasil.</p>
+                            <p>O mercado de bronzeamento evolui rápido. Aqui, você nunca será a última a saber. Receba
+                                aulas e materiais constantemente atualizados sobre as novas técnicas, produtos e modelos
+                                de negócio que estão ditando o padrão no Brasil.</p>
                         </div>
                     </div>
                 </div>
@@ -1471,7 +1780,9 @@ Isso é o que um portfólio bem construído trás: mais dinheiro por atendimento
                         <div class="vip-eco-num">02</div>
                         <div class="vip-eco-text">
                             <h3>A Comunidade das<br>Audaciosas</h3>
-                            <p>Dizem que você é a média das pessoas com quem convive. Imagine estar rodeada por empreendedoras que faturam de R$10k a múltiplos 5 dígitos. Um ambiente 100% seguro para tirar dúvidas, formar parcerias milionárias e elevar a sua própria régua.</p>
+                            <p>Dizem que você é a média das pessoas com quem convive. Imagine estar rodeada por
+                                empreendedoras que faturam de R$10k a múltiplos 5 dígitos. Um ambiente 100% seguro para
+                                tirar dúvidas, formar parcerias milionárias e elevar a sua própria régua.</p>
                         </div>
                     </div>
                 </div>
@@ -1480,900 +1791,224 @@ Isso é o que um portfólio bem construído trás: mais dinheiro por atendimento
         </div>
     </section>
 
-    <!-- ═══════════════════════════════════════════════════════════════════
-         DOBRA: ANCORAGEM DE PREÇO (VALOR)
-    ═══════════════════════════════════════════════════════════════════ -->
-    <section class="value-anchor-section">
-        <div class="value-anchor-container">
-            <h2 class="va-title">Quanto você acha justo eu cobrar<br>por <span class="va-highlight">TODO ESSE ACESSO?</span></h2>
-            
-            <p class="va-subtitle">Toda a minha expertise e o meu método trabalhando para você, enquanto você participa de aulas sempre atualizadas e vive um ambiente de alto nível.</p>
-            
-            <p class="va-text-bold">Uma estrutura completa:</p>
+    <!-- ==========================================================
+         DOBRA DE OFERTA - PREMIUM
+    ========================================================== -->
+    <section class="of-section" id="oferta">
 
-            <div class="va-box">
-                <ul class="va-list">
-                    <li><span class="va-check">✔</span> O Método 3P (Pessoa, Processo, Produto) passo a passo</li>
-                    <li><span class="va-check">✔</span> Acesso à Comunidade VIP de Audaciosas</li>
-                    <li><span class="va-check">✔</span> Aulas Constantes de Tendências e Inovações</li>
-                    <li><span class="va-check">✔</span> Processos de Gestão, Vendas e Precificação que colocam dinheiro no seu bolso todos os meses</li>
-                </ul>
-            </div>
-
-            <p class="va-text-highlight">Esse é o ecossistema MAIS COMPLETO que eu já criei na minha vida.</p>
-
-            <p class="va-text-final">Eu recebi muitas mensagens de alunas pedindo para eu cobrar, no mínimo, R$5.000 por esse acesso. E ainda assim eu teria uma FILA GIGANTESCA de pessoas querendo entrar.</p>
+        <!-- URGENCIA COM COUNTDOWN -->
+        <div class="of-urgency-bar">
+            🔥 OFERTA POR TEMPO LIMITADO &mdash; ENCERRA EM:
+            <span class="of-cd">
+                <span id="plDays">00</span>d&nbsp;
+                <span id="plHours">00</span>h&nbsp;
+                <span id="plMinutes">00</span>m&nbsp;
+                <span id="plSeconds">00</span>s
+            </span>
         </div>
-    </section>
 
-
-    <style>
-        /* ═══ VALUE ANCHOR SECTION ═══ */
-        .value-anchor-section {
-            background-color: #060907;
-            color: #FFFFFF;
-            padding: 100px 24px;
-            text-align: center;
-            font-family: 'Montserrat', sans-serif;
-            border-top: 1px solid rgba(212, 160, 23, 0.1);
-        }
-
-        .value-anchor-container {
-            max-width: 800px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .va-title {
-            font-size: clamp(2rem, 4.5vw, 3.2rem);
-            font-weight: 800;
-            line-height: 1.2;
-            margin: 0 0 24px 0;
-            font-family: 'Montserrat', sans-serif;
-            letter-spacing: -0.03em;
-        }
-
-        .va-highlight {
-            color: #1FC95B; /* Verde vibrante igual a referência, ou use var(--gold-bright) se preferir manter o padrão */
-        }
-
-        .va-subtitle {
-            font-size: 1.15rem;
-            color: rgba(255, 255, 255, 0.9);
-            line-height: 1.6;
-            margin: 0 0 40px 0;
-            max-width: 650px;
-        }
-
-        .va-text-bold {
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin: 0 0 20px 0;
-        }
-
-        .va-box {
-            background-color: #101412;
-            border-bottom: 2px solid var(--gold-bright);
-            border-radius: 8px;
-            padding: 40px 50px;
-            width: 100%;
-            max-width: 650px;
-            text-align: left;
-            margin-bottom: 40px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.6);
-        }
-
-        .va-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .va-list li {
-            display: flex;
-            align-items: flex-start;
-            gap: 16px;
-            font-size: 1.05rem;
-            color: rgba(255, 255, 255, 0.95);
-            line-height: 1.5;
-            font-weight: 500;
-        }
-
-        .va-check {
-            color: #111;
-            font-size: 0.8rem;
-            flex-shrink: 0;
-            background: var(--gold-bright);
-            width: 20px;
-            height: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            margin-top: 3px;
-        }
-
-        .va-text-highlight {
-            font-size: 1.3rem;
-            font-weight: 800;
-            margin: 0 0 24px 0;
-        }
-
-        .va-text-final {
-            font-size: 1.05rem;
-            color: rgba(255, 255, 255, 0.75);
-            line-height: 1.6;
-            max-width: 700px;
-            margin: 0;
-        }
-        
-        @media (max-width: 640px) {
-            .va-box {
-                padding: 30px 20px;
-            }
-        }
-
-        /* ═══ VIP ECOSYSTEM SECTION ═══ */
-        .vip-eco-section {
-            background: #09130C; /* Verde escuro hiper luxuoso */
-            padding: 120px 24px;
-            position: relative;
-            overflow: hidden;
-            color: #FFFFFF;
-        }
-
-        .vip-eco-bg-glow {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 80vw;
-            height: 80vw;
-            background: radial-gradient(circle, rgba(212, 160, 23, 0.08) 0%, rgba(9, 19, 12, 0) 60%);
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        .vip-eco-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
-        }
-
-        .vip-eco-header {
-            text-align: center;
-            margin-bottom: 80px;
-        }
-
-        .vip-eco-subtitle {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.8rem;
-            font-weight: 700;
-            letter-spacing: 0.3em;
-            color: var(--gold-bright);
-            text-transform: uppercase;
-            margin-bottom: 20px;
-        }
-
-        .vip-eco-title {
-            font-family: 'Cinzel', serif;
-            font-size: clamp(2.2rem, 5vw, 3.8rem);
-            line-height: 1.15;
-            font-weight: 800;
-            color: #FFFFFF;
-            margin: 0;
-        }
-
-        .vip-eco-title .gold-text {
-            background: linear-gradient(to right, #F5DFA0, #D4A017, #F5DFA0);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-style: italic;
-        }
-
-        .vip-eco-content {
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
-        }
-
-        .vip-eco-item {
-            width: 100%;
-            display: flex;
-        }
-
-        .vip-item-left {
-            justify-content: flex-start;
-        }
-
-        .vip-item-right {
-            justify-content: flex-end;
-        }
-
-        .vip-eco-card {
-            background: rgba(255, 255, 255, 0.02);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border: 1px solid rgba(212, 160, 23, 0.15);
-            border-radius: 20px;
-            padding: 60px;
-            width: 100%;
-            max-width: 850px;
-            display: flex;
-            align-items: center;
-            gap: 50px;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
-            transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1), border-color 0.5s ease;
-        }
-
-        .vip-eco-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(212, 160, 23, 0.4);
-            background: rgba(255, 255, 255, 0.04);
-        }
-
-        .vip-eco-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 100%;
-            background: linear-gradient(to bottom, var(--gold-bright), var(--gold-deep));
-            opacity: 0.5;
-            transition: opacity 0.5s ease;
-        }
-        
-        .vip-eco-card:hover::before {
-            opacity: 1;
-        }
-
-        .vip-eco-num {
-            font-family: 'Cinzel', serif;
-            font-size: 7rem;
-            font-weight: 900;
-            color: transparent;
-            -webkit-text-stroke: 1px rgba(212, 160, 23, 0.3);
-            line-height: 1;
-            flex-shrink: 0;
-            transform: translateY(-10px);
-        }
-
-        .vip-eco-text h3 {
-            font-family: 'Cinzel', serif;
-            font-size: 2.2rem;
-            font-weight: 800;
-            margin: 0 0 20px 0;
-            color: #FFFFFF;
-            line-height: 1.15;
-        }
-
-        .vip-eco-text p {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.05rem;
-            line-height: 1.7;
-            color: rgba(255, 255, 255, 0.7);
-            margin: 0;
-        }
-
-        @media (max-width: 900px) {
-            .vip-eco-card {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 20px;
-                padding: 40px 30px;
-            }
-
-            .vip-eco-num {
-                font-size: 4.5rem;
-                transform: none;
-                margin-bottom: -20px;
-            }
-
-            .vip-eco-text h3 {
-                font-size: 1.8rem;
-                margin-top: 10px;
-            }
-        }
-
-        /* ═══ CSS Reta Final: Oferta, Bônus, Indecisão, FAQ ═══ */
-        .offer-bg {
-            background-color: #FFFFFF;
-            padding: 80px 20px;
-            position: relative;
-        }
-
-        .offer-container {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        /* Box de Entregáveis / Bônus */
-        .stack-box {
-            background: #FFFFFF;
-            border: 1px solid rgba(212, 160, 23, 0.2);
-            border-radius: 24px;
-            padding: 40px;
-            margin-bottom: 40px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-        }
-
-        .stack-title {
-            text-align: center;
-            font-family: 'Cinzel', serif;
-            font-size: 32px;
-            font-weight: 700;
-            color: var(--color-text);
-            margin-bottom: 40px;
-        }
-
-        .stack-item {
-            display: flex;
-            align-items: flex-start;
-            justify-content: space-between;
-            padding: 20px 0;
-            border-bottom: 1px solid rgba(212, 160, 23, 0.15);
-        }
-
-        .stack-item:last-child {
-            border-bottom: none;
-        }
-
-        .stack-item-info {
-            display: flex;
-            gap: 15px;
-            align-items: center;
-        }
-
-        .stack-icon {
-            width: 40px;
-            height: 40px;
-            background: rgba(90, 138, 90, 0.2);
-            color: var(--gold-pale);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 18px;
-        }
-
-        .stack-name {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            color: var(--color-text);
-            font-size: 18px;
-        }
-
-        .stack-desc {
-            font-size: 13px;
-            color: var(--color-text-muted);
-            opacity: 0.8;
-            margin-top: 4px;
-        }
-
-        .stack-price {
-            font-weight: 700;
-            color: var(--gold-pale);
-            font-family: 'Cinzel', serif;
-            font-size: 18px;
-            text-decoration: line-through;
-            opacity: 0.7;
-        }
-
-        /* Acervo Integrado */
-        .acervo-integrado {
-            margin-top: 15px;
-            padding-top: 15px;
-            border-top: 1px dashed rgba(212, 160, 23, 0.2);
-        }
-
-        /* Total e Cartão de Oferta */
-        .total-stack {
-            text-align: center;
-            font-size: 20px;
-            color: var(--color-text);
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 2px solid var(--green-moss);
-        }
-
-        .pricing-card {
-            background: linear-gradient(145deg, #1A3D2B 0%, #2D5E40 100%);
-            border: 1px solid var(--gold-pale);
-            border-radius: 32px;
-            padding: 50px 40px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(212, 160, 23, 0.15);
-        }
-
-        .pricing-badge {
-            position: absolute;
-            top: 25px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: linear-gradient(135deg, var(--gold-pale), var(--yellow-soft));
-            color: #0D1F16;
-            padding: 6px 20px;
-            border-radius: 20px;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 12px;
-            animation: pulse-gold 2s infinite;
-        }
-
-        @keyframes pulse-gold {
-            0% {
-                box-shadow: 0 0 0 0 rgba(245, 223, 160, 0.5);
-            }
-
-            70% {
-                box-shadow: 0 0 0 10px rgba(245, 223, 160, 0);
-            }
-
-            100% {
-                box-shadow: 0 0 0 0 rgba(245, 223, 160, 0);
-            }
-        }
-
-        .pricing-title {
-            color: #FFF;
-            font-family: 'Cinzel', serif;
-            font-size: 42px;
-            font-weight: 700;
-            margin-top: 40px;
-            margin-bottom: 10px;
-        }
-
-        .pricing-subtitle {
-            color: rgba(244, 238, 216, 0.8);
-            font-size: 16px;
-            margin-bottom: 30px;
-        }
-
-        .price-escalation {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 15px;
-            color: rgba(244, 238, 216, 0.5);
-            font-size: 14px;
-            margin-bottom: 20px;
-        }
-
-        .price-escalation span {
-            text-decoration: line-through;
-        }
-
-        .price-value {
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            color: var(--gold-pale);
-            line-height: 1;
-            margin-bottom: 30px;
-        }
-
-        .price-currency {
-            font-size: 24px;
-            font-weight: 700;
-            margin-top: 15px;
-            margin-right: 5px;
-        }
-
-        .price-amount {
-            font-size: 90px;
-            font-family: 'Cinzel', serif;
-            font-weight: 900;
-        }
-
-        .price-cents {
-            font-size: 24px;
-            font-weight: 700;
-            margin-top: 15px;
-        }
-
-        .price-period {
-            font-size: 16px;
-            color: rgba(244, 238, 216, 0.6);
-            align-self: flex-end;
-            margin-bottom: 20px;
-            margin-left: 5px;
-        }
-
-        .cta-gold-btn {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--gold-pale) 0%, var(--gold-bright) 50%, var(--gold-deep) 100%);
-            color: #0D1F16;
-            text-decoration: none;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 20px;
-            font-weight: 800;
-            padding: 20px 50px;
-            border-radius: 50px;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            transition: transform 0.3s, box-shadow 0.3s;
-            box-shadow: 0 10px 30px rgba(212, 160, 23, 0.35);
-            width: 100%;
-            max-width: 400px;
-        }
-
-        .cta-gold-btn:hover {
-            transform: translateY(-5px) scale(1.02);
-            box-shadow: 0 15px 40px rgba(245, 223, 160, 0.5);
-        }
-
-        .guarantee-info {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            color: rgba(244, 238, 216, 0.7);
-            margin-top: 20px;
-            font-size: 14px;
-        }
-
-        /* Indecisão */
-        .cost-of-inaction {
-            background-color: #F5DFA0;
-            color: var(--color-text);
-            padding: 80px 20px;
-            border-top: 1px solid rgba(212, 160, 23, 0.15);
-        }
-
-        .coi-title {
-            text-align: center;
-            color: var(--color-text);
-            font-size: 28px;
-            font-family: 'Cinzel', serif;
-            font-weight: 700;
-            margin-bottom: 40px;
-        }
-
-        .coi-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 30px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .coi-card {
-            background: #FFFFFF;
-            border-left: 4px solid var(--green-moss);
-            border-top: 1px solid rgba(212, 160, 23, 0.15);
-            border-right: 1px solid rgba(212, 160, 23, 0.15);
-            border-bottom: 1px solid rgba(212, 160, 23, 0.15);
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-
-        .coi-card h4 {
-            color: var(--gold-deep);
-            font-family: 'Cinzel', serif;
-            font-size: 18px;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-
-        .coi-card p {
-            color: var(--color-text-muted);
-            font-size: 14px;
-            line-height: 1.6;
-        }
-
-        /* FAQ */
-        .faq-section {
-            background: #FFFFFF;
-            padding: 80px 20px;
-            border-top: 1px solid rgba(212, 160, 23, 0.15);
-        }
-
-        .faq-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .faq-title {
-            text-align: center;
-            font-size: 36px;
-            font-family: 'Cinzel', serif;
-            font-weight: 700;
-            color: var(--color-text);
-            margin-bottom: 40px;
-        }
-
-        .faq-item {
-            background: #FFFFFF;
-            border: 1px solid rgba(212, 160, 23, 0.2);
-            margin-bottom: 15px;
-            border-radius: 12px;
-            overflow: hidden;
-            transition: all 0.3s;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
-        }
-
-        .faq-question {
-            padding: 20px 25px;
-            font-weight: 700;
-            color: var(--color-text);
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            user-select: none;
-        }
-
-        .faq-answer {
-            padding: 0 25px;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out, padding 0.3s;
-            color: var(--color-text-muted);
-            font-size: 15px;
-            line-height: 1.6;
-        }
-
-        .faq-item.active .faq-answer {
-            padding: 0 25px 25px 25px;
-            max-height: 300px;
-        }
-
-        .faq-icon {
-            transition: transform 0.3s;
-            color: var(--gold-pale);
-            font-size: 24px;
-            line-height: 1;
-        }
-
-        .faq-item.active .faq-icon {
-            transform: rotate(45deg);
-        }
-
-        @media (max-width: 768px) {
-            .coi-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .pricing-card {
-                padding: 40px 20px;
-            }
-
-            .price-amount {
-                font-size: 70px;
-            }
-
-            .stack-item {
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            .stack-price {
-                align-self: flex-start;
-                padding-left: 55px;
-            }
-        }
-    </style>
-
-    <!-- ═══════════════════════════════════════════════════════════════════
-         DOBRA 4: OFERTA, VALUE STACKING E BÔNUS
-    ═══════════════════════════════════════════════════════════════════ -->
-    <section class="offer-bg" id="oferta">
-        <div class="offer-container">
-
-            <div class="stack-box">
-                <h2 class="stack-title">Tudo o que você leva aderindo hoje:</h2>
-
-                <div class="stack-item">
-                    <div class="stack-item-info">
-                        <div class="stack-icon">👑</div>
-                        <div>
-                            <div class="stack-name">Acesso Imediato ao Golden Club Digital</div>
-                            <div class="stack-desc">A comunidade exclusiva de empresárias do bronze. Mentorias,
-                                direcionamento e networking focado em resultados.</div>
+        <div class="of-wrap">
+
+            <!-- TITULO DE CONTEXTO -->
+            <h2 class="of-context-title">
+                Você vai levar todo esse conhecimento<br>
+                por um valor <em>RIDÍCULO</em>
+            </h2>
+            <p class="of-context-sub">
+                a não ser que você prefira continuar pagando caro por resultados mediocres
+            </p>
+
+            <!-- CARD PRINCIPAL -->
+            <div class="of-card">
+
+                <!-- CABECALHO: Capa no Topo + Infos -->
+                <div class="of-card-head">
+                    <div class="of-card-cover">
+                        <img src="imagem/gcd-capa16.9.png" alt="Golden Club Digital">
+                    </div>
+                    <div class="of-card-head-body">
+                        <span class="of-badge">❖ Condição de Fundadora ❖</span>
+                        <p class="of-product-desc">
+                            O ecossistema completo para você aplicar, ver resultados reais e
+                            dominar o mercado de bronzeamento sem depender de promoções.
+                        </p>
+                        <div class="of-old-price-box">
+                            <span class="of-old-price-label">Valor separado no mercado:</span>
+                            <span class="of-old-price-val">R$ 10.370,00</span>
                         </div>
                     </div>
-                    <div class="stack-price">R$ 997,00</div>
                 </div>
 
-                <div class="stack-item" style="flex-direction: column; align-items: stretch;">
-                    <div style="display: flex; justify-content: space-between; align-items: flex-start; width: 100%;">
-                        <div class="stack-item-info">
-                            <div class="stack-icon">📚</div>
-                            <div>
-                                <div class="stack-name">Acervo Completo (Cursos & Gravações)</div>
-                                <div class="stack-desc">Acesso liberado a toda a nossa biblioteca de gestão,
-                                    posicionamento e escala para o seu negócio.</div>
+                <!-- BONUS -->
+                <div class="of-bonuses">
+                    <div class="of-bonuses-title">🎁 Tudo incluído no seu plano hoje</div>
+                    <div class="of-bonus-grid">
+
+                        <div class="of-bonus-card">
+                            <span class="of-bonus-card-icon">📚</span>
+                            <div class="of-bonus-card-name">Método 3P Completo</div>
+                            <div class="of-bonus-card-desc">Passo a passo para construir, precificar e escalar seu negócio do zero à lotação da agenda.</div>
+                            <div class="of-bonus-card-val">
+                                <span class="strike">R$ 1.497,00</span>
+                                <span class="free-tag">GRÁTIS</span>
                             </div>
                         </div>
-                        <div class="stack-price">R$ 497,00</div>
-                    </div>
 
-                    <div class="acervo-integrado">
-                        <div class="courses-grid"
-                            style="grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 10px; margin-top: 0;">
-                            <div class="course-thumb" style="border-radius: 8px;"><img src="imagem/cursos/1.png"
-                                    alt="Capa Curso 1"></div>
-                            <div class="course-thumb" style="border-radius: 8px;"><img src="imagem/cursos/2.jpeg"
-                                    alt="Capa Curso 2"></div>
-                            <div class="course-thumb" style="border-radius: 8px;"><img src="imagem/cursos/3.png"
-                                    alt="Capa Curso 3"></div>
-                            <div class="course-thumb" style="border-radius: 8px;"><img src="imagem/cursos/4.png"
-                                    alt="Capa Curso 4"></div>
-                            <div class="course-thumb" style="border-radius: 8px;"><img src="imagem/cursos/5.png"
-                                    alt="Capa Curso 5"></div>
-                            <div class="course-thumb" style="border-radius: 8px;"><img src="imagem/cursos/6.png"
-                                    alt="Capa Curso 6"></div>
-                            <div class="course-thumb" style="border-radius: 8px;"><img src="imagem/cursos/7.png"
-                                    alt="Capa Curso 7"></div>
-                            <div class="course-thumb" style="border-radius: 8px;"><img src="imagem/cursos/8.png"
-                                    alt="Capa Curso 8"></div>
+                        <div class="of-bonus-card">
+                            <span class="of-bonus-card-icon">👑</span>
+                            <div class="of-bonus-card-name">Comunidade VIP das Audaciosas</div>
+                            <div class="of-bonus-card-desc">Ambiente fechado de alta performance com mentoras e alunas que faturam múltiplos 5 dígitos.</div>
+                            <div class="of-bonus-card-val">
+                                <span class="strike">R$ 997,00</span>
+                                <span class="free-tag">GRÁTIS</span>
+                            </div>
                         </div>
+
+                        <div class="of-bonus-card">
+                            <span class="of-bonus-card-icon">📡</span>
+                            <div class="of-bonus-card-name">Aulas Semanais &amp; Gestão</div>
+                            <div class="of-bonus-card-desc">Material constante sobre tendências do mercado e templates prontos para fechar mais clientes.</div>
+                            <div class="of-bonus-card-val">
+                                <span class="strike">R$ 2.691,00</span>
+                                <span class="free-tag">GRÁTIS</span>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 
-                <div class="stack-item">
-                    <div class="stack-item-info">
-                        <div class="stack-icon">🎁</div>
+                <!-- CHECKOUT -->
+                <div class="of-checkout">
+
+                    <!-- Resumo / Ancoragem -->
+                    <div class="of-summary">
+                        <div class="of-summary-title">Resumo do seu pedido</div>
+
+                        <div class="of-summary-row">
+                            <span>Golden Club Digital</span>
+                            <span class="of-sval">R$ 5.185,00</span>
+                        </div>
+                        <div class="of-summary-row">
+                            <span>Bônus: Método 3P</span>
+                            <span class="of-sval">R$ 1.497,00</span>
+                        </div>
+                        <div class="of-summary-row">
+                            <span>Bônus: Comunidade VIP</span>
+                            <span class="of-sval">R$ 997,00</span>
+                        </div>
+                        <div class="of-summary-row">
+                            <span>Bônus: Aulas Semanais</span>
+                            <span class="of-sval">R$ 2.691,00</span>
+                        </div>
+
+                        <div class="of-summary-divider"></div>
+
+                        <div class="of-summary-total">
+                            <span>Total se comprado separado</span>
+                            <span>R$ 10.370,00</span>
+                        </div>
+
+                        <div class="of-economy-tag">
+                            💚 Você economiza mais de R$ 9.691,00 hoje
+                        </div>
+                    </div>
+
+                    <!-- CTA + Preco -->
+                    <div class="of-cta-col">
                         <div>
-                            <div class="stack-name">Bônus Especial: Método X1®</div>
-                            <div class="stack-desc">O protocolo mestre para entregar um bronze perfeito usando apenas 1
-                                produto, maximizando o lucro de cada cliente.</div>
+                            <div class="of-price-label">Por apenas &mdash; Plano Anual</div>
+                            <div class="of-price-display">
+                                <span class="cur">R$</span>
+                                <span class="val">67</span>
+                                <span class="cts">,90</span>
+                            </div>
+                            <div class="of-price-note">por mês &bull; ou R$ 679,00 à vista por 1 ano</div>
+                        </div>
+
+                        <a href="#" class="of-cta-btn">
+                            QUERO GARANTIR MINHA VAGA
+                            <span class="of-cta-sub">Compra 100% Segura &bull; Acesso Imediato</span>
+                        </a>
+
+                        <div class="of-payments">
+                            <span class="of-pay-item">VISA</span>
+                            <span class="of-pay-item">MASTERCARD</span>
+                            <span class="of-pay-item">PIX</span>
+                            <span class="of-pay-item">BOLETO</span>
+                        </div>
+
+                        <div class="of-guarantee">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            <p><strong>Risco zero!</strong> Garantia incondicional de 7 dias. Se não gostar, devolvemos 100% do seu dinheiro sem perguntas.</p>
                         </div>
                     </div>
-                    <div class="stack-price">R$ 297,00</div>
+
                 </div>
-
-                <div class="stack-item">
-                    <div class="stack-item-info">
-                        <div class="stack-icon">💬</div>
-                        <div>
-                            <div class="stack-name">Bônus Especial: Scripts de Vendas Magnéticos</div>
-                            <div class="stack-desc">Modelos validados de persuasão para usar no WhatsApp e Direct,
-                                eliminando a objeção de "está caro".</div>
-                        </div>
-                    </div>
-                    <div class="stack-price">R$ 147,00</div>
-                </div>
-
-                <div class="stack-item">
-                    <div class="stack-item-info">
-                        <div class="stack-icon">📅</div>
-                        <div>
-                            <div class="stack-name">Bônus Especial: Planner da Empresária do Bronze</div>
-                            <div class="stack-desc">Ferramenta organizada para estruturar sua rotina, controle logístico
-                                e metas de faturamento 3x.</div>
-                        </div>
-                    </div>
-                    <div class="stack-price">R$ 97,00</div>
-                </div>
-
-                <div class="total-stack">
-                    Valor Total se comprado separadamente: <strong
-                        style="text-decoration: line-through; opacity: 0.6; margin-left: 10px;">R$ 2.035,00</strong>
-                </div>
-            </div>
-
-            <!-- Cartão Super Oferta -->
-            <div class="pricing-card">
-                <div class="pricing-badge">🔥 Lote de Fundação (Aberto)</div>
-                <h3 class="pricing-title">Golden Club Digital</h3>
-                <p class="pricing-subtitle">Seu passe garantido para a comunidade, todo o acervo e todos os bônus.</p>
-
-                <div class="price-escalation">
-                    <span>Lote 3: R$ 127/mês</span>
-                    <span>Lote 2: R$ 97/mês</span>
-                    <span style="color: var(--gold-pale); text-decoration: none; font-weight: bold;">Lote Atual</span>
-                </div>
-
-                <div class="price-value">
-                    <div class="price-currency">R$</div>
-                    <div class="price-amount">79</div>
-                    <div class="price-cents">,90</div>
-                    <div class="price-period">/mês*</div>
-                </div>
-
-                <a href="#" class="cta-gold-btn">
-                    Garantir Meu Acesso
-                </a>
-
-                <div class="guarantee-info">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                    </svg>
-                    <span>Garantia Incondicional de 7 Dias. Risco Zero.</span>
-                </div>
-                <p style="color: rgba(244, 238, 216, 0.4); font-size: 11px; margin-top: 15px;">*Valor referente ao plano
-                    anual parcelado no cartão. Sujeito a alteração de lote a qualquer momento.</p>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════════════════════════════
-         DOBRA 5: PREÇO DA INDECISÃO
-    ═══════════════════════════════════════════════════════════════════ -->
-    <section class="cost-of-inaction">
-        <h2 class="coi-title">🚨 Qual é o verdadeiro preço de deixar para depois?</h2>
-        <div class="coi-grid">
-            <div class="coi-card">
-                <h4>Estagnação de Faturamento</h4>
-                <p>Enquanto você hesita esperando o 'momento certo', concorrentes da sua região estão aplicando nossa
-                    metodologia, aumentando seus preços com propriedade e lotando a agenda sem fazer promoções.</p>
-            </div>
-            <div class="coi-card">
-                <h4>Desgaste Físico Constante</h4>
-                <p>A consequência de não profissionalizar a gestão é continuar atendendo de sol a sol, se matando de
-                    trabalhar por quantias mínimas, sofrendo de exaustão sem desfrutar dos lucros.</p>
-            </div>
-            <div class="coi-card">
-                <h4>Solidão na Jornada</h4>
-                <p>Tentar descobrir o caminho das vendas complexas sozinha é cruel. Você permanecerá patinando nos
-                    mesmos erros de marketing e precificação que já foram resolvidos pelas mentoras do Golden Club.</p>
             </div>
         </div>
     </section>
 
-    <!-- ═══════════════════════════════════════════════════════════════════
-         DOBRA 6: FAQ
-    ═══════════════════════════════════════════════════════════════════ -->
+    <!-- ==========================================================
+         CUSTO DA INACAO
+    ========================================================== -->
+    <section class="coi-section">
+        <div class="coi-inner">
+            <h2 class="coi-section-title">🚨 O Verdadeiro Preço da Indecisão</h2>
+            <p class="coi-section-sub">Cada dia que passa sem agir tem um custo invisível</p>
+            <div class="coi-grid">
+                <div class="coi-card">
+                    <span class="coi-card-icon">📉</span>
+                    <h4>Estagnação de Faturamento</h4>
+                    <p>Enquanto você hesita, concorrentes da sua região estão aplicando nossa metodologia, aumentando preços com propriedade e lotando a agenda sem fazer promoções.</p>
+                </div>
+                <div class="coi-card">
+                    <span class="coi-card-icon">😣</span>
+                    <h4>Desgaste Físico Constante</h4>
+                    <p>Não profissionalizar a gestão é continuar atendendo de sol a sol, trabalhando por quantias mínimas, sofrendo de exaustão sem desfrutar dos lucros.</p>
+                </div>
+                <div class="coi-card">
+                    <span class="coi-card-icon">🧭</span>
+                    <h4>Solidão na Jornada</h4>
+                    <p>Tentar descobrir o caminho sozinha é cruel. Você permanecerá patinando nos mesmos erros que as mentoras do Golden Club já resolveram.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================
+         FAQ
+    ========================================================== -->
     <section class="faq-section">
         <div class="faq-container">
             <h2 class="faq-title">Perguntas Frequentes</h2>
 
             <div class="faq-item">
                 <div class="faq-question">Como funciona o acesso ao Golden Club? <span class="faq-icon">+</span></div>
-                <div class="faq-answer">Assim que sua inscrição for aprovada, você receberá um e-mail com seus dados de
-                    login exclusivos para a nossa plataforma privada. Lá, você terá liberação imediata ao Acervo de
-                    Cursos, aos Bônus (incluindo o Método X1) e o passe de entrada para iniciar na Comunidade.</div>
+                <div class="faq-answer">Assim que sua inscrição for aprovada, você receberá um e-mail com seus dados de login exclusivos para a nossa plataforma privada. Lá, você terá liberação imediata ao Acervo de Cursos, aos Bônus e o passe de entrada para iniciar na Comunidade.</div>
             </div>
 
             <div class="faq-item">
-                <div class="faq-question">Existe alguma taxa de fidelidade ou multa? <span class="faq-icon">+</span>
-                </div>
-                <div class="faq-answer">A assinatura do Golden Club tem vigência anual, focada no seu desenvolvimento de
-                    médio e longo prazo. Você paga pelo plano equivalente a 12 meses, garantindo suporte e evolução
-                    contínua ao seu negócio, sem cobranças "surpresas" mensais variáveis.</div>
+                <div class="faq-question">Existe alguma taxa de fidelidade ou multa? <span class="faq-icon">+</span></div>
+                <div class="faq-answer">A assinatura do Golden Club no plano anual garante seu acesso e preço travado por 12 meses, focada no seu desenvolvimento de médio e longo prazo, sem cobranças "surpresas". O plano mensal pode ser cancelado quando desejar.</div>
             </div>
 
             <div class="faq-item">
-                <div class="faq-question">O bônus do Método X1® já está incluso? <span class="faq-icon">+</span></div>
-                <div class="faq-answer">Com toda certeza! Ao garantir o seu ingresso no lote atual de Fundadores, o
-                    acesso às metodologias do Método X1 é destravado instantaneamente, ensinando como operar de forma
-                    limpa e maximizar a lucratividade no mesmo instante em que logar.</div>
+                <div class="faq-question">Sou iniciante, o clube serve para mim? <span class="faq-icon">+</span></div>
+                <div class="faq-answer">Com toda certeza! Ao garantir o seu ingresso, você já começa com os processos, roteiros e mentalidade corretos, economizando anos de erros que a maioria das bronzeadoras comete ao abrir seus espaços.</div>
             </div>
 
             <div class="faq-item">
-                <div class="faq-question">Como acontecem as orientações e mentorias? <span class="faq-icon">+</span>
-                </div>
-                <div class="faq-answer">Os encontros da comunidade acontecem de forma fechada. Nesses encontros,
-                    debatemos estratégias, analisamos gargalos das membras e fornecemos direcionamento estratégico. Tudo
-                    fica gravado e é adicionado à biblioteca do Acervo caso você não possa participar ao vivo.</div>
+                <div class="faq-question">Como acontecem as orientações e mentorias? <span class="faq-icon">+</span></div>
+                <div class="faq-answer">Os encontros da comunidade acontecem de forma fechada. Nesses encontros, debatemos estratégias, analisamos gargalos das membras e fornecemos direcionamento estratégico. Tudo fica gravado e é adicionado à biblioteca.</div>
             </div>
-
         </div>
     </section>
 
-
-
-
+    <!-- ═══════════════════════════════════════════════════════════════════
+         SCRIPTS
+    ═══════════════════════════════════════════════════════════════════ -->
     <script>
-        // Animates elements on scroll
+        // Animations on scroll
         document.addEventListener('DOMContentLoaded', () => {
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach((entry) => {
@@ -2384,37 +2019,12 @@ Isso é o que um portfólio bem construído trás: mais dinheiro por atendimento
                 });
             }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
-            const cards = document.querySelectorAll('.benefit-card, .qz-item, .coi-card, .course-thumb, .met-info-box, .stack-box, .faq-item');
+            const cards = document.querySelectorAll('.benefit-card, .qz-item, .coi-card, .of-bonus-card, .uo-offer-box, .faq-item');
             cards.forEach((card) => observer.observe(card));
         });
 
-        // FAQ Toggle Logic
-        document.querySelectorAll('.faq-question').forEach(button => {
-            button.addEventListener('click', () => {
-                const faqItem = button.parentElement;
-
-                // Close other open items
-                document.querySelectorAll('.faq-item.active').forEach(openItem => {
-                    if (openItem !== faqItem) {
-                        openItem.classList.remove('active');
-                        openItem.querySelector('.faq-icon').textContent = '+';
-                    }
-                });
-
-                faqItem.classList.toggle('active');
-                const icon = button.querySelector('.faq-icon');
-                if (faqItem.classList.contains('active')) {
-                    icon.style.transform = 'rotate(45deg)';
-                } else {
-                    icon.style.transform = 'rotate(0deg)';
-                }
-            });
-        });
-    </script>
-
-    <!-- Carrossel de Depoimentos: Auto-slide com pausa ao toque -->
-    <script>
-        (function() {
+        // Carrossel de Depoimentos
+        (function () {
             const track = document.getElementById('spTrack');
             const dotsContainer = document.getElementById('spDots');
             const carousel = document.getElementById('spCarousel');
@@ -2425,10 +2035,9 @@ Isso é o que um portfólio bem construído trás: mais dinheiro por atendimento
             let current = 0;
             let interval = null;
             let resumeTimeout = null;
-            const DELAY = 4000; // 4 seconds per slide
-            const RESUME_DELAY = 5000; // Resume after 5s of no interaction
+            const DELAY = 4000;
+            const RESUME_DELAY = 5000;
 
-            // Create dots
             slides.forEach((_, i) => {
                 const dot = document.createElement('button');
                 dot.classList.add('sp-dot');
@@ -2439,10 +2048,7 @@ Isso é o que um portfólio bem construído trás: mais dinheiro por atendimento
 
             function goTo(index) {
                 current = index % total;
-                
-                // Pega a largura do slide + gap (20px) para fazer a transição exata em px
-                const slideWidth = slides[0].offsetWidth + 20; 
-                
+                const slideWidth = slides[0].offsetWidth + 20;
                 track.style.transform = `translateX(-${current * slideWidth}px)`;
                 dotsContainer.querySelectorAll('.sp-dot').forEach((d, i) => {
                     d.classList.toggle('active', i === current);
@@ -2450,32 +2056,22 @@ Isso é o que um portfólio bem construído trás: mais dinheiro por atendimento
             }
 
             function next() { goTo(current + 1); }
-
-            function startAutoplay() {
-                stopAutoplay();
-                interval = setInterval(next, DELAY);
-            }
-
-            function stopAutoplay() {
-                if (interval) { clearInterval(interval); interval = null; }
-            }
-
+            function startAutoplay() { stopAutoplay(); interval = setInterval(next, DELAY); }
+            function stopAutoplay() { if (interval) { clearInterval(interval); interval = null; } }
             function pauseAndResume() {
                 stopAutoplay();
                 if (resumeTimeout) clearTimeout(resumeTimeout);
                 resumeTimeout = setTimeout(startAutoplay, RESUME_DELAY);
             }
 
-            // Pause on hover (desktop)
             carousel.addEventListener('mouseenter', pauseAndResume);
-            // Pause on touch (mobile)
             carousel.addEventListener('touchstart', pauseAndResume, { passive: true });
 
-            // Swipe support for mobile
             let touchStartX = 0;
             carousel.addEventListener('touchstart', (e) => {
                 touchStartX = e.changedTouches[0].screenX;
             }, { passive: true });
+            
             carousel.addEventListener('touchend', (e) => {
                 const diff = e.changedTouches[0].screenX - touchStartX;
                 if (Math.abs(diff) > 50) {
@@ -2487,7 +2083,96 @@ Isso é o que um portfólio bem construído trás: mais dinheiro por atendimento
 
             startAutoplay();
         })();
+
+        // Cronômetro da Oferta Final (3 Dias persistidos)
+        (function () {
+            var KEY = 'gcd_launch_deadline_v2';
+            var stored = localStorage.getItem(KEY);
+            var deadline;
+            
+            if (stored) {
+                deadline = parseInt(stored, 10);
+            } else {
+                deadline = Date.now() + 3 * 24 * 60 * 60 * 1000;
+                localStorage.setItem(KEY, deadline);
+            }
+
+            function pad(n) { return n < 10 ? '0' + n : '' + n; }
+
+            function tick() {
+                var diff = deadline - Date.now();
+                if (diff <= 0) {
+                    var el = document.getElementById('plCountdown');
+                    if (el) el.innerHTML = "<p style='color:var(--gold-bright); font-family:Montserrat; font-weight:900; font-size:1.5rem; letter-spacing:0.1em; text-transform:uppercase;'>OFERTA ENCERRADA</p>";
+                    return;
+                }
+                
+                var els = {
+                    plDays: Math.floor(diff / 86400000),
+                    plHours: Math.floor((diff % 86400000) / 3600000),
+                    plMinutes: Math.floor((diff % 3600000) / 60000),
+                    plSeconds: Math.floor((diff % 60000) / 1000)
+                };
+                
+                Object.keys(els).forEach(function (id) {
+                    var el = document.getElementById(id);
+                    if (el) el.textContent = pad(els[id]);
+                });
+            }
+
+            tick();
+            setInterval(tick, 1000);
+        })();
+
+        // Contador animado no Hero (+700 alunas em < 3s)
+        (function () {
+            const counterEl = document.getElementById('heroStudentsCounter');
+            if (!counterEl) return;
+            const target = 700;
+            const duration = 2200; // 2.2s
+            let started = false;
+
+            function animateCounter() {
+                let startTime = null;
+                function step(timestamp) {
+                    if (!startTime) startTime = timestamp;
+                    const progress = Math.min((timestamp - startTime) / duration, 1);
+                    const easeProgress = 1 - Math.pow(1 - progress, 3);
+                    const current = Math.floor(easeProgress * target);
+                    counterEl.textContent = current.toLocaleString('pt-BR');
+                    if (progress < 1) {
+                        requestAnimationFrame(step);
+                    } else {
+                        counterEl.textContent = '700';
+                    }
+                }
+                requestAnimationFrame(step);
+            }
+
+            const observer = new IntersectionObserver((entries) => {
+                if (entries[0].isIntersecting && !started) {
+                    started = true;
+                    animateCounter();
+                }
+            }, { threshold: 0.2 });
+
+            observer.observe(counterEl);
+        })();
+
+        // FAQ Collapse Action
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+
+                document.querySelectorAll('.faq-item.active').forEach(openItem => {
+                    if (openItem !== faqItem) {
+                        openItem.classList.remove('active');
+                    }
+                });
+
+                faqItem.classList.toggle('active');
+            });
+        });
     </script>
 </body>
-
 </html>
