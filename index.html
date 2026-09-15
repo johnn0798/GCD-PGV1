@@ -2718,8 +2718,9 @@
         .hero-top-img { width: 100%; max-width: none; height: auto; object-fit: contain; }
         .hero-gradient-overlay { background: linear-gradient(to top, var(--color-bg) 0%, rgba(244,238,216,.68) 17%, rgba(244,238,216,0) 48%); }
         .hero-text-block { max-width: 980px; padding: 28px 24px 54px; gap: 20px; }
-        .hero-title { font-family: 'Montserrat', sans-serif !important; font-weight: 800; letter-spacing: -.035em; line-height: 1.08; text-wrap: balance; }
-        .hero-title-highlight { color: #E6C35C !important; -webkit-text-fill-color: #E6C35C !important; background: none !important; text-shadow: 0 1px 0 rgba(155,116,16,.12); }
+        .hero-title { font-family: 'Montserrat', sans-serif !important; font-size: clamp(1.55rem, 4.5vw, 3.2rem); font-weight: 800; letter-spacing: -.035em; line-height: 1.08; text-wrap: balance; }
+        .hero-line { display: block; white-space: nowrap; }
+        .hero-title-highlight { background: linear-gradient(110deg, #8F6819 0%, #B58A2A 28%, #E1C16A 52%, #A8781F 78%, #7B5713 100%) !important; background-size: 180% auto !important; -webkit-background-clip: text !important; background-clip: text !important; -webkit-text-fill-color: transparent !important; color: #A8781F !important; text-shadow: none; }
         .hero-subtitle { max-width: 640px; color: var(--color-text-muted); line-height: 1.55; }
         .hero-subtitle .luxury-italic { color: var(--gold-deep); }
         .cta-note { max-width: 520px; color: var(--color-text-muted); font-size: .78rem; line-height: 1.45; }
@@ -2728,7 +2729,7 @@
         @media (max-width: 767px) {
             .hero-top-img { min-height: 0; }
             .hero-text-block { padding: 22px 18px 42px; gap: 16px; }
-            .hero-title { font-size: clamp(2rem, 9vw, 3rem); }
+            .hero-title { font-size: clamp(1.25rem, 5.25vw, 1.8rem); letter-spacing: -.045em; }
             .hero-subtitle { font-size: .98rem; }
         }
 
@@ -2752,8 +2753,8 @@
         <div class="hero-text-block">
 
             <h1 class="hero-title">
-                Vamos juntas construir <span class="hero-title-highlight gold-shimmer">os melhores 12 meses</span> da
-                sua vida
+                <span class="hero-line">Vamos juntas construir</span>
+                <span class="hero-line"><span class="hero-title-highlight gold-shimmer">os melhores 12 meses</span> da sua vida</span>
             </h1>
             <h2 class="hero-subtitle">
                 Você é minha convidada para participar da maior plataforma do brasil de
