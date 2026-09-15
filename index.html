@@ -283,18 +283,18 @@
         }
 
         .hero-subtitle {
-            color: var(--color-text-muted);
+            color: var(--color-text);
             font-family: 'Montserrat', sans-serif;
             font-size: 1.125rem;
             max-width: 680px;
             margin: 0;
             line-height: 1.7;
-            font-weight: 400;
+            font-weight: 500;
         }
 
         .hero-subtitle strong {
             color: var(--color-text);
-            font-weight: 700;
+            font-weight: 800;
         }
 
         @media (min-width: 768px) {
@@ -1979,27 +1979,30 @@
         /* ── TÍTULO CONTEXTO ── */
         .of-context-title {
             text-align: center;
-            font-family: 'Playfair Display', Georgia, serif;
+            font-family: 'Cinzel', serif;
             font-size: clamp(1.8rem, 4vw, 2.8rem);
-            font-weight: 700;
+            font-weight: 800;
             line-height: 1.3;
-            color: #1A3D2B;
+            color: var(--color-text);
             margin-bottom: 12px;
         }
 
         .of-context-title em {
-            font-style: normal;
+            font-style: italic;
             background: linear-gradient(135deg, #B8860B, #D4A017, #F0C040);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            font-weight: 900;
+            padding: 0 4px;
         }
 
         .of-context-sub {
             text-align: center;
-            font-size: 0.82rem;
-            color: rgba(26, 61, 43, 0.55);
-            letter-spacing: 0.2em;
+            font-size: 0.95rem;
+            color: var(--color-text-muted);
+            font-weight: 600;
+            letter-spacing: 0.05em;
             text-transform: uppercase;
             margin-bottom: 56px;
         }
@@ -2186,123 +2189,164 @@
             border-radius: 10px;
         }
 
-        /* ── CHECKOUT ── */
-        .of-checkout {
+        /* ── PLANOS / PREÇOS ── */
+        .of-plans {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr 1.15fr;
+            gap: 24px;
+            padding: 40px;
+            background: linear-gradient(160deg, #f0ebd8 0%, #e6f0e3 100%);
+            align-items: center;
         }
 
-        .of-summary {
-            padding: 40px 48px;
-            border-right: 1px solid rgba(212, 160, 23, 0.15);
+        .of-plan-card {
             background: #fff;
-        }
-
-        .of-summary-title {
-            font-size: 0.7rem;
-            font-weight: 700;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: rgba(26, 61, 43, 0.4);
-            margin-bottom: 22px;
-        }
-
-        .of-summary-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 0;
-            border-bottom: 1px solid rgba(26, 61, 43, 0.05);
-            font-size: 0.86rem;
-            color: rgba(26, 61, 43, 0.7);
-        }
-
-        .of-sval {
-            color: rgba(26, 61, 43, 0.3) !important;
-            text-decoration: line-through;
-            font-size: 0.8rem;
-        }
-
-        .of-summary-divider {
-            height: 1px;
-            background: linear-gradient(90deg, rgba(212, 160, 23, 0.4), transparent);
-            margin: 16px 0;
-        }
-
-        .of-summary-total {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-weight: 700;
-            font-size: 0.95rem;
-            color: #1A3D2B;
-        }
-
-        .of-economy-tag {
-            margin-top: 16px;
-            background: rgba(45, 94, 64, 0.08);
-            border: 1px solid rgba(45, 94, 64, 0.2);
-            color: #2D5E40;
-            font-size: 0.8rem;
-            font-weight: 700;
-            padding: 12px 16px;
-            border-radius: 10px;
-            text-align: center;
-        }
-
-        /* ── CTA COLUNA ── */
-        .of-cta-col {
-            padding: 40px 48px;
+            border-radius: 16px;
+            padding: 40px 32px;
+            border: 1px solid rgba(212, 160, 23, 0.2);
             display: flex;
             flex-direction: column;
             gap: 20px;
-            background: linear-gradient(160deg, #f0ebd8 0%, #e6f0e3 100%);
-            justify-content: center;
+            box-shadow: 0 4px 15px rgba(26, 61, 43, 0.05);
+            transition: all 0.3s ease;
         }
 
-        .of-price-label {
-            font-size: 0.7rem;
-            font-weight: 700;
+        .of-plan-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(26, 61, 43, 0.1);
+        }
+
+        .of-plan-card-featured {
+            background: linear-gradient(145deg, #1A3D2B 0%, #0F2A1C 100%);
+            border: 2px solid #D4A017;
+            color: #fff;
+            transform: scale(1.03);
+            position: relative;
+            box-shadow: 0 15px 35px rgba(26, 61, 43, 0.2);
+        }
+
+        .of-plan-card-featured:hover {
+            transform: scale(1.02) translateY(-3px);
+            box-shadow: 0 20px 40px rgba(26, 61, 43, 0.3);
+        }
+
+        .of-plan-badge {
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(90deg, #F0C040, #D4A017, #B8860B);
+            background-size: 200% auto;
+            color: #09130C;
+            font-size: 0.75rem;
+            font-weight: 900;
+            letter-spacing: 0.15em;
             text-transform: uppercase;
-            letter-spacing: 0.2em;
-            color: rgba(26, 61, 43, 0.45);
-            margin-bottom: 6px;
+            padding: 6px 20px;
+            border-radius: 20px;
+            white-space: nowrap;
+            box-shadow: 0 4px 10px rgba(212, 160, 23, 0.3);
+            animation: goldShimmer 3s linear infinite;
+        }
+
+        .of-plan-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.4rem;
+            font-weight: 800;
+            text-align: center;
+        }
+
+        .of-plan-card-featured .of-plan-title {
+            color: #F5DFA0;
+            margin-top: 8px;
+        }
+
+        .of-plan-desc {
+            font-size: 0.9rem;
+            text-align: center;
+            color: var(--color-text-muted);
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .of-plan-card-featured .of-plan-desc {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .of-plan-price-box {
+            text-align: center;
+            margin: 10px 0;
         }
 
         .of-price-display {
             display: flex;
             align-items: flex-start;
+            justify-content: center;
             gap: 2px;
             line-height: 1;
             margin-bottom: 4px;
         }
 
         .of-price-display .cur {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             font-weight: 700;
+            padding-top: 8px;
+        }
+
+        .of-plan-card:not(.of-plan-card-featured) .of-price-display .cur {
             color: #B8860B;
-            padding-top: 12px;
+        }
+
+        .of-plan-card-featured .of-price-display .cur {
+            color: #F0C040;
         }
 
         .of-price-display .val {
-            font-size: 5.2rem;
+            font-size: 4rem;
             font-weight: 900;
-            color: #1A3D2B;
-            letter-spacing: -4px;
+            letter-spacing: -2px;
             line-height: 1;
         }
 
-        .of-price-display .cts {
-            font-size: 1.8rem;
-            font-weight: 700;
+        .of-plan-card:not(.of-plan-card-featured) .of-price-display .val {
             color: #1A3D2B;
-            padding-top: 12px;
+        }
+
+        .of-price-display .cts {
+            font-size: 1.4rem;
+            font-weight: 700;
+            padding-top: 8px;
+        }
+
+        .of-plan-card:not(.of-plan-card-featured) .of-price-display .cts {
+            color: #1A3D2B;
         }
 
         .of-price-note {
             font-size: 0.8rem;
-            color: rgba(26, 61, 43, 0.45);
-            margin-top: 2px;
+            opacity: 0.7;
+            margin-top: 4px;
+        }
+
+        .of-plan-features {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .of-feature {
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .of-feature-icon {
+            color: #D4A017;
+            flex-shrink: 0;
+            font-size: 1.1rem;
         }
 
         /* ── BOTÃO CTA ── */
@@ -2312,10 +2356,10 @@
             background-size: 200% auto;
             color: #1A3D2B;
             text-align: center;
-            padding: 20px 24px;
-            border-radius: 14px;
+            padding: 16px 20px;
+            border-radius: 12px;
             text-decoration: none;
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: 900;
             text-transform: uppercase;
             letter-spacing: 0.1em;
@@ -2323,7 +2367,25 @@
             box-shadow: 0 6px 20px rgba(212, 160, 23, 0.35);
             position: relative;
             overflow: hidden;
+            margin-top: auto;
+        }
+
+        .of-plan-card-featured .of-cta-btn {
             animation: goldShimmer 4s linear infinite;
+        }
+
+        .of-cta-btn-alt {
+            background: transparent;
+            color: #1A3D2B;
+            box-shadow: none;
+            border: 2px solid #1A3D2B;
+            font-weight: 800;
+        }
+
+        .of-cta-btn-alt:hover {
+            background: #1A3D2B;
+            color: #FFFFFF;
+            box-shadow: 0 4px 10px rgba(26, 61, 43, 0.15);
         }
 
         .of-cta-btn::before {
@@ -2342,19 +2404,19 @@
             left: 160%;
         }
 
-        .of-cta-btn:hover {
+        .of-cta-btn:hover:not(.of-cta-btn-alt) {
             background-position: right center;
-            box-shadow: 0 12px 35px rgba(212, 160, 23, 0.5);
+            box-shadow: 0 10px 25px rgba(212, 160, 23, 0.4);
             transform: translateY(-2px);
             color: #1A3D2B;
         }
 
         .of-cta-sub {
             display: block;
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             font-weight: 600;
-            margin-top: 7px;
-            opacity: 0.65;
+            margin-top: 6px;
+            opacity: 0.7;
             text-transform: none;
             letter-spacing: 0.02em;
         }
@@ -2420,17 +2482,18 @@
 
         .coi-section-title {
             text-align: center;
-            font-family: 'Playfair Display', Georgia, serif;
+            font-family: 'Cinzel', serif;
             font-size: clamp(1.6rem, 3.5vw, 2.4rem);
-            font-weight: 700;
-            color: #1A3D2B;
+            font-weight: 800;
+            color: var(--color-text);
             margin-bottom: 10px;
         }
 
         .coi-section-sub {
             text-align: center;
             font-size: 0.82rem;
-            color: rgba(26, 61, 43, 0.45);
+            color: var(--color-text-muted);
+            font-weight: 700;
             letter-spacing: 0.18em;
             text-transform: uppercase;
             margin-bottom: 50px;
@@ -2483,13 +2546,17 @@
                 grid-template-columns: 1fr 1fr;
             }
 
-            .of-checkout {
+            .of-plans {
                 grid-template-columns: 1fr;
+                gap: 32px;
             }
 
-            .of-summary {
-                border-right: none;
-                border-bottom: 1px solid rgba(212, 160, 23, 0.12);
+            .of-plan-card-featured {
+                transform: none;
+            }
+
+            .of-plan-card-featured:hover {
+                transform: translateY(-3px);
             }
 
             .coi-grid {
@@ -2504,8 +2571,7 @@
 
             .of-card-head-body,
             .of-bonuses,
-            .of-summary,
-            .of-cta-col {
+            .of-plans {
                 padding: 28px 20px;
             }
 
@@ -2514,7 +2580,12 @@
             }
 
             .of-price-display .val {
-                font-size: 3.8rem;
+                font-size: 3.5rem;
+            }
+
+            .of-plan-badge {
+                font-size: 0.65rem;
+                padding: 4px 16px;
             }
 
             .coi-section {
@@ -3026,7 +3097,7 @@
                 por um valor <em>RIDÍCULO</em>
             </h2>
             <p class="of-context-sub">
-                a não ser que você prefira continuar pagando caro por resultados mediocres
+                a não ser que você prefira continuar pagando caro por resultados medíocres
             </p>
 
             <!-- CARD PRINCIPAL -->
@@ -3091,77 +3162,102 @@
                     </div>
                 </div>
 
-                <!-- CHECKOUT -->
-                <div class="of-checkout">
+                <!-- PLANOS / CHECKOUT -->
+                <div class="of-plans">
 
-                    <!-- Resumo / Ancoragem -->
-                    <div class="of-summary">
-                        <div class="of-summary-title">Resumo do seu pedido</div>
+                    <!-- Plano 3 Meses -->
+                    <div class="of-plan-card">
+                        <h3 class="of-plan-title">Plano 3 Meses</h3>
+                        <p class="of-plan-desc">Acesso trimestral para experimentar o método.</p>
 
-                        <div class="of-summary-row">
-                            <span>Golden Club Digital</span>
-                            <span class="of-sval">R$ 5.185,00</span>
-                        </div>
-                        <div class="of-summary-row">
-                            <span>Bônus: Método 3P</span>
-                            <span class="of-sval">R$ 1.497,00</span>
-                        </div>
-                        <div class="of-summary-row">
-                            <span>Bônus: Comunidade VIP</span>
-                            <span class="of-sval">R$ 997,00</span>
-                        </div>
-                        <div class="of-summary-row">
-                            <span>Bônus: Aulas Semanais</span>
-                            <span class="of-sval">R$ 2.691,00</span>
-                        </div>
-
-                        <div class="of-summary-divider"></div>
-
-                        <div class="of-summary-total">
-                            <span>Total se comprado separado</span>
-                            <span>R$ 10.370,00</span>
-                        </div>
-
-                        <div class="of-economy-tag">
-                            💚 Você economiza mais de R$ 9.691,00 hoje
-                        </div>
-                    </div>
-
-                    <!-- CTA + Preco -->
-                    <div class="of-cta-col">
-                        <div>
-                            <div class="of-price-label">Por apenas &mdash; Plano Anual</div>
+                        <div class="of-plan-price-box">
                             <div class="of-price-display">
                                 <span class="cur">R$</span>
-                                <span class="val">67</span>
-                                <span class="cts">,90</span>
+                                <span class="val">XX</span>
+                                <span class="cts">,XX</span>
                             </div>
-                            <div class="of-price-note">por mês &bull; ou R$ 679,00 à vista por 1 ano</div>
+                            <div class="of-price-note">por mês (ou R$ XX,XX à vista)</div>
+                        </div>
+
+                        <div class="of-plan-features">
+                            <div class="of-feature">
+                                <span class="of-feature-icon">✓</span>
+                                <span>Acesso ao Método 3P (3 meses)</span>
+                            </div>
+                            <div class="of-feature">
+                                <span class="of-feature-icon">✓</span>
+                                <span>Comunidade VIP (3 meses)</span>
+                            </div>
+                            <div class="of-feature">
+                                <span class="of-feature-icon">✓</span>
+                                <span>Aulas Semanais (3 meses)</span>
+                            </div>
+                        </div>
+
+                        <a href="#" class="of-cta-btn of-cta-btn-alt">
+                            ASSINAR 3 MESES
+                        </a>
+                    </div>
+
+                    <!-- Plano Anual (Featured) -->
+                    <div class="of-plan-card of-plan-card-featured">
+                        <div class="of-plan-badge">👑 Membro Fundador</div>
+                        <h3 class="of-plan-title">Plano Anual</h3>
+                        <p class="of-plan-desc">Acesso completo por 1 ano com melhor custo-benefício.</p>
+
+                        <div class="of-plan-price-box">
+                            <div class="of-price-display">
+                                <span class="cur">R$</span>
+                                <span class="val">XX</span>
+                                <span class="cts">,XX</span>
+                            </div>
+                            <div class="of-price-note">por mês (ou R$ XX,XX à vista)</div>
+                        </div>
+
+                        <div class="of-plan-features">
+                            <div class="of-feature">
+                                <span class="of-feature-icon">✓</span>
+                                <span><strong>Acesso ao Método 3P (1 ano)</strong></span>
+                            </div>
+                            <div class="of-feature">
+                                <span class="of-feature-icon">✓</span>
+                                <span><strong>Comunidade VIP (1 ano)</strong></span>
+                            </div>
+                            <div class="of-feature">
+                                <span class="of-feature-icon">✓</span>
+                                <span><strong>Aulas Semanais (1 ano)</strong></span>
+                            </div>
+                            <div class="of-feature">
+                                <span class="of-feature-icon" style="font-size: 1.2rem;">⭐</span>
+                                <span style="color: #F5DFA0; font-weight: 700;">Benefício Exclusivo: Selo de Membro Fundador</span>
+                            </div>
                         </div>
 
                         <a href="#" class="of-cta-btn">
-                            QUERO GARANTIR MINHA VAGA
-                            <span class="of-cta-sub">Compra 100% Segura &bull; Acesso Imediato</span>
+                            ASSINAR PLANO ANUAL
+                            <span class="of-cta-sub">Melhor Oferta &bull; Acesso Imediato</span>
                         </a>
-
-                        <div class="of-payments">
-                            <span class="of-pay-item">VISA</span>
-                            <span class="of-pay-item">MASTERCARD</span>
-                            <span class="of-pay-item">PIX</span>
-                            <span class="of-pay-item">BOLETO</span>
-                        </div>
-
-                        <div class="of-guarantee">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                            </svg>
-                            <p><strong>Risco zero!</strong> Garantia incondicional de 7 dias. Se não gostar, devolvemos
-                                100% do seu dinheiro sem perguntas.</p>
-                        </div>
                     </div>
 
                 </div>
+
+                <!-- Garantia e Pagamentos Gerais -->
+                <div style="background: #fff; padding: 24px; border-top: 1px solid rgba(212, 160, 23, 0.15); display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; align-items: center;">
+                    <div class="of-payments" style="margin:0;">
+                        <span class="of-pay-item">VISA</span>
+                        <span class="of-pay-item">MASTERCARD</span>
+                        <span class="of-pay-item">PIX</span>
+                        <span class="of-pay-item">BOLETO</span>
+                    </div>
+                    <div class="of-guarantee" style="margin:0; max-width: 400px; padding: 10px 14px;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                        </svg>
+                        <p><strong>Risco zero!</strong> Garantia incondicional de 7 dias.</p>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -3315,26 +3411,21 @@
             startAutoplay();
         })();
 
-        // Cronômetro da Oferta Final (3 Dias persistidos)
+        // Cronômetro da Oferta Final (Até 21/09 às 23:59:59)
         (function () {
-            var KEY = 'gcd_launch_deadline_v2';
-            var stored = localStorage.getItem(KEY);
-            var deadline;
-
-            if (stored) {
-                deadline = parseInt(stored, 10);
-            } else {
-                deadline = Date.now() + 3 * 24 * 60 * 60 * 1000;
-                localStorage.setItem(KEY, deadline);
-            }
+            var now = new Date();
+            var deadline = new Date(now.getFullYear(), 8, 21, 23, 59, 59).getTime();
 
             function pad(n) { return n < 10 ? '0' + n : '' + n; }
 
             function tick() {
                 var diff = deadline - Date.now();
+                var urgencyBar = document.querySelector('.of-urgency-bar');
+
                 if (diff <= 0) {
-                    var el = document.getElementById('plCountdown');
-                    if (el) el.innerHTML = "<p style='color:var(--gold-bright); font-family:Montserrat; font-weight:900; font-size:1.5rem; letter-spacing:0.1em; text-transform:uppercase;'>OFERTA ENCERRADA</p>";
+                    if (urgencyBar) {
+                        urgencyBar.innerHTML = "<span style='color: #fff8e7; font-family:Montserrat; font-weight:900; font-size:1rem; letter-spacing:0.1em; text-transform:uppercase;'>OFERTA ENCERRADA</span>";
+                    }
                     return;
                 }
 
