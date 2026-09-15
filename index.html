@@ -2606,6 +2606,110 @@
                     max-width: 260px;
                 }
             }
+
+        /* GCD-PGV1 REDESIGN — pré-lançamento 24 horas */
+        :root {
+            --color-bg: #F4EED8;
+            --color-bg-alt: #E9E2C8;
+            --color-text: #183A2A;
+            --color-text-muted: #40604B;
+            --color-text-light: rgba(24, 58, 42, .62);
+            --green-deep: #183A2A;
+            --green-medium: #28583D;
+            --green-forest: #387451;
+            --green-moss: #6E8E64;
+            --gold-deep: #9B7410;
+            --gold-bright: #C99A20;
+            --gold-light: #E2BC55;
+            --gold-pale: #F3DE9A;
+        }
+        *, *::before, *::after { font-family: 'Montserrat', sans-serif !important; }
+        body { background: var(--color-bg); color: var(--color-text); }
+        h1, h2, h3, h4, h5, h6, p, span, a, button, label, li { font-family: 'Montserrat', sans-serif !important; }
+        h1, h2, h3, h4, h5, h6 { letter-spacing: -.025em; }
+        .luxury-italic { font-family: 'Montserrat', sans-serif !important; font-style: italic; }
+        .gold-text, .gold-shimmer { background: none; -webkit-text-fill-color: initial; color: var(--gold-deep); }
+        .hero, .of-section { background: var(--color-bg); }
+        .methodology-section, .faq-section { background: var(--green-deep); }
+        .vip-eco-section { background: var(--color-bg); color: var(--green-deep); padding: 88px 20px; }
+        .vip-eco-title { color: var(--green-deep) !important; }
+        .vip-eco-title .gold-text { color: var(--green-deep) !important; }
+        .vip-eco-subtitle { color: var(--gold-deep) !important; }
+        .vip-eco-card { background: #FFFDF6; border: 1px solid rgba(24,58,42,.14); box-shadow: 0 16px 35px rgba(24,58,42,.10); }
+        .vip-eco-text h3, .vip-eco-text p { color: var(--green-deep) !important; }
+        .vip-eco-text p { color: var(--color-text-muted) !important; }
+        .met-header h2, .met-header h3 { font-family: 'Montserrat', sans-serif !important; }
+        .met-header h3 { color: rgba(255,255,255,.78); }
+        .met-3p-card { border-radius: 16px; }
+        .met-3p-title, .met-3p-subheadline { font-family: 'Montserrat', sans-serif !important; }
+        .met-3p-covers-stack img { width: 82px; aspect-ratio: 3/4; border-radius: 10px; }
+        .of-section { background: var(--green-deep); color: var(--color-bg); }
+        .of-section::before { background: radial-gradient(ellipse at 10% 5%, rgba(226,188,85,.22), transparent 68%); }
+        .of-urgency-bar { background: var(--gold-bright); color: var(--green-deep); }
+        .of-wrap { max-width: 1080px; padding: 56px 18px 76px; }
+        .of-context-title { color: var(--color-bg); font-family: 'Montserrat', sans-serif !important; font-weight: 800; }
+        .of-context-title em { color: var(--gold-light); background: none; -webkit-text-fill-color: initial; }
+        .of-context-sub { color: rgba(244,238,216,.72); }
+        .of-card { border-radius: 22px; background: var(--color-bg); box-shadow: 0 24px 70px rgba(0,0,0,.28); }
+        .of-card-head { background: var(--color-bg); border-bottom: 0; }
+        .of-card-cover { background: var(--green-medium); }
+        .of-card-cover img { max-height: 300px; object-fit: cover; }
+        .of-card-head-body { background: var(--color-bg); padding: 28px 24px 22px; }
+        .of-badge { background: var(--gold-bright); color: var(--green-deep); animation: none; }
+        .of-product-desc { color: var(--green-deep); max-width: 660px; }
+        .of-old-price-label { color: var(--color-text-muted); }
+        .of-old-price-val { color: rgba(24,58,42,.42); }
+        .of-bonuses { padding: 28px 24px; background: #E9E2C8; border-bottom: 1px solid rgba(24,58,42,.12); }
+        .of-bonuses-title { color: var(--gold-deep); margin-bottom: 18px; }
+        .of-bonus-grid { grid-template-columns: repeat(3, 1fr); gap: 12px; }
+        .of-bonus-card { background: #FFFDF6; border-color: rgba(24,58,42,.13); padding: 18px 16px; }
+        .of-bonus-card-icon { color: var(--gold-deep); font-size: 1.4rem; }
+        .of-bonus-card-name, .of-bonus-card-desc { color: var(--green-deep); }
+        .of-bonus-card-desc { color: var(--color-text-muted); }
+        .of-bonus-card-val .free-tag { color: var(--green-deep); background: rgba(56,116,81,.10); border-color: rgba(56,116,81,.2); }
+        .of-checkout { display: block; padding: 24px; background: var(--color-bg); }
+        .of-summary { padding: 0 0 22px; border-right: 0; border-bottom: 1px solid rgba(24,58,42,.15); background: transparent; }
+        .of-summary-title, .of-summary-row, .of-summary-total { color: var(--green-deep); }
+        .of-economy-tag { color: var(--green-deep); background: rgba(56,116,81,.10); border-color: rgba(56,116,81,.22); }
+        .of-cta-col { margin-top: 24px; padding: 0; background: transparent; gap: 16px; }
+        .of-price-label { color: var(--color-text-muted); }
+        .of-price-display .cur, .of-price-display .cts { color: var(--gold-deep); }
+        .of-price-display .val { color: var(--green-deep); }
+        .of-price-note { color: var(--color-text-muted); }
+        .of-cta-btn { background: var(--gold-bright); color: var(--green-deep); animation: none; }
+        .of-cta-btn:hover { color: var(--green-deep); background: var(--gold-light); }
+        .of-guarantee { background: rgba(56,116,81,.09); border-color: rgba(56,116,81,.2); }
+        .coi-section { background: var(--color-bg); }
+        .coi-section-title, .coi-card h4 { font-family: 'Montserrat', sans-serif !important; color: var(--green-deep); }
+        .coi-card-icon { color: var(--gold-deep); }
+        @media (max-width: 680px) {
+            .of-wrap { padding: 42px 12px 56px; }
+            .of-context-title { font-size: 1.65rem; }
+            .of-context-sub { font-size: .72rem; }
+            .of-card-cover img { max-height: 190px; }
+            .of-bonus-grid { grid-template-columns: 1fr; }
+            .of-bonus-card { display: grid; grid-template-columns: 32px 1fr; column-gap: 10px; align-items: start; }
+            .of-bonus-card-icon { grid-row: span 2; margin: 0; }
+            .of-bonus-card-desc { grid-column: 2; margin: 3px 0 8px; }
+            .of-bonus-card-val { grid-column: 2; }
+            .of-checkout { padding: 20px 18px; }
+            .of-price-display .val { font-size: 4.2rem; }
+            .of-cta-btn { font-size: .86rem; padding: 17px 14px; }
+        }
+
+
+        .of-plan-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+        .of-plan-card { position: relative; background: #FFFDF6; border: 1px solid rgba(24,58,42,.16); border-radius: 16px; padding: 22px 18px 18px; text-align: center; }
+        .of-plan-featured { border: 2px solid var(--gold-bright); box-shadow: 0 10px 28px rgba(155,116,16,.14); }
+        .of-plan-ribbon { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); white-space: nowrap; background: var(--gold-bright); color: var(--green-deep); border-radius: 20px; padding: 5px 12px; font-size: .62rem; font-weight: 900; letter-spacing: .08em; }
+        .of-plan-kicker { color: var(--gold-deep); font-size: .62rem; font-weight: 800; letter-spacing: .14em; }
+        .of-plan-title { color: var(--green-deep); font-size: 1.25rem; font-weight: 800; margin: 6px 0 8px; }
+        .of-plan-price { color: var(--green-deep); font-size: 3rem; line-height: 1; font-weight: 900; letter-spacing: -.08em; }
+        .of-plan-price small { color: var(--gold-deep); font-size: 1rem; letter-spacing: 0; vertical-align: top; margin-right: 3px; }
+        .of-plan-note { min-height: 34px; color: var(--color-text-muted); font-size: .7rem; line-height: 1.4; margin: 9px 0 15px; }
+        .of-plan-card .of-cta-btn { font-size: .72rem; padding: 14px 8px; letter-spacing: .06em; }
+        @media (max-width: 520px) { .of-plan-grid { grid-template-columns: 1fr; } .of-plan-card { padding: 20px 16px 16px; } .of-plan-featured { order: -1; } }
+
     </style>
 </head>
 
@@ -2961,7 +3065,7 @@
 
             <div class="vip-eco-header">
                 <h4 class="vip-eco-subtitle">Além de tudo isso</h4>
-                <h2 class="vip-eco-title">Um <span class="gold-text">Ecossistema Vivo</span>.</h2>
+                <h2 class="vip-eco-title">Um Ecossistema Vivo.</h2>
             </div>
 
             <div class="vip-eco-content">
@@ -3006,161 +3110,44 @@
          DOBRA DE OFERTA - PREMIUM
     ========================================================== -->
     <section class="of-section" id="oferta">
-
-        <!-- URGENCIA COM COUNTDOWN -->
         <div class="of-urgency-bar">
-            🔥 OFERTA POR TEMPO LIMITADO &mdash; ENCERRA EM:
-            <span class="of-cd">
-                <span id="plDays">00</span>d&nbsp;
-                <span id="plHours">00</span>h&nbsp;
-                <span id="plMinutes">00</span>m&nbsp;
-                <span id="plSeconds">00</span>s
-            </span>
+            PRÉ-LANÇAMENTO — CONDIÇÃO DE FUNDADORA ENCERRA EM:
+            <span class="of-cd"><span id="plDays">00</span>d <span id="plHours">00</span>h <span id="plMinutes">00</span>m <span id="plSeconds">00</span>s</span>
         </div>
-
         <div class="of-wrap">
-
-            <!-- TITULO DE CONTEXTO -->
-            <h2 class="of-context-title">
-                Você vai levar todo esse conhecimento<br>
-                por um valor <em>RIDÍCULO</em>
-            </h2>
-            <p class="of-context-sub">
-                a não ser que você prefira continuar pagando caro por resultados mediocres
-            </p>
-
-            <!-- CARD PRINCIPAL -->
+            <h2 class="of-context-title">Entre para o <em>Golden Club Digital</em></h2>
+            <p class="of-context-sub">Uma jornada prática para posicionar, vender e crescer com método</p>
             <div class="of-card">
-
-                <!-- CABECALHO: Capa no Topo + Infos -->
                 <div class="of-card-head">
-                    <div class="of-card-cover">
-                        <img src="imagem/gcd-capa16.9.png" alt="Golden Club Digital">
-                    </div>
+                    <div class="of-card-cover"><img src="imagem/gcd-capa16.9.png" alt="Golden Club Digital"></div>
                     <div class="of-card-head-body">
-                        <span class="of-badge">❖ Condição de Fundadora ❖</span>
-                        <p class="of-product-desc">
-                            O ecossistema completo para você aplicar, ver resultados reais e
-                            dominar o mercado de bronzeamento sem depender de promoções.
-                        </p>
-                        <div class="of-old-price-box">
-                            <span class="of-old-price-label">Valor separado no mercado:</span>
-                            <span class="of-old-price-val">R$ 10.370,00</span>
-                        </div>
+                        <span class="of-badge">CONDIÇÃO DE FUNDADORA</span>
+                        <p class="of-product-desc">Um ecossistema de desenvolvimento para bronzeadoras que querem parar de improvisar, cobrar com segurança e construir uma agenda mais previsível.</p>
                     </div>
                 </div>
-
-                <!-- BONUS -->
                 <div class="of-bonuses">
-                    <div class="of-bonuses-title">🎁 Tudo incluído no seu plano hoje</div>
+                    <div class="of-bonuses-title">O que está incluído nos dois planos</div>
                     <div class="of-bonus-grid">
-
-                        <div class="of-bonus-card">
-                            <span class="of-bonus-card-icon">📚</span>
-                            <div class="of-bonus-card-name">Método 3P Completo</div>
-                            <div class="of-bonus-card-desc">Passo a passo para construir, precificar e escalar seu
-                                negócio do zero à lotação da agenda.</div>
-                            <div class="of-bonus-card-val">
-                                <span class="strike">R$ 1.497,00</span>
-                                <span class="free-tag">GRÁTIS</span>
-                            </div>
-                        </div>
-
-                        <div class="of-bonus-card">
-                            <span class="of-bonus-card-icon">👑</span>
-                            <div class="of-bonus-card-name">Comunidade VIP das Audaciosas</div>
-                            <div class="of-bonus-card-desc">Ambiente fechado de alta performance com mentoras e alunas
-                                que faturam múltiplos 5 dígitos.</div>
-                            <div class="of-bonus-card-val">
-                                <span class="strike">R$ 997,00</span>
-                                <span class="free-tag">GRÁTIS</span>
-                            </div>
-                        </div>
-
-                        <div class="of-bonus-card">
-                            <span class="of-bonus-card-icon">📡</span>
-                            <div class="of-bonus-card-name">Aulas Semanais &amp; Gestão</div>
-                            <div class="of-bonus-card-desc">Material constante sobre tendências do mercado e templates
-                                prontos para fechar mais clientes.</div>
-                            <div class="of-bonus-card-val">
-                                <span class="strike">R$ 2.691,00</span>
-                                <span class="free-tag">GRÁTIS</span>
-                            </div>
-                        </div>
-
+                        <div class="of-bonus-card"><span class="of-bonus-card-icon">◈</span><div class="of-bonus-card-name">Método 3P completo</div><div class="of-bonus-card-desc">Pessoa, Processo e Produto aplicados ao negócio de bronzeamento.</div><div class="of-bonus-card-val"><span class="free-tag">INCLUÍDO</span></div></div>
+                        <div class="of-bonus-card"><span class="of-bonus-card-icon">◎</span><div class="of-bonus-card-name">Comunidade das Audaciosas</div><div class="of-bonus-card-desc">Ambiente para trocar experiências, formar parcerias e evoluir.</div><div class="of-bonus-card-val"><span class="free-tag">INCLUÍDO</span></div></div>
+                        <div class="of-bonus-card"><span class="of-bonus-card-icon">◇</span><div class="of-bonus-card-name">Encontros e aulas semanais</div><div class="of-bonus-card-desc">Direcionamento, tendências, gestão e materiais atualizados.</div><div class="of-bonus-card-val"><span class="free-tag">INCLUÍDO</span></div></div>
                     </div>
                 </div>
-
-                <!-- CHECKOUT -->
                 <div class="of-checkout">
-
-                    <!-- Resumo / Ancoragem -->
                     <div class="of-summary">
-                        <div class="of-summary-title">Resumo do seu pedido</div>
-
-                        <div class="of-summary-row">
-                            <span>Golden Club Digital</span>
-                            <span class="of-sval">R$ 5.185,00</span>
-                        </div>
-                        <div class="of-summary-row">
-                            <span>Bônus: Método 3P</span>
-                            <span class="of-sval">R$ 1.497,00</span>
-                        </div>
-                        <div class="of-summary-row">
-                            <span>Bônus: Comunidade VIP</span>
-                            <span class="of-sval">R$ 997,00</span>
-                        </div>
-                        <div class="of-summary-row">
-                            <span>Bônus: Aulas Semanais</span>
-                            <span class="of-sval">R$ 2.691,00</span>
-                        </div>
-
-                        <div class="of-summary-divider"></div>
-
-                        <div class="of-summary-total">
-                            <span>Total se comprado separado</span>
-                            <span>R$ 10.370,00</span>
-                        </div>
-
-                        <div class="of-economy-tag">
-                            💚 Você economiza mais de R$ 9.691,00 hoje
-                        </div>
+                        <div class="of-summary-title">Escolha seu ciclo de desenvolvimento</div>
+                        <div class="of-summary-row"><span>Plano Trimestral</span><strong>3 meses</strong></div>
+                        <div class="of-summary-row"><span>Plano Anual Fundadora</span><strong>12 meses</strong></div>
+                        <div class="of-economy-tag">Acesso imediato + garantia de 7 dias</div>
                     </div>
-
-                    <!-- CTA + Preco -->
                     <div class="of-cta-col">
-                        <div>
-                            <div class="of-price-label">Por apenas &mdash; Plano Anual</div>
-                            <div class="of-price-display">
-                                <span class="cur">R$</span>
-                                <span class="val">67</span>
-                                <span class="cts">,90</span>
-                            </div>
-                            <div class="of-price-note">por mês &bull; ou R$ 679,00 à vista por 1 ano</div>
+                        <div class="of-plan-grid">
+                            <div class="of-plan-card"><div class="of-plan-kicker">CICLO DE IMPLEMENTAÇÃO</div><div class="of-plan-title">Trimestral</div><div class="of-plan-price"><small>R$</small>697</div><div class="of-plan-note">à vista ou 3x de R$ 249</div><a href="#" class="of-cta-btn">QUERO COMEÇAR<span class="of-cta-sub">Acesso imediato</span></a></div>
+                            <div class="of-plan-card of-plan-featured"><div class="of-plan-ribbon">MAIS ESCOLHIDO</div><div class="of-plan-kicker">CONDIÇÃO DE FUNDADORA</div><div class="of-plan-title">Anual</div><div class="of-plan-price"><small>R$</small>997</div><div class="of-plan-note">à vista ou 12x de R$ 99,70</div><a href="#" class="of-cta-btn">GARANTIR MINHA VAGA<span class="of-cta-sub">Preço travado por 12 meses</span></a></div>
                         </div>
-
-                        <a href="#" class="of-cta-btn">
-                            QUERO GARANTIR MINHA VAGA
-                            <span class="of-cta-sub">Compra 100% Segura &bull; Acesso Imediato</span>
-                        </a>
-
-                        <div class="of-payments">
-                            <span class="of-pay-item">VISA</span>
-                            <span class="of-pay-item">MASTERCARD</span>
-                            <span class="of-pay-item">PIX</span>
-                            <span class="of-pay-item">BOLETO</span>
-                        </div>
-
-                        <div class="of-guarantee">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                            </svg>
-                            <p><strong>Risco zero!</strong> Garantia incondicional de 7 dias. Se não gostar, devolvemos
-                                100% do seu dinheiro sem perguntas.</p>
-                        </div>
+                        <div class="of-payments"><span class="of-pay-item">VISA</span><span class="of-pay-item">MASTERCARD</span><span class="of-pay-item">PIX</span><span class="of-pay-item">BOLETO</span></div>
+                        <div class="of-guarantee"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><p><strong>Garantia de 7 dias.</strong> Conheça a experiência por dentro e, se não fizer sentido para você, solicite o reembolso dentro do prazo.</p></div>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -3171,23 +3158,23 @@
     ========================================================== -->
     <section class="coi-section">
         <div class="coi-inner">
-            <h2 class="coi-section-title">🚨 O Verdadeiro Preço da Indecisão</h2>
+            <h2 class="coi-section-title">O Verdadeiro Preço da Indecisão</h2>
             <p class="coi-section-sub">Cada dia que passa sem agir tem um custo invisível</p>
             <div class="coi-grid">
                 <div class="coi-card">
-                    <span class="coi-card-icon">📉</span>
+                    <span class="coi-card-icon">↘</span>
                     <h4>Estagnação de Faturamento</h4>
                     <p>Enquanto você hesita, concorrentes da sua região estão aplicando nossa metodologia, aumentando
                         preços com propriedade e lotando a agenda sem fazer promoções.</p>
                 </div>
                 <div class="coi-card">
-                    <span class="coi-card-icon">😣</span>
+                    <span class="coi-card-icon">∿</span>
                     <h4>Desgaste Físico Constante</h4>
                     <p>Não profissionalizar a gestão é continuar atendendo de sol a sol, trabalhando por quantias
                         mínimas, sofrendo de exaustão sem desfrutar dos lucros.</p>
                 </div>
                 <div class="coi-card">
-                    <span class="coi-card-icon">🧭</span>
+                    <span class="coi-card-icon">◎</span>
                     <h4>Solidão na Jornada</h4>
                     <p>Tentar descobrir o caminho sozinha é cruel. Você permanecerá patinando nos mesmos erros que as
                         mentoras do Golden Club já resolveram.</p>
@@ -3315,16 +3302,16 @@
             startAutoplay();
         })();
 
-        // Cronômetro da Oferta Final (3 Dias persistidos)
+        // Cronômetro do pré-lançamento (24 horas)
         (function () {
-            var KEY = 'gcd_launch_deadline_v2';
+            var KEY = 'gcd_launch_deadline_24h_v3';
             var stored = localStorage.getItem(KEY);
             var deadline;
 
             if (stored) {
                 deadline = parseInt(stored, 10);
             } else {
-                deadline = Date.now() + 3 * 24 * 60 * 60 * 1000;
+                deadline = Date.now() + 24 * 60 * 60 * 1000;
                 localStorage.setItem(KEY, deadline);
             }
 
