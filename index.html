@@ -2713,13 +2713,14 @@
         @media (max-width: 520px) { .of-plan-grid { grid-template-columns: 1fr; } .of-plan-card { padding: 20px 16px 16px; } .of-plan-featured { order: -1; } }
 
         /* HERO — enquadramento fluido e contraste de lançamento */
-        .hero { background: var(--color-bg); overflow: hidden; }
-        .hero-image-block { width: 100%; overflow: hidden; background: var(--color-bg); }
+        .hero { background: #FFFFFF; overflow: hidden; }
+        .hero-image-block { width: 100%; overflow: hidden; background: #FFFFFF; }
         .hero-top-img { width: 100%; max-width: none; height: auto; object-fit: contain; }
-        .hero-gradient-overlay { background: linear-gradient(to top, var(--color-bg) 0%, rgba(244,238,216,.68) 17%, rgba(244,238,216,0) 48%); }
-        .hero-text-block { max-width: 980px; padding: 28px 24px 54px; gap: 20px; }
+        .hero-gradient-overlay { background: linear-gradient(to top, #FFFFFF 0%, rgba(255,255,255,.72) 17%, rgba(255,255,255,0) 48%); }
+        .hero-text-block { max-width: 980px; padding: 28px 24px 54px; gap: 20px; background: #FFFFFF; }
         .hero-title { font-family: 'Montserrat', sans-serif !important; font-size: clamp(1.55rem, 4.5vw, 3.2rem); font-weight: 800; letter-spacing: -.035em; line-height: 1.08; text-wrap: balance; }
-        .hero-line { display: block; white-space: nowrap; }
+        .hero-line { display: block; white-space: normal; }
+        .hero-mobile-break { display: none; }
         .hero-title-highlight { background: linear-gradient(110deg, #8F6819 0%, #B58A2A 28%, #E1C16A 52%, #A8781F 78%, #7B5713 100%) !important; background-size: 180% auto !important; -webkit-background-clip: text !important; background-clip: text !important; -webkit-text-fill-color: transparent !important; color: #A8781F !important; text-shadow: none; }
         .hero-subtitle { max-width: 640px; color: var(--color-text-muted); line-height: 1.55; }
         .hero-subtitle .luxury-italic { color: var(--gold-deep); }
@@ -2729,7 +2730,8 @@
         @media (max-width: 767px) {
             .hero-top-img { min-height: 0; }
             .hero-text-block { padding: 22px 18px 42px; gap: 16px; }
-            .hero-title { font-size: clamp(1.25rem, 5.25vw, 1.8rem); letter-spacing: -.045em; }
+            .hero-title { width: 100%; font-size: clamp(1.35rem, 6.1vw, 1.8rem); letter-spacing: -.045em; line-height: 1.12; }
+            .hero-mobile-break { display: block; }
             .hero-subtitle { font-size: .98rem; }
         }
 
@@ -2754,7 +2756,7 @@
 
             <h1 class="hero-title">
                 <span class="hero-line">Vamos juntas construir</span>
-                <span class="hero-line"><span class="hero-title-highlight gold-shimmer">os melhores 12 meses</span> da sua vida</span>
+                <span class="hero-line"><span class="hero-title-highlight gold-shimmer">os 12 melhores<span class="hero-mobile-break"></span> meses</span> da sua vida</span>
             </h1>
             <h2 class="hero-subtitle">
                 Você é minha convidada para participar da maior plataforma do brasil de
